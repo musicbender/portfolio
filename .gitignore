@@ -1,0 +1,17 @@
+
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Tests
+test/runner
+test/integration/runner
+
+# Other
+.DS_Store
+dist
+server/config.js
+server/temp/*
+.git
