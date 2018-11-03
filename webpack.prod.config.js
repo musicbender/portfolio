@@ -3,28 +3,28 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const config = {
   mode: 'production',
-  devtool: 'cheap-module-source-map',
   target: 'web',
   resolve: {
     extensions: ['.js', '.json'],
   },
   entry: {
     index: [path.join(__dirname, '/client/index.js')],
-    vendor: ['react', 'react-dom', 'react-router-dom'],
+    vendor: ['react', 'react-dom', 'react-router-dom']
   },
   output: {
     path: path.join(__dirname, '/dist/public'),
-    filename: 'dist.js',
+    filename: 'bundle.js',
     publicPath: '/public',
+    chunkFilename: '[name].bundle.js'
   },
   module: {
     rules: [
       {
         test: /\.jsx*$/,
-        include: path.join(__dirname, '/client'),
         loader: "babel-loader",
         exclude: /node_modules/,
       },
@@ -48,7 +48,17 @@ const config = {
         loader: 'file-loader?name=[path][name].[ext]'
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i, loader: "file-loader?name=[path][hash].[ext]"
+        test: /\.(jpe?g|png|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              context: './client/assets/',
+              name: '[path][name].[ext]',
+              outputPath: 'assets/'
+            }
+          }
+        ]
       },
       {
         test: /\.(graphql|gql)$/,
@@ -59,17 +69,23 @@ const config = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production'),
-        'LIVE': process.env.LIVE,
-      }
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'process.env.IS_QA': process.env.IS_QA,
+      'process.env.IS_LIVE': process.env.IS_LIVE
     }),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new MiniCssExtractPlugin({
-      filename: "style.css",
-    })
+      filename: "style.css"
+    }),
+    new CopyWebpackPlugin([
+      { from: 'client/assets/favicons', to: 'assets/favicons' },
+      { from: 'client/assets/images/', to: 'assets/images', ignore: [ '.DS_Store' ] },
+      { from: 'manifest.json', to: '' }
+    ]),
+    new BundleAnalyzerPlugin({ analyzerMode: 'disabled' })
   ],
   optimization: {
-    minimizer: {
+    minimizer: [
       new UglifyJsPlugin({
         uglifyOptions: {
           compress: true,
@@ -78,13 +94,21 @@ const config = {
             comments: false
           }
         }
-      }),
-    },
+      })
+    ],
+    runtimeChunk: false,
     splitChunks: {
-      name: 'vendor',
-      minChunks: 2
-    },
-  }
+      cacheGroups: {
+        default: false,
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all',
+          minChunks: 2
+        }
+      }
+    }
+  },
 };
 
 module.exports = config;

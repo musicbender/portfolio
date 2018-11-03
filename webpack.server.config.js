@@ -3,6 +3,7 @@ const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   mode: 'production',
@@ -15,9 +16,6 @@ module.exports = {
   externals: [ nodeExternals() ],
   cache: false,
   resolve: {
-    alias: {
-	     "~": path.join(__dirname, './client'),
-	  },
     extensions: ['.js', '.json']
   },
   entry: path.join(__dirname, './server/server.js'),
@@ -26,11 +24,11 @@ module.exports = {
     filename: 'server.bundle.js',
   },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.jsx?$/,
-        loaders: "babel-loader",
-        exclude: /node_modules/,
+        test: /\.js$/,
+        loader: "babel-loader",
+        exclude: /node_modules/
       },
       {
         test: /\.scss$/,
@@ -40,23 +38,16 @@ module.exports = {
         test: /\.css$/,
         loader: 'css-loader'
       }
-    ],
+    ]
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production'),
-        'LIVE': process.env.LIVE,
-        'PORT': process.env.PORT,
-      }
-    }),
     new CopyWebpackPlugin([
       { from: 'server/views/', to: 'views', flatten: true },
-      { from: 'server/temp/', to: 'temp', flatten: true }
-    ])
+    ]),
+    new BundleAnalyzerPlugin({ analyzerMode: 'disabled' })
   ],
   optimization: {
-    minimizer: {
+    minimizer: [
       new UglifyJsPlugin({
         uglifyOptions: {
           compress: true,
@@ -65,7 +56,7 @@ module.exports = {
             comments: false
           }
         }
-      }),
-    }
+      })
+    ]
   }
 };

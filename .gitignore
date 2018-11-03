@@ -12,6 +12,7 @@ test/integration/runner
 # Other
 .DS_Store
 dist
-server/config.js
 server/temp/*
+server/config.js
+.env
 .git

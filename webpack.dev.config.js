@@ -1,11 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const PORT = require('./server/config').PORT;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const config = {
   mode: 'development',
-  devtool: 'cheap-module-source-map',
   target: 'web',
   resolve: {
     extensions: ['.js', '.json', '.graphql'],
@@ -15,12 +14,14 @@ const config = {
       'webpack-hot-middleware/client',
       'webpack/hot/only-dev-server',
       path.join(__dirname, '/client/index.js'),
-    ]
+    ],
+    vendor: ['react', 'react-dom', 'react-router-dom']
   },
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'dist.js',
-    publicPath: 'http://localhost:' + PORT + '/',
+    filename: 'bundle.js',
+    publicPath: 'http://localhost:' + process.env.PORT + '/',
+    chunkFilename: '[name].bundle.js'
   },
   watchOptions: {
     ignored: ['server/temp/*', 'node_modules']
@@ -62,20 +63,34 @@ const config = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.DefinePlugin({
-      'process.env': {
-        'LIVE': false,
-        'NODE_ENV': JSON.stringify('development'),
-        'BABEL_ENV': JSON.stringify('development'),
-        'PORT': 3015,
-        'BASE_URL': JSON.stringify('http://localhost'),
-        'MOCK_DATA': process.env.MOCK_DATA
-      },
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'process.env.APP_ENV': JSON.stringify(process.env.APP_ENV),
+      'process.env.PORT': process.env.PORT,
+      'process.env.DB_HOST': JSON.stringify(process.env.DB_HOST),
+      'process.env.DB_PORT': process.env.DB_PORT,
+      'process.env.MOCK_DATA': process.env.MOCK_DATA
     }),
     new CopyWebpackPlugin([
       { from: 'server/config.js', to: path.resolve(__dirname, 'dist'), flatten: true},
+      { from: 'client/assets/images/', to: 'assets/images', ignore: [ '.DS_Store' ] },
+      { from: 'client/assets/svg/', to: 'assets/svg', ignore: [ '.DS_Store' ] },
     ])
   ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        default: false,
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all',
+          minChunks: 2
+        }
+      }
+    }
+  }
 };
 
 module.exports = config;
