@@ -8,9 +8,13 @@ import graphqlHTTP from 'express-graphql';
 import schema from './api';
 import restAPI from './rest-api';
 import { createStore } from 'redux';
+import { renderToString } from 'react-dom/server';
+import { Provider } from 'react-redux';
+import { StaticRouter } from 'react-router';
 import reducers from '../client/reducers';
 import graphQLSetupMiddleware from './middleware/graphql-middleware';
 import headersMiddleware from './middleware/headers-middleware';
+const criticalCSS = require('./views/critical.css').toString();
 
 //--//--//--// INIT //--//--//--//
 const app = new express();
@@ -87,12 +91,29 @@ app.use('/rest-api', restAPI);
 //--//--//--// SERVER SIDE RENDERING //--//--//--//
 app.get('*', (req, res) => {
   const store = createStore(reducers);
+  const context = {};
+  const html = renderToString(
+    <Provider store={store}>
+      <StaticRouter location={req.url} context={context}>
+        <App />
+      </StaticRouter>
+    </Provider>
+  );
+
+  if (context.url) {
+    res.redirect(301, context.url);
+    res.end();
+  }
+
   const preloadedState = store.getState();
+
   res
     .set('Content-Type', 'text/html')
     .status(200)
     .render('index', {
+      html,
       preloadedState,
+      criticalCSS
     });
 });
 
