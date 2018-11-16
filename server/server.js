@@ -6,7 +6,6 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import graphqlHTTP from 'express-graphql';
 import schema from './api';
-import restAPI from './rest-api';
 import { createStore } from 'redux';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
@@ -14,7 +13,6 @@ import { StaticRouter } from 'react-router';
 import reducers from '../client/reducers';
 import graphQLSetupMiddleware from './middleware/graphql-middleware';
 import headersMiddleware from './middleware/headers-middleware';
-const criticalCSS = require('./views/critical.css').toString();
 
 //--//--//--// INIT //--//--//--//
 const app = new express();
@@ -85,13 +83,11 @@ app.use(
     pretty: process.env.NODE_ENV === 'development'
 })));
 
-//--//--//--// REST API //--//--//--//
-app.use('/rest-api', restAPI);
-
 //--//--//--// SERVER SIDE RENDERING //--//--//--//
 app.get('*', (req, res) => {
   const store = createStore(reducers);
   const context = {};
+  const criticalCSS = require('./views/critical.css').toString();
   const html = renderToString(
     <Provider store={store}>
       <StaticRouter location={req.url} context={context}>

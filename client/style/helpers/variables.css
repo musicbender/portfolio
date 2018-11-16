@@ -1,0 +1,26 @@
+/******* Breakpoints *******/
+$largest-site-width:    1920px;
+$extra-large-width:     1600px;
+$site-max-width:        1320px;
+$desktop-odd-width:     1280px;
+$small-desktop-width:   1024px;
+
+/*******Animation*******/
+$easeOut   : cubic-bezier(0.23, 1, 0.32, 1);
+$easeIn    : cubic-bezier(0.950, 0.050, 0.795, 0.035);
+$easeInOut : cubic-bezier(0.445, 0.05, 0.55, 0.95);
+$slow:       700ms;
+$moderate:   400ms;
+$fast:       200ms;
+
+/*******Fonts*******/
+$robo: 'Roboto', sans-serif;
+
+/******* Sizes *******/
+
+
+/******* Colors *******/
+$white: #fff;
+$off-white: rgb(245,245,245);
+$black: rgb(40,40,40);
+$matte-black: #000;
