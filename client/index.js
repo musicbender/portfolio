@@ -4,7 +4,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import App from './components/app';
 import store from './store';
-import './style/main.scss';
 
 if (typeof window === undefined) {
 	global.window = {};

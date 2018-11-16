@@ -2,10 +2,10 @@ const { APP_ALLOWED_ORIGINS } = process.env;
 
 const headersMiddleware = (req, res, next) => {
   if (req.originalUrl !== '/graphql') {
-    const allowedOrigins = APP_ALLOWED_ORIGINS.split(',');
+    const allowedOrigins = APP_ALLOWED_ORIGINS && APP_ALLOWED_ORIGINS.split(',');
     const origin = req.headers.origin;
 
-    if (allowedOrigins.indexOf(origin) > -1) {
+    if (allowedOrigins && allowedOrigins.indexOf(origin) > -1) {
      res.header('Access-Control-Allow-Origin', origin);
     }
 
