@@ -73,7 +73,6 @@ const config = {
       'process.env.MOCK_DATA': process.env.MOCK_DATA
     }),
     new CopyWebpackPlugin([
-      { from: 'server/config.js', to: path.resolve(__dirname, 'dist'), flatten: true},
       { from: 'client/assets/images/', to: 'assets/images', ignore: [ '.DS_Store' ] },
       { from: 'client/assets/svg/', to: 'assets/svg', ignore: [ '.DS_Store' ] },
     ])
