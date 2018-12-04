@@ -14,6 +14,6 @@ const stepsSchema = new Schema({
   }
 });
 
-const Steps = mongoose.model('Steps', stepsSchema);
+const Step = mongoose.model('Step', stepsSchema);
 
-export default Steps;
+export default Step;

@@ -1,8 +1,7 @@
 import {
   GraphQLInputObjectType,
   GraphQLString,
-  GraphQLInt,
-  GraphQLNonNull
+  GraphQLInt
 } from 'graphql';
 
 const StepInputType = new GraphQLInputObjectType({

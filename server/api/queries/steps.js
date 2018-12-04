@@ -1,12 +1,12 @@
-import { GraphQLString, GraphQLInt } from 'graphql';
-import { Steps } from '../../models';
+import { GraphQLList } from 'graphql';
+import { Step } from '../../models';
 import { StepType } from '../types';
 
 const steps = {
-  type: StepType,
+  type: new GraphQLList(StepType),
   description: 'Get all step counts',
   resolve() {
-    return Steps.find();
+    return Step.find({});
   }
 }
 
