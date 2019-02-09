@@ -1,4 +1,8 @@
- require('dotenv').config();
+const fs = require('fs');
+
+if (process.env.USE_DOTENV) {
+  require('dotenv').config();
+}
 
 if (process.env.NODE_ENV === 'production') {
   require('./dist/server.bundle.js');
@@ -8,9 +12,10 @@ if (process.env.NODE_ENV === 'production') {
   require.extensions['.scss'] = () => {
     return;
   };
-  require.extensions['.css'] = () => {
-    return;
+
+  require.extensions['.css'] = (module, filename) => {
+    module.exports = fs.readFileSync(filename, 'utf8');
   };
 
-  require('./server/server');
+  require('./src/server/server');
 }

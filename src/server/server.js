@@ -7,6 +7,7 @@ import mongoose from 'mongoose';
 import React from 'react';
 import graphqlHTTP from 'express-graphql';
 import schema from './api';
+import restAPI from './rest-api';
 import { createStore } from 'redux';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
@@ -21,7 +22,7 @@ const app = new express();
 const server = http.createServer(app);
 const viewDir = process.env.NODE_ENV === 'production'
   ? 'dist/views'
-  : 'server/views';
+  : 'src/server/views';
 
 app.set('view engine', 'pug');
 app.set('views', viewDir);
@@ -29,7 +30,7 @@ app.set('views', viewDir);
 //--//--//--// CONNECT DATABASE //--//--//--//
 mongoose.Promise = global.Promise;
 mongoose.connect(
-  `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/patjacobs`,
+  `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/portfolio`,
   {
     useNewUrlParser: true,
     autoReconnect: true
@@ -47,7 +48,7 @@ db.on('error', err => {
 //--//--//--// RUN WEBPACK WHEN IN DEV MODE //--//--//--//
 if (process.env.NODE_ENV === 'development') {
   const webpack = require('webpack');
-  const wpConfig = require('../webpack.dev.config');
+  const wpConfig = require('../../webpack.dev.config');
   const webpackDevMiddleware = require('webpack-dev-middleware');
   const webpackHotMiddleware = require('webpack-hot-middleware');
   const compiler = webpack(wpConfig);
@@ -68,12 +69,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(headersMiddleware);
 
-if (process.env.NODE_ENV === 'development') {
-  // for live, serve these with nginx
+if (process.env.SERVER_STATIC === 'true') {
   app.use(express.static(path.join(__dirname, 'public/')));
 }
 
-//--//--//--// GRAPHQL //--//--//--//
+//--//--//--// GRAPHQL API //--//--//--//
 app.use(
   '/graphql',
   bodyParser.json(),
@@ -85,11 +85,14 @@ app.use(
     pretty: process.env.NODE_ENV === 'development'
 })));
 
+//--//--//--// REST API //--//--//--//
+app.use('/rest-api', restAPI);
+
 //--//--//--// SERVER SIDE RENDERING //--//--//--//
 app.get('*', (req, res) => {
   const store = createStore(reducers);
   const context = {};
-  const criticalCSS = require('./views/critical.css').toString();
+  const criticalCSS = require('./views/critical.css');
   const html = renderToString(
     <Provider store={store}>
       <StaticRouter location={req.url} context={context}>

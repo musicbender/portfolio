@@ -1,3 +1,3 @@
 #!/bin/bash
 
-nodemon index.js
+export USE_DOTENV=true; nodemon index.js

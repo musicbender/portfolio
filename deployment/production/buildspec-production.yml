@@ -1,0 +1,28 @@
+version: 0.2
+
+env:
+  variables:
+    NODE_ENV: production
+    APP_ENV: live
+
+phases:
+  pre_build:
+    commands:
+      - npm install -g webpack webpack-cli
+      - npm install
+  build:
+    commands:
+      - webpack --config webpack.prod.config.js
+      - webpack --config webpack.server.config.js
+  post_build:
+    commands:
+      - cp deployment/production/appspec-production.yml appspec.yml
+
+artifacts:
+  type: zip
+  files:
+    - dist/**/*
+    - node_modules/**/*
+    - deployment/lib/**/*
+    - deployment/production/**/*
+    - appspec.yml

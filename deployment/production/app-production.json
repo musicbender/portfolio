@@ -1,0 +1,14 @@
+{
+  "apps": [{
+    "name": "launcher-tool",
+    "script": "/var/www/patjacobs/dist/server.bundle.js",
+    "instances": 0,
+    "autorestart": true,
+    "exec_mode": "cluster",
+    "log_date_format": "YYYY-MM-DD HH:mm:ss",
+    "merge_logs": true,
+    "env": {
+      "PORT": 3005
+    }
+  }]
+}

@@ -6,8 +6,8 @@
   ],
   "verbose": true,
   "watch": [
-    "server",
-    "client"
+    "src/server",
+    "src/client"
   ],
   "env": {
     "NODE_ENV": "development"

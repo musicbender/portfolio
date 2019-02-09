@@ -13,7 +13,7 @@ const config = {
     index: [
       'webpack-hot-middleware/client',
       'webpack/hot/only-dev-server',
-      path.join(__dirname, '/client/index.js'),
+      path.join(__dirname, '/src/client/index.js'),
     ],
     vendor: ['react', 'react-dom', 'react-router-dom']
   },
@@ -30,13 +30,13 @@ const config = {
     rules: [
       {
         test: /\.jsx*$/,
-        include: path.join(__dirname, '/client'),
+        include: path.join(__dirname, '/src/client'),
         loader: "babel-loader",
         exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
-        include: path.join(__dirname, '/client'),
+        include: path.join(__dirname, '/src/client'),
         loader: "style-loader!css-loader!sass-loader",
       },
       {
@@ -67,14 +67,11 @@ const config = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
       'process.env.APP_ENV': JSON.stringify(process.env.APP_ENV),
-      'process.env.PORT': process.env.PORT,
-      'process.env.DB_HOST': JSON.stringify(process.env.DB_HOST),
-      'process.env.DB_PORT': process.env.DB_PORT,
       'process.env.MOCK_DATA': process.env.MOCK_DATA
     }),
     new CopyWebpackPlugin([
-      { from: 'client/assets/images/', to: 'assets/images', ignore: [ '.DS_Store' ] },
-      { from: 'client/assets/svg/', to: 'assets/svg', ignore: [ '.DS_Store' ] },
+      { from: 'src/client/assets/images/', to: 'assets/images', ignore: [ '.DS_Store' ] },
+      { from: 'src/client/assets/svg/', to: 'assets/svg', ignore: [ '.DS_Store' ] },
     ])
   ],
   optimization: {
