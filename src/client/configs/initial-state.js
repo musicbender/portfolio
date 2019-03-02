@@ -1,5 +1,6 @@
 module.exports = {
   global: {
-    pageLoaded: false
+    pageLoaded: false,
+    mode: 'dark'
   }
 }

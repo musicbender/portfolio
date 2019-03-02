@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Route } from 'react-router-dom';
+import GridLines from './_global/grid-lines';
 import '../style/main.css';
+
+//pages
+import Home from './home';
 
 @withRouter
 class App extends Component {
@@ -12,22 +17,25 @@ class App extends Component {
   render() {
     return (
       <div className="pj-portfolio">
-        Oh Yeeeeaaaahhh
+        <GridLines />
+        <div className="page-wrapper">
+          <Route path="/" exact component={Home} />
+        </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = () => {
   return {
 
   }
 }
 
 const mapDispatchToProps = dispatch => {
-  return {
+  return bindActionCreators({
 
-  }
+  }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

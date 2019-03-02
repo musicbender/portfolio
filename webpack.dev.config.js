@@ -7,7 +7,7 @@ const config = {
   mode: 'development',
   target: 'web',
   resolve: {
-    extensions: ['.js', '.json', '.graphql'],
+    extensions: ['.js', '.json'],
   },
   entry: {
     index: [
@@ -35,13 +35,20 @@ const config = {
         exclude: /node_modules/,
       },
       {
-        test: /\.scss$/,
-        include: path.join(__dirname, '/src/client'),
-        loader: "style-loader!css-loader!sass-loader",
-      },
-      {
         test: /\.css$/,
-        loader: "css-loader/locals?module&localIdentName=[name]__[local]___[hash:base64:5]",
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true,
+              camelCase: 'dashes',
+              localIdentName: '[folder]__[local]___[hash:base64:5]'
+            }
+          },
+          'postcss-loader'
+        ]
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
@@ -53,11 +60,6 @@ const config = {
       {
         test: /\.pug/,
         loader: "pug-loader",
-      },
-      {
-        test: /\.graphql$/,
-        exclude: /node_modules/,
-        loader: "graphql-tag/loader"
       }
     ],
   },
@@ -66,7 +68,6 @@ const config = {
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      'process.env.APP_ENV': JSON.stringify(process.env.APP_ENV),
       'process.env.MOCK_DATA': process.env.MOCK_DATA
     }),
     new CopyWebpackPlugin([

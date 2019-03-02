@@ -31,10 +31,6 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.scss$/,
-        loader: 'css-loader/locals?modules&loacalIdentName=[name]--[local]--[hash:base64:5]!sass-loader',
-      },
-      {
         test: /\.css$/,
         loader: 'css-loader'
       }
