@@ -1,0 +1,22 @@
+@import '../../../style/helpers/variables';
+@import '../../../style/helpers/mixins';
+
+.grid-lines {
+  position: fixed;
+  width: 100%;
+  > .grid-item-wrapper {
+    &.size-0 {
+      width: 8%;
+    }
+    &.size-1 {
+      width: 16%;
+    }
+    &.size-3 {
+      width: 32%;
+    }
+    > .grid-line {
+      height: 100vh;
+      border-left: 1px solid $black;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import '../../../style/helpers/variables';
+@import '../../../style/helpers/mixins';
+
+.error-message {
+  margin: 1em auto;
+  padding: 0.5em 1em;
+  text-align: center;
+  animation: showError $moderate $easeInOut;
+  animation-fill-mode: forwards;
+  > .error-icon {
+    display: inline-block;
+    padding: 0;
+    margin-right: 0.25em;
+    fill: material-color('red');
+    transform: translateY(0.2em);
+  }
+  > .error-text {
+    display: inline-block;
+  }
+}
+
+@keyframes showError {
+  0% {
+    opacity: 0;
+    transform: translateX(-1em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

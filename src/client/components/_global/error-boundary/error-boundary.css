@@ -1,0 +1,19 @@
+@import '../../../style/helpers/variables';
+@import '../../../style/helpers/mixins';
+
+.error-boundary {
+  @mixin super-center();
+  > i {
+    display: inline-block;
+    margin-right: 0.5em;
+    color: material-color('red');
+    font-size: 20px;
+    transform: translateY(-2px);
+  }
+  > h2 {
+    display: inline-block;
+    color: material-color('red');
+    font-weight: 500;
+    font-size: 20px;
+  }
+}
