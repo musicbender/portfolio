@@ -18,7 +18,7 @@
     }
     > .grid-line {
       height: 100vh;
-      border-left: 1px solid rgba($matte-black, 0.275);
+      border-left: 1px solid $dark-lines;
     }
   }
 }

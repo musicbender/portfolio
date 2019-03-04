@@ -20,7 +20,7 @@ $inconsolata: 'Inconsolata', 'serif';
 /******* Sizes *******/
 $grid-s: 8%;
 $grid-m: 17%;
-$grid-l: 33%;
+$grid-l: 34%;
 $toolbar-height: 4em;
 
 /******* Colors *******/
@@ -36,6 +36,6 @@ $aqua: #32D2C9;
 
 /******* Theme Colors *******/
 $dark-bg: #242424;
-$dark-lines: rgba($matte-black, 0.44);
+$dark-lines: rgba($matte-black, 0.45);
 $light-bg: $white;
 $light-lines: rgba($matte-black, 0.1);

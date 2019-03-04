@@ -3,4 +3,19 @@
 
 .home-header {
   height: 100vh;
+  > .title-wrapper {
+    margin: 10em 0 0 $grid-s;
+    > .title {
+      margin: 0 0 0.25em -0.08em;
+      font-family: $futura;
+      font-size: 6rem;
+      font-weight: normal;
+    }
+    > .subtitle {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: normal;
+      letter-spacing: 0.67em;
+    }
+  }
 }

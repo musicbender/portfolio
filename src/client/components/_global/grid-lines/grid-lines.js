@@ -14,7 +14,7 @@ const GridLines = () => (
             style.gridItemWrapper,
             style[`size-${column}`]
           )}
-          key={'grid' + column * i + 7}
+          key={'grid' + column + i}
         >
           <div className={cx(style.gridLine)}></div>
         </div>
