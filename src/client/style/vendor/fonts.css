@@ -1,1 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@font-face {
+  font-family: 'Futura';
+  weight: 300;
+  src: url('../../assets/fonts/Futura-Medium.woff2') format('woff2'),
+       url('../../assets/fonts/Futura-Medium.woff') format('woff'),
+       url('../../assets/fonts/Futura-Medium.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'Futura';
+  weight: 500;
+  src: url('../../assets/fonts/Futura-Bold.woff2') format('woff2'),
+       url('../../assets/fonts/Futura-Bold.woff') format('woff'),
+       url('../../assets/fonts/Futura-Bold.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  weight: 500;
+  src: url('../../assets/fonts/Inconsolata.woff2') format('woff2'),
+       url('../../assets/fonts/Inconsolata.woff') format('woff'),
+       url('../../assets/fonts/Inconsolata.ttf')  format('truetype');
+}

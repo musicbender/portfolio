@@ -6,7 +6,7 @@ import style from './grid-lines.css';
 const cx = cn.bind(style);
 
 const GridLines = () => (
-  <div className="grid-lines">
+  <div className={cx(style.gridLines)}>
     {
       config.gridLines.map((column, i) => (
         <div
@@ -14,7 +14,7 @@ const GridLines = () => (
             style.gridItemWrapper,
             style[`size-${column}`]
           )}
-          key={'grid' + column + i * 7}
+          key={'grid' + column * i + 7}
         >
           <div className={cx(style.gridLine)}></div>
         </div>

@@ -8,6 +8,7 @@ const cx = cn.bind(style);
 
 // sections
 import Header from '../header';
+import RecentWork from '../recent-work';
 
 class Home extends Component {
   constructor(props) {
@@ -17,7 +18,8 @@ class Home extends Component {
   render() {
     return (
       <main className={cx(style.home, 'page')}>
-
+        <Header />
+        <RecentWork />
       </main>
     );
   }

@@ -14,10 +14,14 @@ $moderate:   400ms;
 $fast:       200ms;
 
 /*******Fonts*******/
-$robo: 'Roboto', sans-serif;
+$futura: 'Futura', sans-serif;
+$inconsolata: 'Inconsolata', 'serif';
 
 /******* Sizes *******/
-
+$grid-s: 8%;
+$grid-m: 17%;
+$grid-l: 33%;
+$toolbar-height: 4em;
 
 /******* Colors *******/
 $white: #fff;
@@ -29,3 +33,9 @@ $yellow: #F9D413;
 $purple: #633DFF;
 $orange: #F98D51;
 $aqua: #32D2C9;
+
+/******* Theme Colors *******/
+$dark-bg: #242424;
+$dark-lines: rgba($matte-black, 0.44);
+$light-bg: $white;
+$light-lines: rgba($matte-black, 0.1);

@@ -3,7 +3,10 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter, Route } from 'react-router-dom';
 import GridLines from './_global/grid-lines';
-import '../style/main.css';
+import Toolbar from './_global/toolbar';
+import cn from 'classnames/bind';
+import style from '../style/main.css';
+const cx = cn.bind(style);
 
 //pages
 import Home from './home';
@@ -16,9 +19,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="pj-portfolio">
+      <div className={cx(style.pjPortfolio)}>
         <GridLines />
-        <div className="page-wrapper">
+        <Toolbar />
+        <div className={cx(style.pageWrapper)}>
           <Route path="/" exact component={Home} />
         </div>
       </div>

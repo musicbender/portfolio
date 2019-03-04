@@ -73,6 +73,7 @@ const config = {
     new CopyWebpackPlugin([
       { from: 'src/client/assets/images/', to: 'assets/images', ignore: [ '.DS_Store' ] },
       { from: 'src/client/assets/svg/', to: 'assets/svg', ignore: [ '.DS_Store' ] },
+      { from: 'src/client/assets/fonts/', to: 'assets/fonts', ignore: [ '.DS_Store' ] }
     ])
   ],
   optimization: {

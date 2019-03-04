@@ -1,6 +1,7 @@
 html {
   font-size: 16px;
   box-sizing: border-box;
+  background-color: $dark-bg;
   @media screen and (min-width: $small-desktop-width) {
     font-size: 17px;
   }
@@ -14,18 +15,45 @@ body {
   position: relative;
   padding: 0;
   margin: 0;
-  overflow: hidden;
+  &::-webkit-scrollbar {
+    width: 3px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba($white, 0.17);
+  }
 }
 
 p, h1, h2, h3, h4, h5, h6, div, input, form, span {
-  font-family: $robo;
+  font-family: $inconsolata;
+  color: rgba($white, 0.87);
 }
 
 p,h1,h2,h3,h4,h5,h6,svg {
   opacity: 1;
 }
 
-// app
+.pj-portfolio {
+  height: auto;
+  min-height: 100vh;
+  background-color: $dark-bg;
+  &.dark {
+    background-color: $dark-bg;
+    p, h1, h2, h3, h4, h5, h6, div, input, form, span, div {
+      color: rgba($white, 0.87);
+    }
+  }
+  &.light {
+    background-color: $light-bg;
+    p, h1, h2, h3, h4, h5, h6, div, input, form, span, div {
+      color: rgba($matte-black, 0.87);
+    }
+  }
+  > .page-wrapper {
+    height: auto;
+    padding-top: $toolbar-height;
+  }
+}
 
 .error {
   color: red;
