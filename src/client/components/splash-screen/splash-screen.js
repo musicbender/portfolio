@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Logo from '../_global/logo';
 import { config } from '../../../shared/config.json';
 import cn from 'classnames/bind';
 import style from './splash-screen.css';
@@ -9,7 +10,7 @@ const SplashScreen = (props) => {
   const renderBlocks = () => {
     return config.gridLines.map((g, i) => {
       const blockNum = 7;
-      const preDelay = 1000;
+      const preDelay = 3000;
       const baseDelay = 75;
       let blocks = [];
 
@@ -36,6 +37,11 @@ const SplashScreen = (props) => {
       <div className={cx(style.blockWrapper)}>
         {renderBlocks()}
       </div>
+      <div className={cx(style.logoWrapper)}>
+        <Logo />
+        <div className={cx(style.mask)}></div>
+      </div>
+
     </div>
   );
 }

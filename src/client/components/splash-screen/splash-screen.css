@@ -30,6 +30,35 @@
       }
     }
   }
+  > .logo-wrapper {
+    @mixin super-center;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    > [class*="logo"] {
+      margin: 0 auto;
+      fill: $dark-bg;
+      stroke: $dark-bg;
+      width: 10em;
+      path[class*="path-line"] {
+        stroke-dasharray: 90;
+        stroke-dashoffset: -90;
+        animation: showSplashLogo 1500ms linear forwards;
+        animation-delay: 1000ms;
+      }
+    }
+    > .mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 48.5%;
+      background-color: $orange;
+      transform: translateX(0);
+      animation: hideLogoMask 500ms linear forwards;
+      animation-delay: 1700ms;
+    }
+  }
 }
 
 @keyframes splashBlockHide {
@@ -38,5 +67,29 @@
   }
   100% {
     transform: translateX(-110%);
+  }
+}
+
+@keyframes showSplashLogo {
+  0% {
+    stroke-dashoffset: 90;
+  }
+  50% {
+    stroke-dashoffset: 45;
+  }
+  51% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes hideLogoMask {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-5em);
   }
 }

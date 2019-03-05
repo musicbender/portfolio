@@ -22,7 +22,7 @@ class App extends Component {
 
   componentDidMount() {
     window.requestTimeout(() => {
-      this.props.changeSplash(false);
+      // this.props.changeSplash(false);
     }, config.splashScreenTimeout);
   }
 

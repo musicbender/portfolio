@@ -1,0 +1,21 @@
+@import '../../../style/helpers/variables';
+@import '../../../style/helpers/mixins';
+
+.logo {
+  fill: $white;
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  stroke-miterlimit: 3;
+  stroke: $white;
+  path {
+    fill: inherit
+  }
+  .path-line {
+    fill: none;
+    stroke: inherit;
+    stroke-width: 1.5px;
+  }
+  .path-fill {
+    fill: inherit;
+  }
+}
