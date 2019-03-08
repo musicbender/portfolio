@@ -2,9 +2,17 @@
 @import '../../style/helpers/mixins';
 
 .home-header {
+  position: relative;
   height: 100vh;
+  > [class*="triangle"][class*="giant"] {
+    @mixin grid-position 4, left;
+    position: absolute;
+    top: 5em;
+    transform: translateX(-100%);
+  }
   > .title-wrapper {
-    margin: 10em 0 0 $grid-s;
+    margin: 0 0 0 $grid-s;
+    padding-top: 10em;
     > .title {
       margin: 0 0 0.25em -0.08em;
       font-family: $futura;

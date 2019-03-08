@@ -1,1 +1,1 @@
-export { default } from './particles';
+export { default as Triangle } from './triangle';

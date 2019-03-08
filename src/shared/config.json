@@ -2,7 +2,7 @@
   "config": {
     "role": "Web Engineer",
     "name": "Pat Jacobs",
-    "gridLines": [0, 1, 0, 1, 2, 0, 0],
+    "gridLines": [8, 17, 8, 17, 34, 8, 8],
     "pageLoadTImeout": 4000,
     "splashScreenTimeout": 5000
   }

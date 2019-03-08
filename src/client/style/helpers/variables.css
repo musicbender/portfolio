@@ -12,6 +12,7 @@ $easeInOut : cubic-bezier(0.445, 0.05, 0.55, 0.95);
 $slow:       700ms;
 $moderate:   400ms;
 $fast:       200ms;
+$header-duration: 4s;
 
 /*******Fonts*******/
 $futura: 'Futura', sans-serif;

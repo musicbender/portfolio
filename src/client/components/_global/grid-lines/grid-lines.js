@@ -10,10 +10,8 @@ const GridLines = () => (
     {
       config.gridLines.map((column, i) => (
         <div
-          className={cx(
-            style.gridItemWrapper,
-            style[`size-${column}`]
-          )}
+          className={cx(style.gridItemWrapper)}
+          style={{ width: `${column}%`}}
           key={'grid' + column + i}
         >
           <div className={cx(style.gridLine)}></div>

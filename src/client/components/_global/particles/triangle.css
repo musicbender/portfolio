@@ -1,0 +1,33 @@
+@import '../../../style/helpers/variables';
+@import '../../../style/helpers/mixins';
+
+.triangle {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  stroke-linejoin: round;
+  stroke-miterlimit: 1.41421;
+  &.giant {
+    width: 53.78%;
+  }
+  &.medium {
+    width: 5em;
+  }
+  &.small {
+    width: 2.5em;
+  }
+  &.white {
+    fill: $white;
+  }
+  &.purple {
+    fill: $purple;
+  }
+  &.orange {
+    fill: $purple;
+  }
+  &.aqua {
+    fill: $aqua;
+  }
+  &.yellow {
+    fill: $yellow
+  }
+}
