@@ -7,7 +7,7 @@
   > [class*="triangle"][class*="giant"] {
     @mixin grid-position 4, left;
     position: absolute;
-    top: 5em;
+    top: 2em;
     transform: translateX(-100%);
   }
   > .title-wrapper {

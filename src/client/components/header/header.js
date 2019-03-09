@@ -13,11 +13,12 @@ const Header = ({
   return (
     <div className={cx(style.homeHeader)}>
       <Triangle size="giant" opacity={0.035} />
+      <ColorDots />
       <div className={cx(style.titleWrapper)}>
         <h1 className={cx(style.title)}>{config.name}</h1>
         <h2 className={cx(style.subtitle)}>{config.role}</h2>
       </div>
-      <ColorDots />
+
     </div>
   );
 }
