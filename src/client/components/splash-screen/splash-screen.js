@@ -11,7 +11,7 @@ const SplashScreen = (props) => {
     return config.gridLines.map((g, i) => {
       const blockNum = 7;
       const preDelay = 3000;
-      const baseDelay = 75;
+      const baseDelay = 55;
       let blocks = [];
 
       for (let j = 0; j < blockNum; j++) {

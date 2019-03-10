@@ -16,6 +16,7 @@
     height: $diameter;
     border-radius: $diameter;
     animation-duration: $header-duration;
+    animation-delay: $header-delay;
     animation-timing-function: steps(1);
     animation-fill-mode: forwards;
     opacity: 0;
@@ -129,31 +130,31 @@
 @keyframes orangeDot {
   0% {
     opacity: 1;
-    transform: translate3d(86vw, 13em, 0) scale(1);
+    transform: translate3d(86vw, 25em, 0) scale(1);
   }
   5% {
-    transform: translate3d(86vw, 13em, 0) scale(1.25);
+    transform: translate3d(86vw, 25em, 0) scale(1.25);
   }
   10% {
-    transform: translate3d(86vw, 12.5em, 0) scale(1.5);
+    transform: translate3d(86vw, 24.5em, 0) scale(1.5);
   }
   15% {
-    transform: translate3d(86vw, 12em, 0) scale(1.75);
+    transform: translate3d(86vw, 25em, 0) scale(1.75);
   }
   20% {
-    transform: translate3d(86vw, 12em, 0) scale(2);
+    transform: translate3d(86vw, 25em, 0) scale(2);
   }
   30% {
-    transform: translate3d(90vw, 14em, 0) scale(1.75);
+    transform: translate3d(75vw, 27em, 0) scale(1.75);
   }
   35% {
-    transform: translate3d(90vw, 17em, 0) scale(1.5);
+    transform: translate3d(75vw, 29em, 0) scale(1.5);
   }
   40% {
-    transform: translate3d(90vw, 23em, 0) scale(1.25);
+    transform: translate3d(75vw, 33em, 0) scale(1.25);
   }
   45% {
-    transform: translate3d(90vw, 23em, 0) scale(1);
+    transform: translate3d(75vw, 33em, 0) scale(1);
   }
   50% {
     transform: translate3d(49.22vw, 36em, 0) scale(1);
@@ -177,7 +178,7 @@
 }
 
 @keyframes aquaDot {
-  0%, 5% {
+  0% {
     opacity: 0;
     transform: translate3d(12vw, 41em, 0) scale(1);
   }

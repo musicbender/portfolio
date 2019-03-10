@@ -3,7 +3,7 @@
     "role": "Web Engineer",
     "name": "Pat Jacobs",
     "gridLines": [8, 17, 8, 17, 34, 8, 8],
-    "pageLoadTImeout": 4000,
-    "splashScreenTimeout": 5000
+    "pageLoadTimeout": 4000,
+    "splashScreenTimeout": 6000
   }
 }

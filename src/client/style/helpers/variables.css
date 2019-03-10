@@ -9,10 +9,12 @@ $small-desktop-width:   1024px;
 $easeOut   : cubic-bezier(0.23, 1, 0.32, 1);
 $easeIn    : cubic-bezier(0.950, 0.050, 0.795, 0.035);
 $easeInOut : cubic-bezier(0.445, 0.05, 0.55, 0.95);
-$slow:       700ms;
-$moderate:   400ms;
-$fast:       200ms;
+$slow:       750ms;
+$moderate:   425ms;
+$fast:       250ms;
 $header-duration: 4.2s;
+$header-delay: 4s;
+$header-delay: 0s;
 
 /*******Fonts*******/
 $futura: 'Futura', sans-serif;

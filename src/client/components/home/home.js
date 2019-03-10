@@ -18,7 +18,9 @@ class Home extends Component {
   render() {
     return (
       <main className={cx(style.home, 'page')}>
-        <Header />
+        <Header
+          mode={this.props.mode}
+        />
         <RecentWork />
       </main>
     );
@@ -28,6 +30,7 @@ class Home extends Component {
 const mapStateToProps = ({ global }) => {
   return {
     pageLoaded: global.pageLoaded,
+    splashOpen: global.splashOpen,
     mode: global.mode
   }
 }

@@ -10,10 +10,10 @@
     width: 53.78%;
   }
   &.medium {
-    width: 5em;
+    width: 4.5em;
   }
   &.small {
-    width: 2.5em;
+    width: 2.75em;
   }
   &.white {
     fill: $white;
@@ -22,7 +22,7 @@
     fill: $purple;
   }
   &.orange {
-    fill: $purple;
+    fill: $orange;
   }
   &.aqua {
     fill: $aqua;

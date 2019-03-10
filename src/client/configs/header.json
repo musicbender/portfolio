@@ -1,0 +1,24 @@
+{
+  "triangles": [
+    {
+      "color": "orange",
+      "size": "small",
+      "opacity": 0.68
+    },
+    {
+      "color": "yellow",
+      "size": "small",
+      "opacity": 0.68
+    },
+    {
+      "color": "purple",
+      "size": "medium",
+      "opacity": 0.68
+    },
+    {
+      "color": "aqua",
+      "size": "medium",
+      "opacity": 0.68
+    }
+  ]
+}
