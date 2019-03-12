@@ -82,38 +82,38 @@
 @keyframes purpleDot {
   0% {
     opacity: 0;
-    transform: translate3d(34vw, 0em, 0) scale(1);
+    transform: translate3d(36vw, 0em, 0) scale(1);
   }
   10% {
     opacity: 1;
-    transform: translate3d(34vw, 0em, 0) scale(1);
+    transform: translate3d(36vw, 0em, 0) scale(1);
   }
   15% {
-    transform: translate3d(34vw, 0em, 0) scale(1.25);
+    transform: translate3d(36vw, 0em, 0) scale(1.25);
   }
   20% {
-    transform: translate3d(34vw, 0em, 0) scale(1.5);
+    transform: translate3d(36vw, 0em, 0) scale(1.5);
   }
   25% {
-    transform: translate3d(34vw, 0em, 0) scale(1.75);
+    transform: translate3d(36vw, 0em, 0) scale(1.75);
   }
   30% {
-    transform: translate3d(34vw, 0em, 0) scale(2);
+    transform: translate3d(36vw, 0em, 0) scale(2);
   }
   35% {
-    transform: translate3d(34vw, 1em, 0) scale(2);
+    transform: translate3d(36vw, 1em, 0) scale(2);
   }
   40% {
-    transform: translate3d(34vw, 8em, 0) scale(2);
+    transform: translate3d(36vw, 8em, 0) scale(2);
   }
   45% {
-    transform: translate3d(34vw, 15em, 0) scale(2);
+    transform: translate3d(36vw, 15em, 0) scale(2);
   }
   50% {
-    transform: translate3d(34vw, 27em, 0) scale(1);
+    transform: translate3d(36vw, 27em, 0) scale(1);
   }
   55% {
-    transform: translate3d(34vw, 28em, 0) scale(1);
+    transform: translate3d(36vw, 28em, 0) scale(1);
   }
   60% {
     transform: translate3d(24vw, 28em, 0) scale(1);

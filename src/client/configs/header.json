@@ -1,12 +1,12 @@
 {
-  "bigTriangle": {
-    "size": "giant",
-    "opacity": 0.035,
-    "parallax": {
-      "y": [-18, 18]
-    }
-  },
   "triangles": [
+    {
+      "size": "giant",
+      "opacity": 0.035,
+      "parallax": {
+        "y": [-18, 18]
+      }
+    },
     {
       "color": "orange",
       "size": "small",

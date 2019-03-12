@@ -39,12 +39,36 @@
       font-family: $futura;
       font-size: 6rem;
       font-weight: normal;
+      animation: titleEnter 4000ms ease-out forwards;
     }
     > .subtitle {
       margin: 0;
       font-size: 1rem;
       font-weight: normal;
       letter-spacing: 0.67em;
+      animation: subTitleEnter 4000ms ease-out forwards;
     }
+  }
+}
+
+@keyframes titleEnter {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -1em, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes subTitleEnter {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 2em, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
