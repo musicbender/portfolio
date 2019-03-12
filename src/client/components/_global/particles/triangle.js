@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Parallax } from 'react-scroll-parallax';
 import cn from 'classnames/bind';
 import style from './triangle.css';
 const cx = cn.bind(style);
@@ -22,7 +23,7 @@ const Triangle = ({
         </g>
       </g>
     </svg>
-  );
+  )
 }
 
 Triangle.propTypes = {
@@ -36,7 +37,7 @@ Triangle.defaultProps = {
   color: 'white',
   size: 'small',
   opacity: 1,
-  classNames: ''
+  classNames: '',
 }
 
 export default Triangle;

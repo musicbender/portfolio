@@ -4,32 +4,33 @@
 .home-header {
   position: relative;
   height: 100vh;
-  > [class*="triangle"][class*="giant"] {
-    @mixin grid-position 4, left;
+  > [class*="triangle-parallax"] {
     position: absolute;
-    top: 2em;
-    transform: translateX(-100%);
-  }
-  > [class*="triangle"][class*="small"],
-  > [class*="triangle"][class*="medium"] {
-      position: absolute;
+    &[class*="giant"] {
+      @mixin grid-position 4, left, %, right;
+      top: 2em;
+      width: 53.78%;
+      [class*="triangle"] {
+        width: 100%;
+      }
     }
-  > [class*="triangle"][class*="orange"] {
+    &[class*="orange"] {
       @mixin grid-position 2, left, %, right;
       top: 1em;
     }
-  > [class*="triangle"][class*="yellow"] {
+    &[class*="yellow"] {
       @mixin grid-position 1, left, %, right;
       top: 45em;
     }
-  > [class*="triangle"][class*="purple"] {
+    &[class*="purple"] {
       @mixin grid-position 5, left, %, right;
       top: 10em;
     }
-  > [class*="triangle"][class*="aqua"] {
+    &[class*="aqua"] {
       @mixin grid-position 3, left, %, right;
-      top: 38em;
+      top: 34em;
     }
+  }
   > .title-wrapper {
     margin: 0 0 0 $grid-s;
     padding-top: 10em;

@@ -11,6 +11,7 @@ import restAPI from './rest-api';
 import { createStore } from 'redux';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
+import { ParallaxProvider } from 'react-scroll-parallax';
 import { StaticRouter } from 'react-router';
 import App from '../client/components/app';
 import reducers from '../client/reducers';
@@ -96,7 +97,9 @@ app.get('*', (req, res) => {
   const html = renderToString(
     <Provider store={store}>
       <StaticRouter location={req.url} context={context}>
-        <App />
+        <ParallaxProvider>
+          <App />
+        </ParallaxProvider>
       </StaticRouter>
     </Provider>
   );

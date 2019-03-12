@@ -18,17 +18,9 @@ module.exports = (mixin, index = 0, prop = 'left', unit = '%', attach = 'left') 
     percent += config.gridLines[i];
   }
 
-  console.log(`---RECUCE---`);
   percent = config.gridLines.reduce((total, cur, i) => {
-    console.log(`${total} - ${cur} - ${i}`)
-    if (i <= index) {
-      return total + cur;
-    } else {
-      return total;
-    }
+    return i <= index ? total + cur : total;
   });
-
-  console.log(`percent: ${percent}`);
 
   output = {
     [prop]: `${percent}${unit}`

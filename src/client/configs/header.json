@@ -1,24 +1,43 @@
 {
+  "bigTriangle": {
+    "size": "giant",
+    "opacity": 0.035,
+    "parallax": {
+      "y": [-18, 18]
+    }
+  },
   "triangles": [
     {
       "color": "orange",
       "size": "small",
-      "opacity": 0.68
+      "opacity": 0.68,
+      "parallax": {
+        "y": [63, -63]
+      }
     },
     {
       "color": "yellow",
       "size": "small",
-      "opacity": 0.68
+      "opacity": 0.68,
+      "parallax": {
+        "y": [-100, 100]
+      }
     },
     {
       "color": "purple",
       "size": "medium",
-      "opacity": 0.68
+      "opacity": 0.5,
+      "parallax": {
+        "y": [-150, 150]
+      }
     },
     {
       "color": "aqua",
       "size": "medium",
-      "opacity": 0.68
+      "opacity": 0.5,
+      "parallax": {
+        "y": [90, -90]
+      }
     }
   ]
 }
