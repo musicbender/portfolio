@@ -39,14 +39,14 @@
       font-family: $futura;
       font-size: 6rem;
       font-weight: normal;
-      animation: titleEnter 4000ms ease-out forwards;
+      animation: titleEnter 4000ms ease-out $header-delay forwards;
     }
     > .subtitle {
       margin: 0;
       font-size: 1rem;
       font-weight: normal;
       letter-spacing: 0.67em;
-      animation: subTitleEnter 4000ms ease-out forwards;
+      animation: subTitleEnter 4000ms ease-out $header-delay forwards;
     }
   }
 }
