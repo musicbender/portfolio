@@ -35,7 +35,7 @@ Triangle.propTypes = {
 
 Triangle.defaultProps = {
   color: 'white',
-  size: 'small',
+  size: 'medium',
   opacity: 1,
   classNames: '',
 }

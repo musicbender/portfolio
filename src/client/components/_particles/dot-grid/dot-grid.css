@@ -3,4 +3,27 @@
 
 .dot-grid-particle {
   position: absolute;
+  > .dot {
+    &.disabled {
+      opacity: 0;
+    }
+    &.white {
+      fill: $white;
+    }
+    &.dull {
+      fill: rgba(80, 80, 80, 0.87);
+    }
+    &.orange {
+      fill: $orange;
+    }
+    &.purple {
+      fill: $purple;
+    }
+    &.aqua {
+      fill: $aqua;
+    }
+    &.yellow {
+      fill: $yellow;
+    }
+  }
 }
