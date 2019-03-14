@@ -4,7 +4,7 @@ import cn from 'classnames/bind';
 import { Parallax } from 'react-scroll-parallax';
 import ColorDots from './color-dots';
 import Svg from '../_global/svg';
-import { Triangle } from '../_global/particles';
+import { Triangle, DotGrid } from '../_particles';
 import { triangles } from '../../configs/header.json';
 import { config } from '../../../shared/config.json';
 import style from './header.css';
@@ -22,6 +22,10 @@ const Header = ({
         key={i + tri.opacity + tri.color}
       >
         <Triangle {...tri} />
+        <DotGrid
+          sequence={[[]]}
+          interval={500}
+        />
       </Parallax>
     ));
   }

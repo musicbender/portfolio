@@ -1,4 +1,4 @@
-import { config } from '../../../shared/config.json';
+const config = require('../../../shared/config.json').config;
 
 module.exports = (mixin, index = 0, prop = 'left', unit = '%', attach = 'left') => {
   const validUnits = ['%', 'vw'];
