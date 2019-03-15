@@ -6,11 +6,16 @@ const cx = cn.bind(style);
 
 const DotGrid = ({
   sequence,
-  layout,
+  index,
+  started,
+  handleSequence,
+  spacing,
   interval,
   delay,
   classNames
 }) => {
+  const offset = spacing / 2;
+  const radius = 3;
   const colorMap = [
     'disabled',
     'white',
@@ -22,7 +27,6 @@ const DotGrid = ({
   ];
 
   const renderDot = (colorIndex, locy, locx, id) => {
-    const radius = 3;
     return (
       <circle
         id={id}
@@ -36,33 +40,48 @@ const DotGrid = ({
   }
 
   const renderRow = (row, i) => {
-    const space = 40;
-    const offset = space / 2;
-    return row.map((dot, j) => {
-      return renderDot(dot, (i * space) + offset, (j * space) + offset, i + 'x' + j);
-    });
-
+    return row.map((dot, j) => (
+      renderDot(dot, (i * spacing) + offset, (j * spacing) + offset, i + 'x' + j)
+    ));
   }
 
   const renderAllRows = (rows) => {
     return rows.map(renderRow);
   }
 
-  const renderSequence = (sequence) => {
-    // TODO: set interval animation through sequence array
+  const startSequence = (sequence) => {
+    requestTimeout(() => {
+      let i = index || 0;
+      const intvl = requestInterval(() => {
+        ++i;
+        handleSequence(i);
+
+        if (i >= (sequence.length - 1)) {
+          clearRequestInterval(intvl);
+        }
+      }, interval);
+    }, delay)
   }
 
   return (
-    <svg className={cx(style.dotGridParticle)}>
+    <svg
+      className={cx(style.dotGridParticle)}
+      style={{
+        width: `${sequence[0][0].length * spacing}px`,
+        height: `${sequence[0].length * spacing}px`
+      }}
+    >
       {
         sequence &&
         sequence.length > 1 &&
-        renderSequence(sequence)
+        handleSequence &&
+        !started &&
+        startSequence(sequence)
       }
       {
         sequence &&
-        sequence.length === 1 &&
-        renderAllRows(sequence[0])
+        sequence.length > 0 &&
+        renderAllRows(sequence[index])
       }
     </svg>
   );
@@ -70,15 +89,20 @@ const DotGrid = ({
 
 DotGrid.propTypes = {
   sequence: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.array)).isRequired,
-  layout: PropTypes.arrayOf(PropTypes.number),
+  index: PropTypes.number,
+  started: PropTypes.bool,
+  handleSequence: PropTypes.func,
+  spacing: PropTypes.number,
   interval: PropTypes.number,
   delay: PropTypes.number,
   classNames: PropTypes.string
 }
 
 DotGrid.defaultProps = {
-  layout: [10, 10],
   classNames: '',
+  index: 0,
+  started: true,
+  spacing: 65,
   delay: 0,
   interval: 500
 }

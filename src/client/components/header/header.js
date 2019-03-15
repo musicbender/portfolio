@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import cn from 'classnames/bind';
 import { Parallax } from 'react-scroll-parallax';
 import ColorDots from './color-dots';
@@ -10,10 +11,29 @@ import { config } from '../../../shared/config.json';
 import style from './header.css';
 const cx = cn.bind(style);
 
-const Header = ({
-  mode
-}) => {
-  const renderTriangles = () => {
+class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dotGridAIndex: 0,
+      dotGridAStarted: false,
+      dotGridBIndex: 0,
+      dotGridBStarted: false,
+      dotGridCIndex: 0,
+      dotGridCStarted: false
+    }
+  }
+
+  handleSequence(id = 'A') {
+    return (index) => {
+      this.setState({
+        [`dotGrid${id}Index`]: index,
+        [`dotGrid${id}Started`]: true
+      });
+    }
+  }
+
+  renderTriangles() {
     return triangles.map((tri, i) => (
       <Parallax
         className={cx('triangle-parallax', tri.color, tri.size)}
@@ -24,26 +44,33 @@ const Header = ({
         <Triangle {...tri} />
         <DotGrid
           sequence={[[]]}
-          interval={500}
+          index={this.state.gotGridAIndex}
+          handleSequence={this.handleSequence('A')}
         />
       </Parallax>
     ));
   }
 
-  return (
-    <div className={cx(style.homeHeader)}>
-      <ColorDots />
-      {renderTriangles()}
-      <div className={cx(style.titleWrapper)}>
-        <h1 className={cx(style.title)}>{config.name}</h1>
-        <h2 className={cx(style.subtitle)}>{config.role}</h2>
+  render() {
+    return (
+      <div className={cx(style.homeHeader)}>
+        <ColorDots />
+        {renderTriangles()}
+        <div className={cx(style.titleWrapper)}>
+          <h1 className={cx(style.title)}>{config.name}</h1>
+          <h2 className={cx(style.subtitle)}>{config.role}</h2>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
-Header.propTypes = {
-  mode: PropTypes.oneOf(['dark', 'light'])
+const mapStateToProps = ({ global }) => {
+  return {
+    pageLoaded: global.pageLoaded,
+    splashOpen: global.splashOpen,
+    mode: global.mode
+  }
 }
 
-export default Header;
+export default connect(mapStateToProps)(Header);

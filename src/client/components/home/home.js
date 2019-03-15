@@ -18,9 +18,7 @@ class Home extends Component {
   render() {
     return (
       <main className={cx(style.home, 'page')}>
-        <Header
-          mode={this.props.mode}
-        />
+        <Header />
         <RecentWork />
       </main>
     );
