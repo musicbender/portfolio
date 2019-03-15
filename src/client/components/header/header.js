@@ -6,6 +6,7 @@ import { Parallax } from 'react-scroll-parallax';
 import ColorDots from './color-dots';
 import Svg from '../_global/svg';
 import { Triangle, DotGrid } from '../_particles';
+import dotGridA from './dot-grid/a'
 import { triangles } from '../../configs/header.json';
 import { config } from '../../../shared/config.json';
 import style from './header.css';
@@ -14,6 +15,7 @@ const cx = cn.bind(style);
 class Header extends Component {
   constructor(props) {
     super(props);
+    this.handleSequence = this.handleSequence.bind(this);
     this.state = {
       dotGridAIndex: 0,
       dotGridAStarted: false,
@@ -42,11 +44,6 @@ class Header extends Component {
         key={i + tri.opacity + tri.color}
       >
         <Triangle {...tri} />
-        <DotGrid
-          sequence={[[]]}
-          index={this.state.gotGridAIndex}
-          handleSequence={this.handleSequence('A')}
-        />
       </Parallax>
     ));
   }
@@ -55,7 +52,15 @@ class Header extends Component {
     return (
       <div className={cx(style.homeHeader)}>
         <ColorDots />
-        {renderTriangles()}
+        {this.renderTriangles()}
+        <DotGrid
+          classNames={cx(style.dotGridA)}
+          sequence={dotGridA}
+          index={this.state.dotGridAIndex}
+          started={this.state.dotGridAStarted}
+          handleSequence={this.handleSequence('A')}
+          interval={200}
+        />
         <div className={cx(style.titleWrapper)}>
           <h1 className={cx(style.title)}>{config.name}</h1>
           <h2 className={cx(style.subtitle)}>{config.role}</h2>

@@ -31,6 +31,11 @@
       top: 34em;
     }
   }
+  > .dot-grid-a {
+    position: absolute;
+    top: 8em;
+    left: 42.25%;
+  }
   > .title-wrapper {
     margin: 0 0 0 $grid-s;
     padding-top: 10em;

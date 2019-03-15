@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames/bind';
+import { hasWindow } from '../../../util/util';
 import style from './dot-grid.css';
 const cx = cn.bind(style);
 
@@ -65,16 +66,17 @@ const DotGrid = ({
 
   return (
     <svg
-      className={cx(style.dotGridParticle)}
+      className={cx(style.dotGridParticle, classNames)}
       style={{
         width: `${sequence[0][0].length * spacing}px`,
         height: `${sequence[0].length * spacing}px`
       }}
     >
       {
+        hasWindow() &&
         sequence &&
         sequence.length > 1 &&
-        handleSequence &&
+        !!handleSequence &&
         !started &&
         startSequence(sequence)
       }
