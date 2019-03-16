@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames/bind';
-import { hasWindow } from '../../../util/util';
+import { getIndexOrLast } from '../../../util/util';
+import { startSequence } from '../../../util/animation';
 import style from './dot-grid.css';
 const cx = cn.bind(style);
 
@@ -27,17 +28,23 @@ const DotGrid = ({
     'yellow'
   ];
 
+  const getIndexOrLast = () => {
+    return sequence[index] || sequence[sequence.length - 1];
+  }
+
   const renderDot = (colorIndex, locy, locx, id) => {
-    return (
-      <circle
-        id={id}
-        className={cx(style.dot, style[colorMap[colorIndex]])}
-        key={id + locx + locy}
-        r={radius}
-        cx={locx}
-        cy={locy}
-      />
-    );
+    if (colorIndex > 0) {
+      return (
+        <circle
+          id={id}
+          className={cx(style.dot, style[colorMap[colorIndex]])}
+          key={id + locx + locy}
+          r={radius}
+          cx={locx}
+          cy={locy}
+        />
+      );
+    }
   }
 
   const renderRow = (row, i) => {
@@ -50,20 +57,6 @@ const DotGrid = ({
     return rows.map(renderRow);
   }
 
-  const startSequence = (sequence) => {
-    requestTimeout(() => {
-      let i = index || 0;
-      const intvl = requestInterval(() => {
-        ++i;
-        handleSequence(i);
-
-        if (i >= (sequence.length - 1)) {
-          clearRequestInterval(intvl);
-        }
-      }, interval);
-    }, delay)
-  }
-
   return (
     <svg
       className={cx(style.dotGridParticle, classNames)}
@@ -73,17 +66,21 @@ const DotGrid = ({
       }}
     >
       {
-        hasWindow() &&
+        !!handleSequence &&
         sequence &&
         sequence.length > 1 &&
-        !!handleSequence &&
         !started &&
-        startSequence(sequence)
+        startSequence({
+          length: sequence.length,
+          interval,
+          delay,
+          index
+        }, handleSequence)
       }
       {
         sequence &&
         sequence.length > 0 &&
-        renderAllRows(sequence[index])
+        renderAllRows(getIndexOrLast(sequence, index))
       }
     </svg>
   );

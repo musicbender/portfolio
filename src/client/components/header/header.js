@@ -6,7 +6,9 @@ import { Parallax } from 'react-scroll-parallax';
 import ColorDots from './color-dots';
 import Svg from '../_global/svg';
 import { Triangle, DotGrid } from '../_particles';
-import dotGridA from './dot-grid/a'
+import { dotGridA, dotGridB } from './dots';
+import { countLongestArray } from '../../util/util';
+import { startSequence } from '../../util/animation';
 import { triangles } from '../../configs/header.json';
 import { config } from '../../../shared/config.json';
 import style from './header.css';
@@ -16,23 +18,31 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.handleSequence = this.handleSequence.bind(this);
+    this.interval = 180;
+    // this.delay = 4000;
+    this.delay = 0;
     this.state = {
-      dotGridAIndex: 0,
-      dotGridAStarted: false,
-      dotGridBIndex: 0,
-      dotGridBStarted: false,
-      dotGridCIndex: 0,
-      dotGridCStarted: false
+      dotGridIndex: 0
     }
   }
 
-  handleSequence(id = 'A') {
-    return (index) => {
-      this.setState({
-        [`dotGrid${id}Index`]: index,
-        [`dotGrid${id}Started`]: true
-      });
-    }
+  componentDidMount() {
+    const dotGridLength = countLongestArray([
+      dotGridA,
+      dotGridB
+    ]);
+
+    startSequence({
+      length: dotGridLength,
+      interval: this.interval,
+      delay: this.delay,
+      index: this.state.dotGridIndex
+    }, this.handleSequence);
+  }
+
+  handleSequence(index) {
+    let newState = { dotGridIndex: index || 0 };
+    this.setState(newState);
   }
 
   renderTriangles() {
@@ -56,10 +66,16 @@ class Header extends Component {
         <DotGrid
           classNames={cx(style.dotGridA)}
           sequence={dotGridA}
-          index={this.state.dotGridAIndex}
-          started={this.state.dotGridAStarted}
-          handleSequence={this.handleSequence('A')}
-          interval={200}
+          index={this.state.dotGridIndex}
+          interval={this.interval}
+          delay={this.delay}
+        />
+        <DotGrid
+          classNames={cx(style.dotGridB)}
+          sequence={dotGridB}
+          index={this.state.dotGridIndex}
+          interval={this.interval}
+          delay={this.delay + (this.interval)}
         />
         <div className={cx(style.titleWrapper)}>
           <h1 className={cx(style.title)}>{config.name}</h1>
