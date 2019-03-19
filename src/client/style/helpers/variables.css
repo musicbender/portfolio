@@ -14,7 +14,7 @@ $moderate:   425ms;
 $fast:       250ms;
 $header-duration: 4.2s;
 $header-delay: 4s;
-$header-delay: 0s;
+/* $header-delay: 0s; */
 
 /*******Fonts*******/
 $futura: 'Futura', sans-serif;

@@ -11,7 +11,7 @@
       fill: $white;
     }
     &.dull {
-      fill: rgba(80, 80, 80, 0.87);
+      fill: rgba(80, 80, 80, 0.5);
     }
     &.orange {
       fill: $orange;

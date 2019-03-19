@@ -1,7 +1,7 @@
 module.exports = {
   global: {
     pageLoaded: false,
-    splashOpen: false,
+    splashOpen: true,
     mode: 'dark'
   },
   stats: {

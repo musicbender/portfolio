@@ -1,0 +1,24 @@
+@import '../../../style/helpers/variables';
+@import '../../../style/helpers/mixins';
+
+.lil-square {
+  $size: 1.25em;
+  width: $size;
+  height: $size;
+  border: 5px solid $orange;
+  &.white {
+    border-color: $white;
+  }
+  &.purple {
+    border-color: $purple;
+  }
+  &.orange {
+    border-color: $orange;
+  }
+  &.aqua {
+    border-color: $aqua;
+  }
+  &.yellow {
+    border-color: $yellow
+  }
+}

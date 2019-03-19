@@ -5,8 +5,8 @@ import cn from 'classnames/bind';
 import { Parallax } from 'react-scroll-parallax';
 import ColorDots from './color-dots';
 import Svg from '../_global/svg';
-import { Triangle, DotGrid } from '../_particles';
-import { dotGridA, dotGridB } from './dots';
+import { Triangle, DotGrid, LilSquare } from '../_particles';
+import { dotGridA, dotGridB, dotGridC, dotGridD } from './dots';
 import { countLongestArray } from '../../util/util';
 import { startSequence } from '../../util/animation';
 import { triangles } from '../../configs/header.json';
@@ -19,8 +19,8 @@ class Header extends Component {
     super(props);
     this.handleSequence = this.handleSequence.bind(this);
     this.interval = 180;
-    // this.delay = 4000;
-    this.delay = 0;
+    this.delay = 4000;
+    // this.delay = 0;
     this.state = {
       dotGridIndex: 0
     }
@@ -62,20 +62,27 @@ class Header extends Component {
     return (
       <div className={cx(style.homeHeader)}>
         <ColorDots />
+        <LilSquare />
         {this.renderTriangles()}
         <DotGrid
           classNames={cx(style.dotGridA)}
           sequence={dotGridA}
           index={this.state.dotGridIndex}
-          interval={this.interval}
-          delay={this.delay}
         />
         <DotGrid
           classNames={cx(style.dotGridB)}
           sequence={dotGridB}
           index={this.state.dotGridIndex}
-          interval={this.interval}
-          delay={this.delay + (this.interval)}
+        />
+        <DotGrid
+          classNames={cx(style.dotGridC)}
+          sequence={dotGridC}
+          index={this.state.dotGridIndex}
+        />
+        <DotGrid
+          classNames={cx(style.dotGridD)}
+          sequence={dotGridD}
+          index={this.state.dotGridIndex}
         />
         <div className={cx(style.titleWrapper)}>
           <h1 className={cx(style.title)}>{config.name}</h1>
