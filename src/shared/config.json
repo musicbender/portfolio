@@ -4,6 +4,15 @@
     "name": "Pat Jacobs",
     "gridLines": [8, 17, 8, 17, 34, 8, 8],
     "pageLoadTimeout": 4000,
-    "splashScreenTimeout": 6000
+    "splashScreenTimeout": 6000,
+    "workItemsAmount": 5
+  },
+  "pages": {
+    "home": {
+      "id": "home",
+      "path": "/",
+      "title": "Pat Jacobs | Web Engineer",
+      "description": "Pat Jacobs is an experience web enginner located in Orange County, California"
+    }
   }
 }

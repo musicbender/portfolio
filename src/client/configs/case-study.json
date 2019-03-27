@@ -1,0 +1,370 @@
+{
+  "lineage2": {
+    "title": "Lineage 2",
+    "techList": [
+      "React",
+      "SCSS",
+      "Node",
+      "Express",
+      "MongoDB",
+      "Webpack 4",
+      "REST",
+      "GraphQL"
+    ],
+    "url": "https://www.lineage2.com",
+    "content": [
+      {
+        "type": "img",
+        "imgFile": "lineage2-1.jpg",
+        "caption": "Home page populated with data from a custom headless CMS"
+      },
+      {
+        "type": "text",
+        "p1": "This is our new marketing site for one of NCSOFT's most popular titles, Lineage 2. About half of the content on the site is managed through our custom headless CMS that my team built. This data is fetched by the site and populates what you see in a way that is performant and as dynamic as possible."
+      },
+      {
+        "type": "img",
+        "imgFile": "lineage2-2.jpg",
+        "caption": "Home page populated with data from a custom headless CMS"
+      },
+      {
+        "type": "img",
+        "imgFile": "lineage2-3.jpg",
+        "caption": "Home page populated with data from a custom headless CMS"
+      },
+      {
+        "type": "text",
+        "p1": "The site includes game information about the possible races and classes a player could choose. There was a large amount of data that had to be visualized in a way that made sense. This included detailed stats on each player class. Here I used animated SVG for the stat circle bars."
+      },
+      {
+        "type": "img",
+        "imgFile": "lineage2-4.jpg",
+        "caption": "Home page populated with data from a custom headless CMS"
+      },
+      {
+        "type": "img",
+        "imgFile": "lineage2-5.jpg",
+        "caption": "Home page populated with data from a custom headless CMS"
+      },
+      {
+        "type": "text",
+        "p1": "There were several other pages including a shop wehre players could buy in-game currency, prestige packs, and server transfers. There was also CMS-generated news articles that could by organized by tags and categories."
+      }
+    ]
+  },
+  "mugmath": {
+    "title": "Mug Math",
+    "techList": [
+      "React",
+      "Redux",
+      "SCSS",
+      "Node",
+      "Express",
+      "Server Side Rendering",
+      "Service Workers",
+      "Material-UI"
+    ],
+    "url": "https://mugmath.com",
+    "content": [
+      {
+        "type": "img",
+        "imgFile": "mugmath-1.jpg",
+        "caption": "Home menu displaying all 'sub apps'"
+      },
+      {
+        "type": "text",
+        "p1": "Mugmath is a Progressive Web App that helps coffee geeks like myself brew and roast better coffee. It is an assortment of small 'sub app' tools to help calculate and dial in your coffee.",
+        "p2": "On a technical standpoint, this project was a playground of a sorts for me to try new and experimental ideas. This was one of my first implimentations of server side rendering. On the Node backend, I pre-rendered the entire React app, some of the critical css, and the initial redux state. This was mainly for a perforamnce boost; in particular, to increase my perceptual performance and make sure a 'shell' of the app rendered immedately. At the time, I used SSR to also help with SEO, but these days Google has no issues crawling through javascript rendered sites."
+      },
+      {
+        "type": "img",
+        "imgFile": "mugmath-2.jpg",
+        "caption": "The Easy Brew Calculator 'sub app'"
+      },
+      {
+        "type": "text",
+        "p1": "This app was also a chance for me to make a Progessive Web App -- something still considered 'leading edge', but more widely accepted than when I created Mugmath. In short, a PWA is the attempt for a website to act like a native app with nearly all of it's stregnths -- the best of both worlds between native and web.",
+        "p2": "Mugmath impliments all the common PWA features and then some: offline mode using service workers, https or http2, cross-browser, critical css, manifest file with app information, ability to be saved to mobile home screen and behave like a native app"
+      },
+      {
+        "type": "img",
+        "imgFile": "mugmath-3.jpg",
+        "caption": "A nearly perfect lighthouse score"
+      },
+      {
+        "type": "text",
+        "p1": "On top of that, it was also my goal to get a perfect lighthouse audit score. Aside from SEO being 90%, I accomplished this goal and continue to improve it as the lighthouse standards change."
+      }
+    ]
+  },
+  "bladeandsoul": {
+    "title": "Blade and Soul",
+    "techList": [
+      "React",
+      "Jekyll",
+      "SCSS",
+      "Mocha",
+      "Grunt",
+      "Node",
+      "Express",
+      "REST",
+      "MongoDB"
+    ],
+    "url": "https://bladeandsoul.com/en",
+    "content": [
+      {
+        "type": "img",
+        "imgFile": "bns-1.jpg",
+        "caption": "Carousel banner for the landing page"
+      },
+      {
+        "type": "text",
+        "p1": "Blade and Soul is a popular AAA Massively Multiplayer Online game. The website serves as a marketing site, game news resource, and online store for in-game items."
+      },
+      {
+        "type": "img",
+        "imgFile": "bns-2.jpg",
+        "caption": "Event page for the Celestial Dawn update"
+      },
+      {
+        "type": "text",
+        "p1": "Much of the content on this site is managed through a custom headless CMS (built with Node and MongoDB) that I help build apon and maintain."
+      },
+      {
+        "type": "img",
+        "imgFile": "bns-3.jpg",
+        "caption": "Previous updates page"
+      }
+    ]
+  },
+  "bns-esports": {
+    "title": "B&S Esports",
+    "techList": [
+      "React",
+      "Redux",
+      "SCSS",
+      "Mocha",
+      "GraphQL",
+      "Webpack",
+      "Node",
+      "MongoDB"
+    ],
+    "url": "https://esports.bladeandsoul.com/en/",
+    "content": [
+      {
+        "type": "img",
+        "imgFile": "esports-1.jpg",
+        "caption": "Carousel banner on landing page"
+      },
+      {
+        "type": "text",
+        "p1": "I am a primary developer for our B&S Esports site. I've built, updated, and regular maintained this site and continue to be involved in its planning.",
+        "p2": "Ths entire site is built with React and Redux and we recently switched from using a REST API to using GraphQL. This is used for team management when teams register for our tournaments and other player data or account information. We use Apollo on the backend and a simple GraphQL request tool on the frontend."
+      },
+      {
+        "type": "img",
+        "imgFile": "esports-2.jpg",
+        "caption": "Team standings table build with regularly updating team data"
+      },
+      {
+        "type": "text",
+        "p1": "Many of the tournament pages displayed team data as a tournament was in progress. This data was regularly updated by another team, the data was then aggrigated and pulled into the site using various AWS services and node scripts."
+      },
+      {
+        "type": "img",
+        "imgFile": "esports-3.jpg",
+        "caption": "Tournament content taken from our custom CMS"
+      },
+      {
+        "type": "text",
+        "p1": "Much like content on the Blade and Soul main site, tournament content was also controlled through our custom headless CMS. I help build features and maintain the CMS especially when it pertains to this Esports site."
+      }
+    ]
+  },
+  "photo-contest": {
+    "title": "Photo Contest",
+    "techList": [
+      "React",
+      "Redux",
+      "Node",
+      "Express",
+      "MongoDB",
+      "SCSS",
+      "Webpack"
+    ],
+    "url": false,
+    "content": [
+      {
+        "type": "video",
+        "videoFile": "contest-1.mp4",
+        "caption": "Creating a new contest"
+      },
+      {
+        "type": "text",
+        "p1": "This is a universal, full-stack web app designed for people to vote on a collection of photos. The administrator first creates a contest using the new contest form. There they can upload and preview their collection of photos (via drag and drop or clicking) and add other meta data such as contest deadline.",
+        "p2": "On save, the contest is saved on the mongo database as its own document and all of the photos as uploaded to S3 using a signed url from the app's backend."
+      },
+      {
+        "type": "video",
+        "videoFile": "contest-2.mp4",
+        "caption": "The contest page"
+      },
+      {
+        "text": "text",
+        "p1": "Because there are a lot of photos to load when a user opens a contest, I wanted the user to have a good experience while waiting. I also needed the contest to be fair -- if images loaded one at a time, the ones loaded first would have an advantage. So I preloaded the images and loaded them all at once when downloading was finished. I also added a Facebook like placeholder animation.",
+        "p2": "At the contest page, users can expand the image to see its full size. When they make a vote, it is instantly counted on the database. They get ten votes, then the contest is locked for that user using cookies."
+      },
+      {
+        "text": "text",
+        "p1": "This is only a version 1.0 of the app, and it is currently in use by my company. In the future, I plan to add user authentication and more administration features."
+      }
+    ]
+  },
+  "sencha": {
+    "title": "Sencha",
+    "techList": [
+      "React",
+      "Redux",
+      "Nightmare/Electron",
+      "Node",
+      "Express",
+      "Mocha",
+      "SCSS",
+      "Webpack",
+      "Material-UI"
+    ],
+    "url": false,
+    "content": [
+      {
+        "type": "video",
+        "videoFile": "sencha-1.mp4",
+        "caption": ""
+      },
+      {
+        "type": "text",
+        "p1": "Sencha is a universal, full-stack web app designed for a single purpose -- a dashboard for end-to-end testing for a collection of web projects. On the backend, it uses Nightmare/Electron to run functional javascript tests within a Chromium instance. The test results are archived to both a Mongo database and S3, and displayed on the frontend of the app."
+      },
+      {
+        "type": "video",
+        "videoFile": "sencha-2.mp4",
+        "caption": ""
+      },
+      {
+        "type": "text",
+        "p1": "You can run tests on any of your sites in the app in both live enviroments and staging/qa enviroments. You can also visit full archived test results.",
+        "p2": "Running tests in Chromium are hard on the EC2 server, so I needed to prevent multiple tests running at once (and there is no real need for that for this app). I did this by using web sockets. If a test starts running, anyone that is using the app will instantly be notified in real time. Also, certain UI elements are disabled preventing anyone from running a new test until the other one finishes."
+      },
+      {
+        "type": "video",
+        "videoFile": "sencha-3.mp4",
+        "caption": ""
+      },
+      {
+        "type": "text",
+        "p1": "I've also set up AWS Cloudwatch and Lambda functions to connect with app and run regular tests on a schedule. Results are also sent to a Slack channel so your team will get notifications on results (and @channel if a test fails)."
+      }
+    ]
+  },
+  "launcher-tool": {
+    "title": "Launcher Tool",
+    "techList": [
+      "Node",
+      "Express",
+      "GraphQL",
+      "MongoDB",
+      "React",
+      "Redux",
+      "SCSS",
+      "Mocha",
+      "Webpack",
+      "JSON Web Tokens",
+      "Server Side Rendering",
+      "Material-UI"
+    ],
+    "url": false,
+    "content": [
+      {
+        "type": "video",
+        "videoFile": "launcher-1.mp4",
+        "caption": "Authentication, user permissions, and landing page"
+      },
+      {
+        "type": "text",
+        "p1": "The launcher tool is a specialized CMS and tool for controlling content in NCSOFT's game launcher. I was the lead developer for this app and planned its functionality and archetecture.",
+        "p2": "This tool is a full-stack, universal web app with server-side rendering, GraphQL API, and JWT authentication."
+      },
+      {
+        "type": "video",
+        "videoFile": "launcher-2.mp4",
+        "caption": "Drag and drop items into the launcher slider"
+      },
+      {
+        "type": "text",
+        "p1": "I wanted it to be easy to add items into the launcher's slider, so I incorporated a drag and drop system. Items and be moved, added, and removed by dragging. Items can also be resized and edited.",
+        "p2": "Once a 'layout' is finished, the user can save it to the schedule. This app will then automatically publish the saved layout on the date/time dictated by the user. This is done through a Lambda function that hits the app's API, then the correct data is aggregated and saved to S3. The app's backend then 'pokes' the game launcher client to let it know it's data has been changed."
+      },
+      {
+        "type": "video",
+        "videoFile": "launcher-3.mp4",
+        "caption": "Save and schedule a publish"
+      },
+      {
+        "type": "text",
+        "p1": "The user can also edit an individual item. The form is dynamic, localized, and changes based on what type of item it is. As a user edits the item, the preview on the right instantly changes.",
+        "p2": "If the item is a news post, the user has the option to auto-fill the item using data from our CMS. The app will grab the data from our CMS API, display it, and auto-fill based on the what CMS item the user chose."
+      },
+      {
+        "type": "video",
+        "videoFile": "launcher-4.mp4",
+        "caption": "The item editor"
+      }
+    ]
+  },
+  "coin-counter": {
+    "title": "Coin Counter",
+    "techList": [
+      "React",
+      "Redux",
+      "Webpack",
+      "Mocha"
+    ],
+    "url": "https://www.patjacobs.io/coin-counter",
+    "content": [
+      {
+        "type": "img",
+        "imgFile": "coin-counter-1.jpg",
+        "caption": "Coin counting for days"
+      },
+      {
+        "type": "text",
+        "p1": "This project was an assignment project to meet these requirements: effectively and efficiently count how many coins you would need of each kind, be able to change the value of the coins, and use solid UX/UI.",
+        "p2": "I believe I accomplished these goals and I was able to build this in less than a day."
+      }
+    ]
+  },
+  "carbine-studios": {
+    "title": "Carbine Studios",
+    "techList": [
+      "Jekyll",
+      "jQuery",
+      "SCSS"
+    ],
+    "url": "http://www.carbinestudios.com/",
+    "content": [
+      {
+        "type": "img",
+        "imgFile": "carbine-1.jpg",
+        "caption": "Landing page for Carbine Studios"
+      },
+      {
+        "type": "text",
+        "p1": "This is the marketing site for the game company Carbine Studios. THe site contains information about the studio and game information. It also had a careers page that incorporated an outside API for displaying currently avaliable positions."
+      },
+      {
+        "type": "img",
+        "imgFile": "carbine-2.jpg",
+        "caption": "Game information page header"
+      }
+    ]
+  }
+}

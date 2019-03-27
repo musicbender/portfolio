@@ -1,0 +1,9 @@
+@import '../../../style/helpers/variables';
+@import '../../../style/helpers/mixins';
+
+.btn {
+  color: $white;
+  &:hover {
+
+  }
+}

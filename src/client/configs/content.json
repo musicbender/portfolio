@@ -1,3 +1,9 @@
 {
-
+  "home": {
+    "sections": {
+      "recentWork": {
+        "heading": "recent_work"
+      }
+    }
+  }
 }

@@ -1,0 +1,32 @@
+@import '../../../styles/partials/_settings';
+@import '../../../styles/partials/_mixins';
+
+.page-not-found {
+  @include background('/images/mobile/about/header-img_about-pg.png', $size: 768px, $position: right 50px);
+  position: relative;
+  min-height: 100vh;
+  background-size: 100% auto;
+  width: 100%;
+  @media(min-width: $tablet-width) {
+    background: url('/images/desktop/about/bg-header.png') no-repeat top center;
+  }
+  > .wrapper {
+    @include super-center($top: 40%);
+    @include box-shadow(3);
+    text-align: center;
+    background-color: $darker-red;
+    border-radius: 5px;
+    padding: 1em 2em;
+    @media (min-width: $small-desktop-width) {
+      padding: 1em 6em;
+    }
+    > h1 {
+      font-family: $AdelonBook;
+      color: $white;
+      font-size: 33px;
+      @media (min-width: $small-desktop-width) {
+        font-size: 60px;
+      }
+    }
+  }
+}

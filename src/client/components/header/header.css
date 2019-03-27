@@ -3,7 +3,7 @@
 
 .home-header {
   position: relative;
-  height: 100vh;
+  height: 110vh;
   > [class*="lil-square"] {
     position: absolute;
     top: 33em;

@@ -1,0 +1,51 @@
+@import '../../style/helpers/variables';
+@import '../../style/helpers/mixins';
+
+.work-item {
+  $width: $grid-m * 2 + $grid-s;
+  position: relative;
+  height: 23.5em;
+  width: $width;
+  > .image-outter-wrapper {
+    position: relative;
+    > .parallax {
+      position: absolute;
+      overflow: hidden;
+      &.index-0 {
+        left: 0;
+        width: $grid-m;
+      }
+      &.index-1 {
+        left: $grid-m;
+        width: grid-s;
+      }
+      > .wrapper {
+        position: absolute;
+        > .image-cover {
+          background-color: rgb(100,100,100);
+        }
+      }
+    }
+  }
+  > .info-outter-wrapper {
+    > .parallax {
+      &.index-0 {
+
+      }
+      &.index-1 {
+
+      }
+      > .wrapper {
+        > .title {
+
+        }
+        > .description {
+
+        }
+        > [class*="btn"] {
+
+        }
+      }
+    }
+  }
+}
