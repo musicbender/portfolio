@@ -7,34 +7,43 @@ import style from './work-item.css';
 const cx = cn.bind(style);
 
 const WorkItem = ({ item, index }) => {
+  const paraConf = {
+    image: [[0, 0], [20, -20]],
+    info: [[0, 0], [20, -20]]
+  }
+
   const renderImageSection = () => {
     return item.parallax.image.map((seg, i) => {
-      <Parallax
-        className={cx(style.parallax, style[`index-${i}`])}
-        x={[0, 0]}
-        y={seg || [0, 0]}
-        key={i + item.title + 'image' + JSON.stringify(seg)}
-      >
-        <div className={cx(style.wrapper)}>
-          <div className={cx(style.imageCover)}></div>
-        </div>
-      </Parallax>
+      return (
+        <Parallax
+          className={cx(style.parallax, style[`index-${i}`])}
+          x={[0, 0]}
+          y={paraConf.image[i] || [0, 0]}
+          key={`${i}` + item.title + 'image' + JSON.stringify(seg)}
+        >
+          <div className={cx(style.wrapper)}>
+            <div className={cx(style.imageCover)}></div>
+          </div>
+        </Parallax>
+      );
     });
   }
 
   const renderInfoSection = () => {
     return item.parallax.info.map((seg, i) => {
-      <Parallax
-        className={cx(style.parallax, style[`index-${i}`])}
-        x={[0, 0]}
-        y={seg || [0, 0]}
-        key={i + item.title + 'info' + JSON.stringify(seg)}
-      >
-        <div className={cx(style.wrapper)}>
-          <h4 className={cx(style.title)}>{item.title}</h4>
-          <p className={cx(style.description)}>{item.description}</p>
-        </div>
-      </Parallax>
+      return (
+        <Parallax
+          className={cx(style.parallax, style[`index-${i}`])}
+          x={[0, 0]}
+          y={paraConf.info[i] || [0, 0]}
+          key={`${i}` + item.title + 'info' + JSON.stringify(seg)}
+        >
+          <div className={cx(style.wrapper)}>
+            <h4 className={cx(style.title)}>{item.title}</h4>
+            <p className={cx(style.description)}>{item.description}</p>
+          </div>
+        </Parallax>
+      );
     });
   }
 

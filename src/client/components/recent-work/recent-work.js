@@ -14,7 +14,7 @@ const RecentWork = () => {
   const renderWorkItems = () => {
     return workData.map((item, i) => {
       return i < config.workItemsAmount && (
-        <WorkItem item={item} index={i} key={item.title + i * 7} />
+        <WorkItem item={item} index={i} key={item.title + `${(i * 7)}`} />
       );
     });
   }

@@ -1,7 +1,6 @@
 import { hasWindow } from './util';
 
 export const startSequence = (options, func) => {
-  console.log(`starting`);
   if (!options.length && options.length < 1) {
     return;
   }
@@ -17,14 +16,10 @@ export const startSequence = (options, func) => {
     index: options.index || 0
   }
 
-  console.log(conf);
-
   requestTimeout(() => {
     let i = conf.index;
-    console.log(`start timeout`);
     const intvl = requestInterval(() => {
       ++i;
-      console.log(i);
       func(i);
 
       if (i >= (conf.length - 1)) {

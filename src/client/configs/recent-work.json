@@ -5,7 +5,7 @@
     "thumb": "thumbnail-lineage2.jpg",
     "desccription": "Official website for Lineage2 MMORPG",
     "parallax": {
-      "image": [[0, 0], [0, 0]],
+      "image": [[0, 0], [20, -20]],
       "info": [[0, 0], [0, 0]]
     }
   },

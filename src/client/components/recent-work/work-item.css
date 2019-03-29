@@ -2,27 +2,47 @@
 @import '../../style/helpers/mixins';
 
 .work-item {
-  $width: $grid-m * 2 + $grid-s;
   position: relative;
   height: 23.5em;
-  width: $width;
+  margin-bottom: 10em;
   > .image-outter-wrapper {
     position: relative;
+    width: 59.52%;
+    height: 100%;
     > .parallax {
       position: absolute;
-      overflow: hidden;
+      /* overflow: hidden; */
+      height: 100%;
       &.index-0 {
         left: 0;
-        width: $grid-m;
+        width: calc($grid-m * 4);
+        > [class*="parallax-inner"] {
+          padding-top: calc(1 / 1 * 145%);
+        }
       }
       &.index-1 {
-        left: $grid-m;
-        width: grid-s;
+        left: calc($grid-m * 4);
+        width: calc($grid-s * 4);
+        > [class*="parallax-inner"] {
+          padding-top: calc(1 / 1 * 308%);
+        }
       }
-      > .wrapper {
-        position: absolute;
-        > .image-cover {
-          background-color: rgb(100,100,100);
+      > [class*="parallax-inner"] {
+        position: relative;
+        width: 100%;
+        height: 0;
+        > .wrapper {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          /* overflow: hidden; */
+          > .image-cover {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(100,100,100);
+          }
         }
       }
     }
