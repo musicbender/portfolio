@@ -4,9 +4,27 @@
     "label": "Lineage 2",
     "thumb": "thumbnail-lineage2.jpg",
     "desccription": "Official website for Lineage2 MMORPG",
-    "parallax": {
-      "image": [[0, 0], [20, -20]],
-      "info": [[0, 0], [0, 0]]
+    "plx": {
+      "image": [
+        {
+          "end": 1400,
+          "startValue": 3
+        },
+        {
+          "end": 1400,
+          "startValue": 10
+        }
+      ],
+      "info": [
+        {
+          "end": 1400,
+          "startValue": 4
+        },
+        {
+          "end": 1400,
+          "startValue": 11
+        }
+      ]
     }
   },
   {
@@ -17,6 +35,28 @@
     "parallax": {
       "image": [[0, 0], [0, 0]],
       "info": [[0, 0], [0, 0]]
+    },
+    "plx": {
+      "image": [
+        {
+          "end": 1950,
+          "startValue": 3
+        },
+        {
+          "end": 1950,
+          "startValue": 10
+        }
+      ],
+      "info": [
+        {
+          "end": 1950,
+          "startValue": 4
+        },
+        {
+          "end": 1950,
+          "startValue": 11
+        }
+      ]
     }
   },
   {
@@ -27,6 +67,28 @@
     "parallax": {
       "image": [[0, 0], [0, 0]],
       "info": [[0, 0], [0, 0]]
+    },
+    "plx": {
+      "image": [
+        {
+          "end": 1400,
+          "startValue": 3
+        },
+        {
+          "end": 1400,
+          "startValue": 10
+        }
+      ],
+      "info": [
+        {
+          "end": 1400,
+          "startValue": 4
+        },
+        {
+          "end": 1400,
+          "startValue": 11
+        }
+      ]
     }
   },
   {
@@ -37,6 +99,28 @@
     "parallax": {
       "image": [[0, 0], [0, 0]],
       "info": [[0, 0], [0, 0]]
+    },
+    "plx": {
+      "image": [
+        {
+          "end": 1400,
+          "startValue": 3
+        },
+        {
+          "end": 1400,
+          "startValue": 10
+        }
+      ],
+      "info": [
+        {
+          "end": 1400,
+          "startValue": 4
+        },
+        {
+          "end": 1400,
+          "startValue": 11
+        }
+      ]
     }
   },
   {
@@ -47,6 +131,28 @@
     "parallax": {
       "image": [[0, 0], [0, 0]],
       "info": [[0, 0], [0, 0]]
+    },
+    "plx": {
+      "image": [
+        {
+          "end": 1400,
+          "startValue": 3
+        },
+        {
+          "end": 1400,
+          "startValue": 10
+        }
+      ],
+      "info": [
+        {
+          "end": 1400,
+          "startValue": 4
+        },
+        {
+          "end": 1400,
+          "startValue": 11
+        }
+      ]
     }
   }
 ]

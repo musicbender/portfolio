@@ -27,7 +27,7 @@
           padding-top: calc(1 / 1 * 308%);
         }
       }
-      > [class*="parallax-inner"] {
+      > .parallax-inner {
         position: relative;
         width: 100%;
         height: 0;
