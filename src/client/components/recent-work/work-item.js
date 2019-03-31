@@ -94,7 +94,19 @@ const WorkItem = ({
         {renderImageSection()}
       </div>
       <div className={cx(style.infoOutterWrapper)}>
-        {renderInfoSection()}
+        {
+          !isStopped &&
+          renderInfoSection()
+        }
+        {
+          isStopped &&
+          <ItemInfo
+            title={item.label}
+            description={item.description}
+            buttonUrl={item.url}
+            isStatic={true}
+          />
+        }
       </div>
     </div>
   );

@@ -9,15 +9,15 @@
     "plx": {
       "image": [
         {
-          "startValue": 3
+          "startValue": 9
         },
         {
-          "startValue": 10
+          "startValue": 16
         }
       ],
       "info": [
         {
-          "startValue": 6
+          "startValue": 7
         },
         {
           "startValue": -2

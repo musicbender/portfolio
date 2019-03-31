@@ -90,6 +90,10 @@
     top: 6em;
     left: 0;
     width: 59.52%;
+    > [class*="item-info"] {
+      position: absolute;
+      left: calc(17% * 4);
+    }
     > .parallax {
       position: absolute;
       &.index-0 {

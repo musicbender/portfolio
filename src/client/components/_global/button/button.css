@@ -2,8 +2,46 @@
 @import '../../../style/helpers/mixins';
 
 .btn {
-  color: $white;
+  color: rgba($white, 0.87);
   &:hover {
 
+  }
+  > p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: inherit;
+  }
+  &.line {
+    $line-w: 4em;
+    position: relative;
+    padding-left: $line-w;
+    display: inline-block;
+    width: auto;
+    > p {
+      transform: translate3d(0, 0, 0);
+      transition: transform $fast $easeInOut;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 80%;
+      left: 0;
+      width: calc($(line-w) - 0.3em);
+      height: 0.075em;
+      background-color: rgba($white, 0.87);
+      transition: width $fast $easeInOut;
+    }
+    &:hover {
+      > p {
+        cursor: pointer;
+        transform: translate3d(1em, 0, 0);
+        transition: transform $fast $easeInOut;
+      }
+      &:before {
+        width: calc($(line-w) + 1em - 0.3em);
+        transition: width $fast $easeInOut;
+      }
+    }
   }
 }

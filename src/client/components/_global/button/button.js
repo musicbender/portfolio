@@ -18,7 +18,7 @@ const Button = ({
     case isExternal:
       return (
         <a className={classnames(buttonClass)} href={url}>
-          {text}
+          <p>{text}</p>
         </a>
       );
     case url:
@@ -28,7 +28,7 @@ const Button = ({
           to={url}
           onClick={(callback) ? (e) => {callback(e)} : () => {return false}}
         >
-          {text}
+          <p>{text}</p>
         </Link>
       );
     default:
@@ -37,7 +37,7 @@ const Button = ({
           className={cx(buttonClass)}
           onClick={(e) => { callback(e) }}
         >
-          {text}
+          <p>{text}</p>
         </div>
       );
   }

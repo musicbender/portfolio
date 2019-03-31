@@ -1,12 +1,15 @@
 @import '../../style/helpers/variables';
 @import '../../style/helpers/mixins';
 
-.item-info {;
+.item-info {
   width: calc($(s)vw + $(m)vw);
   text-align: left;
   color: rgba($white, 0.87);
   background-color: color($purple shade(60%));
   padding: 1em;
+  &.static {
+
+  }
   > h5 {
     margin: 0 0 1em;
     font-family: $futura;
