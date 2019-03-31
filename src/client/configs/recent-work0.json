@@ -1,0 +1,27 @@
+[
+  {
+    "id": "lineage2",
+    "label": "Lineage 2",
+    "imageDesktop": "bns.jpg",
+    "imageMobile": "bns.jpg",
+    "desccription": "Official website for Lineage2 MMORPG",
+    "plx": {
+      "image": [
+        {
+          "startValue": 3
+        },
+        {
+          "startValue": 10
+        }
+      ],
+      "info": [
+        {
+          "startValue": 4
+        },
+        {
+          "startValue": 8
+        }
+      ]
+    }
+  }
+]

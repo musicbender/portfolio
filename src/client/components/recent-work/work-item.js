@@ -7,9 +7,15 @@ import cn from 'classnames/bind';
 import style from './work-item.css';
 const cx = cn.bind(style);
 
-const WorkItem = ({ item, index }) => {
+const WorkItem = ({
+  item,
+  index,
+  isStopped,
+  handleWorkStops
+}) => {
   const baseEnd = 1400;
   const accumulator = 535;
+  const imgDir = `${process.env.ASSET_ROOT}assets/images/recent-work/`;
 
   const getPlxData = (item, i) => {
     return [
@@ -34,11 +40,21 @@ const WorkItem = ({ item, index }) => {
         <Plx
           className={cx(style.parallax, style[`index-${i}`])}
           parallaxData={getPlxData(seg, i)}
+          onPlxStart={handleWorkStops(index, false)}
+          onPlxEnd={handleWorkStops(index, true)}
           key={`${i}` + item.title + 'image' + JSON.stringify(seg)}
         >
           <div className={cx(style.parallaxInner)}>
             <div className={cx(style.wrapper)}>
-              <div className={cx(style.imageCover)}></div>
+              <div
+                className={cx(style.image, style.mobile, style[`index-${i}`])}
+                style={{ backgroundImage: `url(${imgDir}${item.imageMobile})` }}
+              ></div>
+              <div
+                className={cx(style.image, style.desktop, style[`index-${i}`])}
+                style={{ backgroundImage: `url(${imgDir}${item.imageDesktop})` }}
+              ></div>
+              <div className={cx(style.imageCover, {[style.stopped]: isStopped})}></div>
             </div>
           </div>
         </Plx>
@@ -66,7 +82,7 @@ const WorkItem = ({ item, index }) => {
   }
 
   return (
-    <div className={cx(style.workItem)}>
+    <div className={cx(style.workItem, { [style.stopped]: isStopped })}>
       <div className={cx(style.imageOutterWrapper)}>
         {renderImageSection()}
       </div>
@@ -78,11 +94,10 @@ const WorkItem = ({ item, index }) => {
 }
 
 WorkItem.propTypes = {
-
-}
-
-WorkItem.defaultProps = {
-
+  // item data
+  item: PropTypes.object.isRequired,
+  // index number within list of work items
+  index: PropTypes.number.isRequired
 }
 
 export default WorkItem;

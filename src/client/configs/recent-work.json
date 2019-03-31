@@ -7,22 +7,18 @@
     "plx": {
       "image": [
         {
-          "end": 1400,
           "startValue": 3
         },
         {
-          "end": 1400,
           "startValue": 10
         }
       ],
       "info": [
         {
-          "end": 1400,
           "startValue": 4
         },
         {
-          "end": 1400,
-          "startValue": 11
+          "startValue": 8
         }
       ]
     }
@@ -32,28 +28,20 @@
     "label": "Blade and Soul",
     "thumb": "thumbnail-demo-15.jpg",
     "desccription": "Official website for Blade and Soul MMORPG",
-    "parallax": {
-      "image": [[0, 0], [0, 0]],
-      "info": [[0, 0], [0, 0]]
-    },
     "plx": {
       "image": [
         {
-          "end": 1950,
           "startValue": 3
         },
         {
-          "end": 1950,
           "startValue": 10
         }
       ],
       "info": [
         {
-          "end": 1950,
           "startValue": 4
         },
         {
-          "end": 1950,
           "startValue": 11
         }
       ]
@@ -71,21 +59,17 @@
     "plx": {
       "image": [
         {
-          "end": 1400,
           "startValue": 3
         },
         {
-          "end": 1400,
           "startValue": 10
         }
       ],
       "info": [
         {
-          "end": 1400,
           "startValue": 4
         },
         {
-          "end": 1400,
           "startValue": 11
         }
       ]
@@ -103,21 +87,17 @@
     "plx": {
       "image": [
         {
-          "end": 1400,
           "startValue": 3
         },
         {
-          "end": 1400,
           "startValue": 10
         }
       ],
       "info": [
         {
-          "end": 1400,
           "startValue": 4
         },
         {
-          "end": 1400,
           "startValue": 11
         }
       ]
@@ -128,28 +108,20 @@
     "label": "B&S Esports",
     "thumb": "thumbnail-demo-13.jpg",
     "desccription": "Esports website for Blade and Soul",
-    "parallax": {
-      "image": [[0, 0], [0, 0]],
-      "info": [[0, 0], [0, 0]]
-    },
     "plx": {
       "image": [
         {
-          "end": 1400,
           "startValue": 3
         },
         {
-          "end": 1400,
           "startValue": 10
         }
       ],
       "info": [
         {
-          "end": 1400,
           "startValue": 4
         },
         {
-          "end": 1400,
           "startValue": 11
         }
       ]
