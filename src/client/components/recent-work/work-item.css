@@ -15,14 +15,14 @@
       &.index-0 {
         left: 0;
         width: calc($grid-m * 4);
-        > [class*="parallax-inner"] {
+        > .parallax-inner  {
           padding-top: calc(1 / 1 * 145%);
         }
       }
       &.index-1 {
         left: calc($grid-m * 4);
         width: calc($grid-s * 4);
-        > [class*="parallax-inner"] {
+        > .parallax-inner  {
           padding-top: calc(1 / 1 * 308%);
         }
       }
@@ -67,14 +67,18 @@
               background-position: right;
             }
           }
+          > .image-filter {
+            background-color: $purple;
+            opacity: 0.15;
+          }
           > .image-cover {
             background-color: $purple;
             opacity: 0.93;
             transform: translate3d(0, 0, 0);
-            transition: transform 350ms ease-in-out;
+            transition: transform 350ms $easeOut;
             &.stopped {
               transform: translate3d(-100%, 0, 0);
-              transition: transform 350ms $easeInOut;
+              transition: transform 350ms $easeIn;
             }
           }
         }
@@ -82,22 +86,29 @@
     }
   }
   > .info-outter-wrapper {
+    position: absolute;
+    top: 6em;
+    left: 0;
+    width: 59.52%;
     > .parallax {
+      position: absolute;
       &.index-0 {
-
+        left: calc($grid-m * 4);
+        width: calc($grid-s * 4);
       }
       &.index-1 {
-
+        left: calc(($grid-m * 4) + ($grid-s * 4));
+        width: calc($grid-m * 4);
+        [class*="item-info"] {
+          transform: translateX(-$(s)vw);
+        }
       }
-      > .wrapper {
-        > .title {
-
-        }
-        > .description {
-
-        }
-        > [class*="btn"] {
-
+      > .parallax-inner {
+        position: relative;
+        width: 100%;
+        > .wrapper {
+          overflow-x: hidden;
+          overflow-y: auto;
         }
       }
     }

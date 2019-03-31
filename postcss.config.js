@@ -7,6 +7,7 @@ module.exports = {
       mixinsDir: path.join(__dirname, '/src/client/style/js-mixins')
     },
     'postcss-simple-vars': {},
+    'postcss-color-function': {},
     'postcss-url': {},
     'postcss-nested': {},
     'postcss-hexrgba': {},

@@ -1,0 +1,27 @@
+@import '../../style/helpers/variables';
+@import '../../style/helpers/mixins';
+
+.item-info {;
+  width: calc($(s)vw + $(m)vw);
+  text-align: left;
+  color: rgba($white, 0.87);
+  background-color: color($purple shade(60%));
+  padding: 1em;
+  > h5 {
+    margin: 0 0 1em;
+    font-family: $futura;
+    font-size: 1.5rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    color: inherit;
+  }
+  > p {
+    margin: 0 0 1.5em;
+    font-family: $inconsolata;
+    font-size: 1rem;
+    color: inherit;
+  }
+  > .btn {
+
+  }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ItemInfo from './item-info';
 import { Parallax } from 'react-scroll-parallax';
 import Plx from 'react-plx';
 import Button from '../_global/button';
@@ -16,6 +17,8 @@ const WorkItem = ({
   const baseEnd = 1400;
   const accumulator = 535;
   const imgDir = `${process.env.ASSET_ROOT}assets/images/recent-work/`;
+
+  console.log(item);
 
   const getPlxData = (item, i) => {
     return [
@@ -54,6 +57,7 @@ const WorkItem = ({
                 className={cx(style.image, style.desktop, style[`index-${i}`])}
                 style={{ backgroundImage: `url(${imgDir}${item.imageDesktop})` }}
               ></div>
+              <div className={cx(style.imageFilter, {[style.stopped]: isStopped})}></div>
               <div className={cx(style.imageCover, {[style.stopped]: isStopped})}></div>
             </div>
           </div>
@@ -68,12 +72,15 @@ const WorkItem = ({
         <Plx
           className={cx(style.parallax, style[`index-${i}`])}
           parallaxData={getPlxData(seg, i)}
-          key={`${i}` + item.title + 'info' + JSON.stringify(seg)}
+          key={`${i}` + item.label + 'info' + JSON.stringify(seg)}
         >
           <div className={cx(style.parallaxInner)}>
             <div className={cx(style.wrapper)}>
-              <h4 className={cx(style.title)}>{item.title}</h4>
-              <p className={cx(style.description)}>{item.description}</p>
+              <ItemInfo
+                title={item.label}
+                description={item.description}
+                buttonUrl={item.url}
+              />
             </div>
           </div>
         </Plx>
@@ -97,7 +104,11 @@ WorkItem.propTypes = {
   // item data
   item: PropTypes.object.isRequired,
   // index number within list of work items
-  index: PropTypes.number.isRequired
+  index: PropTypes.number.isRequired,
+  // Boolean is this item has stopped parallax animation
+  isStopped: PropTypes.bool,
+  // Function controlling if parallax animation has stopped
+  handleWorkStops: PropTypes.func
 }
 
 export default WorkItem;

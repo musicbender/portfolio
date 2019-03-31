@@ -20,10 +20,15 @@ $header-delay: 4s;
 $futura: 'Futura', sans-serif;
 $inconsolata: 'Inconsolata', 'serif';
 
+/******* Grid Sizes *******/
+$s: 8;
+$m: 17;
+$l: 34;
+$grid-s: $(s)%;
+$grid-m: $(m)%;
+$grid-l: $(l)%;
+
 /******* Sizes *******/
-$grid-s: 8%;
-$grid-m: 17%;
-$grid-l: 34%;
 $toolbar-height: 4em;
 
 /******* Colors *******/
