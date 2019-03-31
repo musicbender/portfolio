@@ -7,9 +7,6 @@
   color: rgba($white, 0.87);
   background-color: color($purple shade(60%));
   padding: 1em;
-  &.static {
-
-  }
   > h5 {
     margin: 0 0 1em;
     font-family: $futura;
@@ -22,9 +19,6 @@
     margin: 0 0 1.5em;
     font-family: $inconsolata;
     font-size: 1rem;
-    color: inherit;
-  }
-  > .btn {
-
+    color: rgba($white, 0.5);
   }
 }

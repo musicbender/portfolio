@@ -18,8 +18,6 @@ const WorkItem = ({
   const accumulator = 535;
   const imgDir = `${process.env.ASSET_ROOT}assets/images/recent-work/`;
 
-  console.log(item);
-
   const getPlxData = (item, i) => {
     return [
       {
@@ -80,6 +78,12 @@ const WorkItem = ({
                 title={item.label}
                 description={item.description}
                 buttonUrl={item.url}
+                buttonClasses={cx(
+                  'work',
+                  'parallax',
+                  { ['stopped']: isStopped },
+                  { ['not-stopped']: !isStopped }
+                )}
               />
             </div>
           </div>
@@ -94,19 +98,19 @@ const WorkItem = ({
         {renderImageSection()}
       </div>
       <div className={cx(style.infoOutterWrapper)}>
-        {
-          !isStopped &&
-          renderInfoSection()
-        }
-        {
-          isStopped &&
-          <ItemInfo
-            title={item.label}
-            description={item.description}
-            buttonUrl={item.url}
-            isStatic={true}
-          />
-        }
+        {renderInfoSection()}
+        <ItemInfo
+          title={item.label}
+          description={item.description}
+          buttonUrl={item.url}
+          isStatic={true}
+          buttonClasses={cx(
+            'work',
+            'static',
+            { ['stopped']: isStopped },
+            { ['not-stopped']: !isStopped }
+          )}
+        />
       </div>
     </div>
   );

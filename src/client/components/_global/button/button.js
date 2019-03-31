@@ -10,9 +10,10 @@ const Button = ({
   text,
   url,
   isExternal,
+  classNames,
   callback
 }) => {
-  const buttonClass = cx(style.btn, style[type]);
+  const buttonClass = cx(style.btn, style[type], classNames);
 
   switch (true) {
     case isExternal:
@@ -48,6 +49,7 @@ Button.defaultProps = {
   text: 'Learn More',
   url: '/',
   isExternal: false,
+  classNames: '',
   callback: () => false
 }
 
@@ -56,6 +58,7 @@ Button.propTypes = {
   text: PropTypes.string,
   url: PropTypes.string,
   isExternal: PropTypes.bool,
+  classNames: PropTypes.string,
   callback: PropTypes.func
 }
 

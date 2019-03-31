@@ -10,12 +10,12 @@ const ItemInfo = ({
   description,
   buttonUrl,
   buttonText,
-  isStatic
+  buttonClasses
 }) => (
-  <div className={cx(style.itemInfo, { [style.static]: isStatic })}>
+  <div className={cx(style.itemInfo)}>
     <h5>{title}</h5>
     <p>{description}</p>
-    <Button text={buttonText} url={buttonUrl} />
+    <Button text={buttonText} url={buttonUrl} classNames={buttonClasses} />
   </div>
 );
 
@@ -24,14 +24,12 @@ ItemInfo.propTypes = {
   description: PropTypes.string,
   buttonUrl: PropTypes.string,
   buttonText: PropTypes.string,
-  isStatic: PropTypes.bool
+  buttonClasses: PropTypes.string
 }
 
 ItemInfo.defaultProps = {
-  // text for cta button
   buttonText: 'view project',
-  // if it is styled for parallaxed or static
-  isStatic: false
+  buttonClasses: ''
 }
 
 export default ItemInfo;

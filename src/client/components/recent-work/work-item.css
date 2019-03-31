@@ -91,6 +91,7 @@
     left: 0;
     width: 59.52%;
     > [class*="item-info"] {
+      visibility: hidden;
       position: absolute;
       left: calc(17% * 4);
     }
@@ -115,6 +116,48 @@
           overflow-y: auto;
         }
       }
+    }
+  }
+  &.stopped {
+    $baseDelay: 150ms;
+    $delay: $baseDelay + 2000ms;
+    > .info-outter-wrapper {
+      > [class*="item-info"] {
+        visibility: visible;
+        /* > [class*="btn"] {
+          > p {
+            transform: translate3d(0, 0, 0);
+            transition: transform $moderate ease-in-out $slow;
+          }
+          &:before {
+            width: calc(4em - 0.3em);
+            transform: translate3d(0, 0, 0);
+            transition: transform $moderate ease-in-out $baseDelay, width $moderate ease-in-out $slow;
+          }
+        } */
+      }
+      > .parallax {
+        visibility: hidden;
+      }
+    }
+  }
+  &:not(.stopped) {
+    [class*="item-info"][class*="static"] {
+      /* > [class*="btn"] {
+        > p {
+          transform: translate3d(100%, 0, 0);
+          transition: transform $fast $easeInOut;
+        }
+        &:before {
+          width: 100%;
+          transform: translate3d(100%, 0, 0);
+        }
+      } */
+    }
+    .parallax [class*="item-info"]  {
+      /* > [class*="btn"] {
+        animation: showBtn $fast $easeInOut forwards;
+      } */
     }
   }
 }

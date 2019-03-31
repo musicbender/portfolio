@@ -4,20 +4,23 @@
 .btn {
   color: rgba($white, 0.87);
   &:hover {
-
+    cursor: pointer;
   }
   > p {
     margin: 0;
     padding: 0;
     text-align: center;
     color: inherit;
+    text-transform: uppercase;
   }
   &.line {
     $line-w: 4em;
+    $r-padding: 1em;
     position: relative;
-    padding-left: $line-w;
+    padding: 0 $r-padding 0 $line-w;
     display: inline-block;
     width: auto;
+    overflow-x: hidden;
     > p {
       transform: translate3d(0, 0, 0);
       transition: transform $fast $easeInOut;
@@ -28,9 +31,55 @@
       top: 80%;
       left: 0;
       width: calc($(line-w) - 0.3em);
-      height: 0.075em;
+      height: 0.05em;
       background-color: rgba($white, 0.87);
       transition: width $fast $easeInOut;
+    }
+    &[class*="work"] {
+      &[class*="static"] {
+        &[class*="stopped"] {
+          > p {
+            transform: translate3d(0, 0, 0);
+            transition: transform $moderate ease-in-out $slow;
+          }
+          &:before {
+            width: calc(4em - 0.3em);
+            transform: translate3d(0, 0, 0);
+            transition: transform $moderate ease-in-out 150ms, width $moderate ease-in-out $slow;
+          }
+          &:hover {
+            > p {
+              cursor: pointer;
+              transform: translate3d(1em, 0, 0);
+              transition: transform $fast $easeInOut 0ms;
+            }
+            &:before {
+              width: calc($(line-w) + 1em - 0.3em);
+              transition: width $fast $easeInOut 0ms;
+            }
+          }
+        }
+        &[class*="not-stopped"] {
+          $x: calc(100% + $(r-padding));
+          > p {
+            transform: translate3d($x, 0, 0);
+            transition: transform $fast $easeInOut;
+          }
+          &:before {
+            width: 100%;
+            transform: translate3d($x, 0, 0);
+          }
+        }
+      }
+      &[class*="parallax"] {
+        &[class*="stopped"] {
+          opacity: 1;
+        }
+        &[class*="not-stopped"] {
+          opacity: 0;
+          transition: opacity $fast $easeIn;
+        }
+      }
     }
     &:hover {
       > p {
