@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Heading from '../_global/heading';
 import WorkItem from './work-item';
 import cn from 'classnames/bind';
-import workData from '../../configs/recent-work0.json';
+import workData from '../../configs/recent-work.json';
 import contentConf from '../../configs/content';
 import { config } from '../../../shared/config';
 import style from './recent-work.css';

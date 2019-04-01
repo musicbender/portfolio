@@ -19,7 +19,9 @@ class Home extends Component {
     return (
       <main className={cx(style.home, 'page')}>
         <Header />
-        <RecentWork />
+        <div className={cx(style.wrapper)}>
+          <RecentWork />
+        </div>
       </main>
     );
   }

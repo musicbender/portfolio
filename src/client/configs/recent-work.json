@@ -2,127 +2,129 @@
   {
     "id": "lineage2",
     "label": "Lineage 2",
-    "thumb": "thumbnail-lineage2.jpg",
-    "desccription": "Official website for Lineage2 MMORPG",
+    "imageDesktop": "bns.jpg",
+    "imageMobile": "bns.jpg",
+    "description": "Official website for Lineage2 MMORPG",
+    "url": "/",
     "plx": {
       "image": [
         {
-          "startValue": 3
+          "startValue": 9
         },
         {
-          "startValue": 10
+          "startValue": 16
         }
       ],
       "info": [
         {
-          "startValue": 4
+          "startValue": 7
         },
         {
-          "startValue": 8
+          "startValue": -2
         }
       ]
     }
   },
   {
-    "id": "bladeandsoul",
-    "label": "Blade and Soul",
-    "thumb": "thumbnail-demo-15.jpg",
-    "desccription": "Official website for Blade and Soul MMORPG",
+    "id": "lineage2",
+    "label": "Lineage 2",
+    "imageDesktop": "bns.jpg",
+    "imageMobile": "bns.jpg",
+    "description": "Official website for Lineage2 MMORPG",
+    "url": "/",
     "plx": {
       "image": [
         {
-          "startValue": 3
+          "startValue": 9
         },
         {
-          "startValue": 10
+          "startValue": 16
         }
       ],
       "info": [
         {
-          "startValue": 4
+          "startValue": 7
         },
         {
-          "startValue": 11
+          "startValue": -2
         }
       ]
     }
   },
   {
-    "id": "aion",
-    "label": "Aion Online",
-    "thumb": "thumbnail-lineage2.jpg",
-    "desccription": "Official website for Aion Online MMORPG",
-    "parallax": {
-      "image": [[0, 0], [0, 0]],
-      "info": [[0, 0], [0, 0]]
-    },
+    "id": "lineage2",
+    "label": "Lineage 2",
+    "imageDesktop": "bns.jpg",
+    "imageMobile": "bns.jpg",
+    "description": "Official website for Lineage2 MMORPG",
+    "url": "/",
     "plx": {
       "image": [
         {
-          "startValue": 3
+          "startValue": 9
         },
         {
-          "startValue": 10
+          "startValue": 16
         }
       ],
       "info": [
         {
-          "startValue": 4
+          "startValue": 7
         },
         {
-          "startValue": 11
+          "startValue": -2
         }
       ]
     }
   },
   {
-    "id": "aion-legions-of-war",
-    "label": "Aion: Legions of War",
-    "thumb": "thumbnail-lineage2.jpg",
-    "desccription": "Official website for the new mobile game based on the popular Aion series",
-    "parallax": {
-      "image": [[0, 0], [0, 0]],
-      "info": [[0, 0], [0, 0]]
-    },
+    "id": "lineage2",
+    "label": "Lineage 2",
+    "imageDesktop": "bns.jpg",
+    "imageMobile": "bns.jpg",
+    "description": "Official website for Lineage2 MMORPG",
+    "url": "/",
     "plx": {
       "image": [
         {
-          "startValue": 3
+          "startValue": 9
         },
         {
-          "startValue": 10
+          "startValue": 16
         }
       ],
       "info": [
         {
-          "startValue": 4
+          "startValue": 7
         },
         {
-          "startValue": 11
+          "startValue": -2
         }
       ]
     }
   },
   {
-    "id": "bns-esports",
-    "label": "B&S Esports",
-    "thumb": "thumbnail-demo-13.jpg",
-    "desccription": "Esports website for Blade and Soul",
+    "id": "lineage2",
+    "label": "Lineage 2",
+    "imageDesktop": "bns.jpg",
+    "imageMobile": "bns.jpg",
+    "description": "Official website for Lineage2 MMORPG",
+    "url": "/",
     "plx": {
       "image": [
         {
-          "startValue": 3
+          "startValue": 9
         },
         {
-          "startValue": 10
+          "startValue": 16
         }
       ],
       "info": [
         {
-          "startValue": 4
+          "startValue": 7
         },
         {
-          "startValue": 11
+          "startValue": -2
         }
       ]
     }
