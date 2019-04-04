@@ -1,0 +1,23 @@
+@import '../../style/helpers/variables';
+@import '../../style/helpers/mixins';
+
+.cavie-dots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  > .wrapper {
+    position: relative;
+    > .dots {
+      position: absolute;
+      bottom: 10em;
+      right: $(s)vw;
+      > .dot {
+        fill: $purple;
+      }
+    }
+  }
+}

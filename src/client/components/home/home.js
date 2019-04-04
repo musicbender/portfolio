@@ -9,6 +9,7 @@ const cx = cn.bind(style);
 // sections
 import Header from '../header';
 import RecentWork from '../recent-work';
+import CavieDots from '../cavie-dots';
 
 class Home extends Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class Home extends Component {
         <Header />
         <div className={cx(style.wrapper)}>
           <RecentWork />
+          <CavieDots />
         </div>
       </main>
     );
