@@ -13,10 +13,11 @@
     position: relative;
     > .dots {
       position: absolute;
-      bottom: 10em;
-      right: $(s)vw;
+      bottom: 0;
+      right: 3.7vw;
       > .dot {
         fill: $purple;
+        transform: translateY(150%);
       }
     }
   }

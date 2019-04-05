@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Plx from 'react-plx';
+import { hasWindow } from '../../util/util';
 import cn from 'classnames/bind';
 import style from './cavie-dots.css';
 const cx = cn.bind(style);
@@ -8,17 +9,20 @@ const cx = cn.bind(style);
 const CavieDots = () => {
   const dotAmount = 25;
   const baseStart = 1000;
-  const accumulator = 500;
+  const accumulator = 100;
 
   const getPlxData = (i) => {
-    const start = baseStart + (i * accumulator);
+    const start = i === 0
+      ? 0
+      : baseStart + (i * accumulator);
+
     return [
       {
         start,
-        end: start + accumulator,
+        end: i === 0 ? 200 : start + accumulator * 2,
         properties: [
           {
-            startValue: 150,
+            startValue: i === 0 ? 0 : 150,
             endValue: 0,
             unit: '%',
             property: 'translateY'
@@ -30,13 +34,17 @@ const CavieDots = () => {
 
   const renderDot = (i, size, x, y) => {
     return (
-      <rect
-        className={cx(style.dot)}
+      <Plx
+        className={cx(style.dotPlx, style.dot)}
+        parallaxData={getPlxData(i)}
+        tagName="rect"
+        disabled={!hasWindow()}
+        animateWhenNotInViewport={true}
+        key={`cavie-dot-$${i}-${i + x + y}`}
         width={size}
         height={size}
         x={x}
         y={y}
-        key={i + x + y}
       />
     );
   }
@@ -59,7 +67,7 @@ const CavieDots = () => {
     }
 
     return (
-      <svg className={cx(style.dots)} viewBox={`0 0 ${size} ${size}`} height={size} width={size}>
+      <svg className={cx(style.dots)} viewBox={`0 0 ${size} ${size}`} height={size * 2} width={size}>
         {dots}
       </svg>
     );
@@ -84,16 +92,3 @@ CavieDots.defaultProps = {
 }
 
 export default CavieDots;
-
-
-// const dot = (
-//   <Plx
-//     classNamew={cx(style.dotPlx)}
-//     parallaxData={getPlxData(i)}
-//     key={`cavie-dot-${i * 3}`}
-//   >
-//     <svg viewBox={`0 0 ${size} ${size}`} height={size} width={size}>
-//       <rect width={size} height={size} />
-//     </svg>
-//   </Plx>
-// );
