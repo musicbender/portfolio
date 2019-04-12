@@ -10,7 +10,7 @@ const CavieDots = () => {
   const dotAmount = 25;
   const baseStart = 1000;
   const accumulator = 100;
-
+  
   const getPlxData = (i) => {
     const start = i === 0
       ? 0

@@ -26,11 +26,11 @@
       @mixin grid-position 2, left, %, right;
       top: 1em;
     }
-    &[class*="yellow"] {
+    &[class*="purple"] {
       @mixin grid-position 1, left, %, right;
       top: 45em;
     }
-    &[class*="purple"] {
+    &[class*="yellow"] {
       @mixin grid-position 5, left, %, right;
       top: 10em;
     }

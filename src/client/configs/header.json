@@ -16,7 +16,7 @@
       }
     },
     {
-      "color": "yellow",
+      "color": "purple",
       "size": "small",
       "opacity": 0.68,
       "parallax": {
@@ -24,7 +24,7 @@
       }
     },
     {
-      "color": "purple",
+      "color": "yellow",
       "size": "medium",
       "opacity": 0.5,
       "parallax": {

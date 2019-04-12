@@ -1,7 +1,85 @@
 [
   {
+    "id": "blade-and-soul",
+    "label": "Blade and Soul",
+    "imageDesktop": "bns.jpg",
+    "imageMobile": "bns.jpg",
+    "description": "Official website for Blade and Soul MMORPG",
+    "url": "/",
+    "plx": {
+      "image": [
+        {
+          "startValue": 9
+        },
+        {
+          "startValue": 16
+        }
+      ],
+      "info": [
+        {
+          "startValue": 7
+        },
+        {
+          "startValue": -2
+        }
+      ]
+    }
+  },
+  {
     "id": "lineage2",
     "label": "Lineage 2",
+    "imageDesktop": "lineage2.jpg",
+    "imageMobile": "lineage2.jpg",
+    "description": "Official website for Lineage2 MMORPG",
+    "url": "/",
+    "plx": {
+      "image": [
+        {
+          "startValue": 9
+        },
+        {
+          "startValue": 16
+        }
+      ],
+      "info": [
+        {
+          "startValue": 7
+        },
+        {
+          "startValue": -2
+        }
+      ]
+    }
+  },
+  {
+    "id": "aion",
+    "label": "Aion Online",
+    "imageDesktop": "aion.jpg",
+    "imageMobile": "aion.jpg",
+    "description": "Official website for Lineage2 MMORPG",
+    "url": "/",
+    "plx": {
+      "image": [
+        {
+          "startValue": 9
+        },
+        {
+          "startValue": 16
+        }
+      ],
+      "info": [
+        {
+          "startValue": 7
+        },
+        {
+          "startValue": -2
+        }
+      ]
+    }
+  },
+  {
+    "id": "launcher",
+    "label": "NCSOFT Game Launcher",
     "imageDesktop": "bns.jpg",
     "imageMobile": "bns.jpg",
     "description": "Official website for Lineage2 MMORPG",
@@ -26,88 +104,10 @@
     }
   },
   {
-    "id": "lineage2",
-    "label": "Lineage 2",
-    "imageDesktop": "bns.jpg",
-    "imageMobile": "bns.jpg",
-    "description": "Official website for Lineage2 MMORPG",
-    "url": "/",
-    "plx": {
-      "image": [
-        {
-          "startValue": 9
-        },
-        {
-          "startValue": 16
-        }
-      ],
-      "info": [
-        {
-          "startValue": 7
-        },
-        {
-          "startValue": -2
-        }
-      ]
-    }
-  },
-  {
-    "id": "lineage2",
-    "label": "Lineage 2",
-    "imageDesktop": "bns.jpg",
-    "imageMobile": "bns.jpg",
-    "description": "Official website for Lineage2 MMORPG",
-    "url": "/",
-    "plx": {
-      "image": [
-        {
-          "startValue": 9
-        },
-        {
-          "startValue": 16
-        }
-      ],
-      "info": [
-        {
-          "startValue": 7
-        },
-        {
-          "startValue": -2
-        }
-      ]
-    }
-  },
-  {
-    "id": "lineage2",
-    "label": "Lineage 2",
-    "imageDesktop": "bns.jpg",
-    "imageMobile": "bns.jpg",
-    "description": "Official website for Lineage2 MMORPG",
-    "url": "/",
-    "plx": {
-      "image": [
-        {
-          "startValue": 9
-        },
-        {
-          "startValue": 16
-        }
-      ],
-      "info": [
-        {
-          "startValue": 7
-        },
-        {
-          "startValue": -2
-        }
-      ]
-    }
-  },
-  {
-    "id": "lineage2",
-    "label": "Lineage 2",
-    "imageDesktop": "bns.jpg",
-    "imageMobile": "bns.jpg",
+    "id": "aion-legions-of-war",
+    "label": "Aion: Legions of War",
+    "imageDesktop": "aion-legions-of-war.jpg",
+    "imageMobile": "aion-legions-of-war.jpg",
     "description": "Official website for Lineage2 MMORPG",
     "url": "/",
     "plx": {
