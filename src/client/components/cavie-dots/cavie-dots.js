@@ -6,11 +6,11 @@ import cn from 'classnames/bind';
 import style from './cavie-dots.css';
 const cx = cn.bind(style);
 
-const CavieDots = () => {
+const CavieDots = ({ atBottom }) => {
   const dotAmount = 25;
   const baseStart = 1000;
   const accumulator = 100;
-  
+
   const getPlxData = (i) => {
     const start = i === 0
       ? 0
@@ -67,7 +67,7 @@ const CavieDots = () => {
     }
 
     return (
-      <svg className={cx(style.dots)} viewBox={`0 0 ${size} ${size}`} height={size * 2} width={size}>
+      <svg className={cx(style.dots)} viewBox={`0 0 ${size - 45} ${size}`} height={size * 2} width={size}>
         {dots}
       </svg>
     );

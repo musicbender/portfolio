@@ -1,3 +1,11 @@
 @import '../../style/helpers/variables';
 @import '../../style/helpers/mixins';
 
+.contact {
+  > .dotgrid {
+
+  }
+  > .contact-cta {
+
+  }
+}

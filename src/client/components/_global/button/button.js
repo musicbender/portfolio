@@ -54,7 +54,7 @@ Button.defaultProps = {
 }
 
 Button.propTypes = {
-  type: PropTypes.string,
+  type: PropTypes.oneOf(['line', 'ridicularge-XL']),
   text: PropTypes.string,
   url: PropTypes.string,
   isExternal: PropTypes.bool,

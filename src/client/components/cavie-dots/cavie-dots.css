@@ -13,8 +13,9 @@
     position: relative;
     > .dots {
       position: absolute;
+      left: 84.1%;
       bottom: 0;
-      right: 3.7vw;
+      transform: translateX(-100%);
       > .dot {
         fill: $purple;
         transform: translateY(150%);

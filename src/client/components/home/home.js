@@ -10,10 +10,18 @@ const cx = cn.bind(style);
 import Header from '../header';
 import RecentWork from '../recent-work';
 import CavieDots from '../cavie-dots';
+import Contact from '../contact';
 
 class Home extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      atBottom: false
+    }
+  }
+
+  handleBottom(atBottom = !this.state.atBottom) {
+    this.setState({ atBottom });
   }
 
   render() {
@@ -22,7 +30,8 @@ class Home extends Component {
         <Header />
         <div className={cx(style.wrapper)}>
           <RecentWork />
-          <CavieDots />
+          <CavieDots at={this.state.atBottom} />
+          <Contact handleBottom={this.handleBottom} />
         </div>
       </main>
     );

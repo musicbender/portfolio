@@ -93,4 +93,9 @@
       }
     }
   }
+  &.ridicularge-XL {
+    padding: 1.5em 2em;
+    font-size: 3rem;
+    background-color: $black;
+  }
 }
