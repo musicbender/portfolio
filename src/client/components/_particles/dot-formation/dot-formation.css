@@ -4,15 +4,17 @@
 .dot-formation {
   position: relative;
   height: 45em;
-  padding-top: 25em;
   overflow-x: hidden;
   overflow-y: visible;
   > .dots {
     position: absolute;
-    left: 2.4%;
     margin: 0 auto;
     > .dot {
       fill: $purple;
+      opacity: 1;
+      &.hide {
+        opacity: 0;
+      }
     }
   }
 }

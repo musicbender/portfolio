@@ -25,3 +25,13 @@ export const countLongestArray = (arrays = []) => {
 
   return output;
 }
+
+export const throttle = (func, wait) => {
+  let time = Date.now();
+  return function(e) {
+    if ((time + wait - Date.now()) < 0) {
+      func(e);
+      time = Date.now();
+    }
+  }
+}

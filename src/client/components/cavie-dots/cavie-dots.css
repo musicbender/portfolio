@@ -2,6 +2,7 @@
 @import '../../style/helpers/mixins';
 
 .cavie-dots {
+  display: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
   position: fixed;
@@ -16,6 +17,9 @@
       left: 84.1%;
       bottom: 0;
       transform: translateX(-100%);
+      &.hide {
+        display: none;
+      }
       > .dot {
         fill: $purple;
         transform: translateY(150%);

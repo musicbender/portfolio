@@ -67,7 +67,12 @@ const CavieDots = ({ atBottom }) => {
     }
 
     return (
-      <svg className={cx(style.dots)} viewBox={`0 0 ${size - 45} ${size}`} height={size * 2} width={size}>
+      <svg
+        className={cx(style.dots, { [style.hide]: atBottom })}
+        viewBox={`0 0 ${size - 45} ${size}`}
+        height={size * 2}
+        width={size}
+      >
         {dots}
       </svg>
     );

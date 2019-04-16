@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { throttle } from '../../util/util';
 import cn from 'classnames/bind';
 import style from './home.css';
 const cx = cn.bind(style);
@@ -15,8 +16,30 @@ import Contact from '../contact';
 class Home extends Component {
   constructor(props) {
     super(props);
+    this.handleScroll = this.handleScroll.bind(this);
+    this.bottom = 5024;
     this.state = {
       atBottom: false
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', throttle(this.handleScroll, 50));
+  }
+
+  handleScroll(e) {
+    if (window.scrollY >= this.bottom) {
+      if (!this.state.atBottom) {
+        console.log(`BOTTOM`);
+        this.setState({ atBottom: true });
+      }
+    }
+
+    if (window.scrollY < this.bottom) {
+      if (this.state.atBottom) {
+        console.log(`NOT BOTTOM`);
+        this.setState({ atBottom: false });
+      }
     }
   }
 
@@ -30,8 +53,8 @@ class Home extends Component {
         <Header />
         <div className={cx(style.wrapper)}>
           <RecentWork />
-          <CavieDots at={this.state.atBottom} />
-          <Contact handleBottom={this.handleBottom} />
+          <CavieDots atBottom={this.state.atBottom} />
+          <Contact atBottom={this.state.atBottom} />
         </div>
       </main>
     );

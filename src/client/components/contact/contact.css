@@ -2,8 +2,22 @@
 @import '../../style/helpers/mixins';
 
 .contact {
-  > .dotgrid {
-
+  overflow-x: hidden;
+  padding-top: 45em;
+  > .dot-wrapper {
+    > * {
+      display: inline-block;
+      &[class*="big"] {
+        width: 1920px;
+        left: 92%;
+        transform: translateX(-100%);
+      }
+      &[class*="small"] {
+        display: none;
+        width: 8.52%;
+        /* left: 91.48%; */
+      }
+    }
   }
   > .contact-cta {
 
