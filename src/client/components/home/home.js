@@ -30,14 +30,12 @@ class Home extends Component {
   handleScroll(e) {
     if (window.scrollY >= this.bottom) {
       if (!this.state.atBottom) {
-        console.log(`BOTTOM`);
         this.setState({ atBottom: true });
       }
     }
 
     if (window.scrollY < this.bottom) {
       if (this.state.atBottom) {
-        console.log(`NOT BOTTOM`);
         this.setState({ atBottom: false });
       }
     }

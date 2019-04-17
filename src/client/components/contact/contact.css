@@ -3,19 +3,23 @@
 
 .contact {
   overflow-x: hidden;
-  padding-top: 45em;
+  margin-top: 45em;
+  height: 45em;
+  width: 100%;
   > .dot-wrapper {
-    > * {
-      display: inline-block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    > div[class*="dot-formation"] {
+      position: absolute;
       &[class*="big"] {
         width: 1920px;
         left: 92%;
         transform: translateX(-100%);
       }
       &[class*="small"] {
-        display: none;
         width: 8.52%;
-        /* left: 91.48%; */
+        left: 96.05%;
       }
     }
   }
