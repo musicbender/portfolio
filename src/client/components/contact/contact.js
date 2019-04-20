@@ -29,7 +29,14 @@ const Contact = ({ atBottom }) => {
         <DotFormation classNames="big" columns={28} hide={!atBottom} hideArray={hideArray} />
         <DotFormation classNames="small" columns={4} />
       </div>
-      <a className={cx(style.contactCta)} onClick={handleButton}>
+      <a
+        className={cx(
+          style.contactCta,
+          { [style.show]: atBottom },
+          { [style.hide]: !atBottom }
+        )}
+        onClick={handleButton}
+      >
         <p>Say Hello</p>
       </a>
     </div>

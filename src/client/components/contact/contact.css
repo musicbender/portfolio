@@ -25,12 +25,24 @@
     }
   }
   > .contact-cta {
-    @mixin super-center 50%, 45.5%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     background-color: rgba($matte-black, 0.5);
-    padding: 3em 5em;
+    padding: 1em 4em;
     border-radius: 1px;
     text-align: center;
+    transition: opacity $slow $easeInOut, transform $slow $easeInOut;
+    &.hide {
+      opacity: 0;
+      transform: translate3d(-50%, calc(-45% + 2em), 0) skew(10deg, 10deg);
+    }
+    &.show {
+      opacity: 1;
+      transform: translate3d(-50%, -45%, 0) skew(0deg, 0deg);
+    }
     > p {
+      margin: 0;
       font-size: 4rem;
       color: $white;
     }
