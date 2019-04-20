@@ -2,10 +2,18 @@
   "config": {
     "role": "Web Engineer",
     "name": "Pat Jacobs",
+    "email": "musicbender@gmail.com",
     "gridLines": [8, 17, 8, 17, 34, 8, 8],
     "pageLoadTimeout": 4000,
     "splashScreenTimeout": 6000,
-    "workItemsAmount": 5
+    "workItemsAmount": 5,
+    "homeBottom": 5024,
+    "colors": {
+      "purple": "#633DFF",
+      "aqua": "#32D2C9",
+      "orange": "#F98D51",
+      "yellow": "#F9D41"
+    }
   },
   "pages": {
     "home": {

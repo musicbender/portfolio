@@ -5,6 +5,7 @@ import { withRouter, Route } from 'react-router-dom';
 import GridLines from './_global/grid-lines';
 import Toolbar from './_global/toolbar';
 import SplashScreen from './splash-screen';
+import Footer from './footer';
 import { changeSplash } from '../actions/global';
 import { config } from '../../shared/config.json';
 import cn from 'classnames/bind';
@@ -32,15 +33,18 @@ class App extends Component {
         style.pjPortfolio,
         { [style.splashOpen]: this.props.splashOpen }
       )}>
-        <GridLines />
-        <Toolbar />
-        {
-          this.props.splashOpen &&
-          <SplashScreen />
-        }
-        <div className={cx(style.pageWrapper)}>
-          <Route path="/" exact component={Home} />
+        <div className={cx(style.wrapper)}>
+          <GridLines />
+          <Toolbar />
+          {
+            this.props.splashOpen &&
+            <SplashScreen />
+          }
+          <div className={cx(style.pageWrapper)}>
+            <Route path="/" exact component={Home} />
+          </div>
         </div>
+      <Footer />
       </div>
     );
   }

@@ -10,8 +10,8 @@
     position: absolute;
     margin: 0 auto;
     > .dot {
-      fill: $purple;
-      opacity: 1;
+      fill: $aqua;
+      opacity: 0.5;
       &.hide {
         opacity: 0;
       }

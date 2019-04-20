@@ -2,10 +2,11 @@
 @import '../../style/helpers/mixins';
 
 .contact {
-  overflow-x: hidden;
+  position: relative;
   margin-top: 45em;
-  height: 45em;
+  height: 32em;
   width: 100%;
+  overflow: hidden;
   > .dot-wrapper {
     position: relative;
     height: 100%;
@@ -14,7 +15,7 @@
       position: absolute;
       &[class*="big"] {
         width: 1920px;
-        left: 92%;
+        left: 91.9%;
         transform: translateX(-100%);
       }
       &[class*="small"] {
@@ -24,6 +25,14 @@
     }
   }
   > .contact-cta {
-
+    @mixin super-center 50%, 45.5%;
+    background-color: rgba($matte-black, 0.5);
+    padding: 3em 5em;
+    border-radius: 1px;
+    text-align: center;
+    > p {
+      font-size: 4rem;
+      color: $white;
+    }
   }
 }

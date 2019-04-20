@@ -30,6 +30,7 @@ $grid-l: $(l)%;
 
 /******* Sizes *******/
 $toolbar-height: 4em;
+$footer-height: 8em;
 
 /******* Colors *******/
 $white: #fff;
@@ -43,7 +44,7 @@ $purple: #633DFF;
 $orange: #F98D51;
 $aqua: #32D2C9;
 
-/******* Theme Colors *******/
+/******* Mode Colors *******/
 $dark-bg: #242424;
 $dark-lines: rgba($matte-black, 0.45);
 $light-bg: $white;

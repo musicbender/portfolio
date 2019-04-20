@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { throttle } from '../../util/util';
+import { config } from '../../../shared/config.json';
 import cn from 'classnames/bind';
 import style from './home.css';
 const cx = cn.bind(style);
@@ -17,7 +18,7 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
-    this.bottom = 5024;
+    this.bottom = config.homeBottom;
     this.state = {
       atBottom: false
     }
@@ -48,11 +49,16 @@ class Home extends Component {
   render() {
     return (
       <main className={cx(style.home, 'page')}>
-        <Header />
-        <div className={cx(style.wrapper)}>
-          <RecentWork />
-          <CavieDots atBottom={this.state.atBottom} />
-          <Contact atBottom={this.state.atBottom} />
+        <div className={cx(style.outterWrapper)}>
+          <Header />
+          <div className={cx(style.wrapper)}>
+            <RecentWork />
+            {
+              !this.state.atBottom &&
+              <CavieDots atBottom={this.state.atBottom} bottom={this.bottom} />
+            }
+            <Contact atBottom={this.state.atBottom} />
+          </div>
         </div>
       </main>
     );

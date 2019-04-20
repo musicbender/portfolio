@@ -2,14 +2,15 @@
 @import '../../../style/helpers/mixins';
 
 .grid-lines {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
   max-width: $largest-site-width;
   > .grid-item-wrapper {
     display: inline-block;
+    height: 100%;
     > .grid-line {
-      height: 100vh;
+      height: 100%;
       border-left: 1px solid $dark-lines;
     }
   }

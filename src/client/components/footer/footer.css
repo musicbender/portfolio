@@ -1,0 +1,12 @@
+@import '../../style/helpers/variables';
+@import '../../style/helpers/mixins';
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: $footer-height;
+  width: 100%;
+  background-color: $dark-lines;
+  z-index: -1;
+}

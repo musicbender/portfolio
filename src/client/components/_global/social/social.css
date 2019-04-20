@@ -1,0 +1,30 @@
+@import '../../../style/helpers/variables';
+@import '../../../style/helpers/mixins';
+
+.social {
+  height: 1.15em;
+  margin-top: 5em;
+  > .wrapper {
+    display: inline-block;
+    width: auto;
+    height: 100%;
+    margin: 0 auto;
+    &:before {
+      content: '';
+      display: table;
+      clear: both;
+    }
+    > a {
+      display: inline-block;
+      margin: 0 2.5em;
+      color: rgba($white, 0.7);
+      text-decoration: none;
+      float: left;
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+}

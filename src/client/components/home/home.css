@@ -3,7 +3,11 @@
 
 .home {
   position: relative;
-  > .wrapper {
-    padding: 20em 0 0;
+  > .outter-wrapper {
+    position: relative;
+    margin-bottom: $footer-height;
+    > .wrapper {
+      padding: 20em 0 0;
+    }
   }
 }

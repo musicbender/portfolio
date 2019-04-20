@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Plx from 'react-plx';
 import { hasWindow } from '../../util/util';
+import { config } from '../../../shared/config.json';
 import cn from 'classnames/bind';
 import style from './cavie-dots.css';
 const cx = cn.bind(style);
 
-const CavieDots = ({ atBottom }) => {
+const CavieDots = ({ atBottom, bottom }) => {
   const dotAmount = 25;
   const baseStart = 1000;
   const accumulator = 100;
@@ -26,6 +27,22 @@ const CavieDots = ({ atBottom }) => {
             endValue: 0,
             unit: '%',
             property: 'translateY'
+          }
+        ]
+      },
+      {
+        start: bottom - 1400,
+        end: bottom,
+        properties: [
+          {
+            startValue: config.colors.purple,
+            endValue: config.colors.aqua,
+            property: 'fill'
+          },
+          {
+            startValue: 1,
+            endValue: 0.5,
+            property: 'opacity'
           }
         ]
       }
