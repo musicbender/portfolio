@@ -10,8 +10,8 @@
     position: absolute;
     margin: 0 auto;
     > .dot {
-      fill: $aqua;
-      opacity: 0.5;
+      opacity: 0.87;
+      transition: fill 150ms linear;
       &.hide {
         opacity: 0;
       }

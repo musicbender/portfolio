@@ -35,3 +35,7 @@ export const throttle = (func, wait) => {
     }
   }
 }
+
+export const minMax = (num, min = 0, max = 255) => {
+  return num <= min ? min : num >= max ? max : num;
+}

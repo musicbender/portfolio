@@ -10,6 +10,7 @@ const DotFormation = ({
   dotSize,
   hide,
   hideArray,
+  color,
   classNames
 }) => {
   const hideEnabled = hide && hideArray && hideArray.length > 0;
@@ -27,6 +28,7 @@ const DotFormation = ({
         height={size}
         x={x}
         y={y}
+        style={{ fill: color }}
       />
     );
   }
@@ -69,6 +71,7 @@ DotFormation.propTypes = {
   dotSize: PropTypes.number,
   hide: PropTypes.bool,
   hideArray: PropTypes.arrayOf(PropTypes.number),
+  color: PropTypes.string,
   classNames: PropTypes.string
 }
 
@@ -77,6 +80,7 @@ DotFormation.defaultProps = {
   rows: 8,
   dotSize: 14.12,
   hide: false,
+  color: '#F98D51',
   classNames: ''
 }
 

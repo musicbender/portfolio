@@ -53,10 +53,7 @@ class Home extends Component {
           <Header />
           <div className={cx(style.wrapper)}>
             <RecentWork />
-            {
-              !this.state.atBottom &&
-              <CavieDots atBottom={this.state.atBottom} bottom={this.bottom} />
-            }
+            <CavieDots atBottom={this.state.atBottom} bottom={this.bottom} />
             <Contact atBottom={this.state.atBottom} />
           </div>
         </div>

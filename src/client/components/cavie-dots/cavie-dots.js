@@ -36,12 +36,12 @@ const CavieDots = ({ atBottom, bottom }) => {
         properties: [
           {
             startValue: config.colors.purple,
-            endValue: config.colors.aqua,
+            endValue: config.colors.orange,
             property: 'fill'
           },
           {
             startValue: 1,
-            endValue: 0.5,
+            endValue: 1,
             property: 'opacity'
           }
         ]
@@ -96,7 +96,11 @@ const CavieDots = ({ atBottom, bottom }) => {
   }
 
   return (
-    <div className={cx(style.cavieDots)}>
+    <div className={cx(
+      style.cavieDots,
+      { [style.show]: !atBottom },
+      { [style.hide]: atBottom }
+    )}>
       <div></div>
       <div className={cx(style.wrapper)}>
         {renderDots()}
