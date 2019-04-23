@@ -1,0 +1,33 @@
+@import '../../style/helpers/variables';
+@import '../../style/helpers/mixins';
+
+.particles-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  > .particle {
+    position: absolute;
+    &.triangle-a {
+      @mixin grid-position 0, left, %, right;
+      top: 6%;
+    }
+    &.triangle-b {
+      @mixin grid-position 1, left, %, right;
+      top: 37%;
+    }
+    &.triangle-c {
+      @mixin grid-position 3, left, %, right;
+      top: 55%;
+    }
+    &.triangle-d {
+      @mixin grid-position 6, left, %, right;
+      top: 64%;
+    }
+    &.triangle-e {
+      @mixin grid-position 0, left, %, right;
+      top: 80%;
+    }
+  }
+}

@@ -2,6 +2,7 @@
 @import '../../style/helpers/mixins';
 
 .recent-work {
+  position: relative;
   height: 193em;
   > h3 {
     margin-bottom: 15em;
@@ -12,5 +13,10 @@
     > .work-items-wrapper {
       padding-left: calc($grid-s * 2);
     }
+  }
+  > .dot-grid-a {
+    position: absolute;
+    left: 1vw;
+    top: 8em;
   }
 }
