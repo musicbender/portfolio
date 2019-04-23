@@ -43,7 +43,7 @@
       path[class*="path-line"] {
         stroke-dasharray: 90;
         stroke-dashoffset: -90;
-        animation: showSplashLogo 1500ms linear forwards;
+        animation: showSplashLogo 1500ms $logoIn forwards;
         animation-delay: 1000ms;
       }
     }
@@ -55,7 +55,7 @@
       width: 48.5%;
       background-color: $orange;
       transform: translateX(0);
-      animation: hideLogoMask 500ms linear forwards;
+      animation: hideLogoMask 1500ms $logoOut forwards;
       animation-delay: 1700ms;
     }
   }
@@ -77,10 +77,7 @@
   50% {
     stroke-dashoffset: 45;
   }
-  51% {
-    stroke-dashoffset: 0;
-  }
-  100% {
+  51%, 100% {
     stroke-dashoffset: 0;
   }
 }

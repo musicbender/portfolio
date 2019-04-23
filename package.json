@@ -82,7 +82,7 @@
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook  -c .storybook -o .out",
     "test": "bash tools/start-test.sh unit",
-    "test:bdd": "bash tools/start-test.sh bdd",
+    "test:tdd": "bash tools/start-test.sh tdd",
     "test:int": "bash tools/start-test.sh integration"
   },
   "repository": {
