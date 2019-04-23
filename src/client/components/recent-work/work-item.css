@@ -72,7 +72,7 @@
             opacity: 0.15;
           }
           > .image-cover {
-            background-color: $purple;
+            background-color: $dark-grey;
             opacity: 0.93;
             transform: translate3d(0, 0, 0);
             transition: transform 350ms $easeOut;

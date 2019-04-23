@@ -2,12 +2,11 @@
 @import '../../style/helpers/mixins';
 
 .cavie-dots {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: block;
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100vw;
+  left: 50%;
+  width: 50vw;
   height: 100vh;
   &.show {
     display: grid;

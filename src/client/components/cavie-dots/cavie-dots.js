@@ -101,7 +101,6 @@ const CavieDots = ({ atBottom, bottom }) => {
       { [style.show]: !atBottom },
       { [style.hide]: atBottom }
     )}>
-      <div></div>
       <div className={cx(style.wrapper)}>
         {renderDots()}
       </div>

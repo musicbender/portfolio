@@ -39,25 +39,22 @@ const Particles = () => {
     }
   }
 
-  return (
-    <div className={cx(style.particlesWrapper)}>
-      {
-        particleData.map((p, i) => {
-          return (
-            <div className={cx(style.particle, style[p.name])}>
-              <Plx
-                className={cx(style.plxInner)}
-                parallaxData={getPlxData(p.plx)}
-                disabled={!hasWindow()}
-              >
-                {getParticle(p)}
-              </Plx>
-            </div>
-          );
-        })
-      }
-    </div>
-  );
+  return particleData.map((p, i) => {
+    return (
+      <div
+        className={cx(style.particle, style[p.name])}
+        key={'work-particle' + i + p.name}
+      >
+        <Plx
+          className={cx(style.plxInner)}
+          parallaxData={getPlxData(p.plx)}
+          disabled={!hasWindow()}
+        >
+          {getParticle(p)}
+        </Plx>
+      </div>
+    );
+  });
 }
 
 export default Particles;

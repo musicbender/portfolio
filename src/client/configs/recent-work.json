@@ -175,12 +175,17 @@
     {
       "name": "dotGridA",
       "type": "dots",
-      "plx": [3, -10]
+      "plx": [0, -18]
     },
     {
       "name": "dotGridB",
       "type": "dots",
-      "plx": [3, -10]
+      "plx": [3, -2]
+    },
+    {
+      "name": "dotGridC",
+      "type": "dots",
+      "plx": [10, -10]
     }
   ]
 }
