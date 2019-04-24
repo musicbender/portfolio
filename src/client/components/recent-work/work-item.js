@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ItemInfo from './item-info';
-import { Parallax } from 'react-scroll-parallax';
 import Plx from 'react-plx';
 import Button from '../_global/button';
 import cn from 'classnames/bind';

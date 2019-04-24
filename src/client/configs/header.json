@@ -3,41 +3,41 @@
     {
       "size": "giant",
       "opacity": 0.035,
-      "parallax": {
-        "y": [-18, 18]
-      }
+      "plx": [-8, 8],
+      "start": 0,
+      "end": 950
     },
     {
       "color": "orange",
       "size": "small",
       "opacity": 0.68,
-      "parallax": {
-        "y": [63, -63]
-      }
+      "plx": [63, -63],
+      "start": 0,
+      "end": 200
     },
     {
       "color": "purple",
       "size": "small",
       "opacity": 0.68,
-      "parallax": {
-        "y": [-100, 100]
-      }
+      "plx": [-100, 100],
+      "start": 0,
+      "end": 950
     },
     {
       "color": "yellow",
       "size": "medium",
       "opacity": 0.5,
-      "parallax": {
-        "y": [-150, 150]
-      }
+      "plx": [-50, 50],
+      "start": 0,
+      "end": 400
     },
     {
       "color": "aqua",
       "size": "medium",
       "opacity": 0.5,
-      "parallax": {
-        "y": [90, -90]
-      }
+      "plx": [90, -90],
+      "start": 0,
+      "end": 800
     }
   ]
 }
