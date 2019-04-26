@@ -138,7 +138,7 @@
       "color": "purple",
       "size": "small",
       "opacity": 0.68,
-      "plx": [3, -10]
+      "plx": [10, -10]
     },
     {
       "name": "triangle-b",
@@ -171,6 +171,30 @@
       "size": "medium",
       "opacity": 0.68,
       "plx": [3, -10]
+    },
+    {
+      "name": "triangle-f",
+      "type": "triangle",
+      "color": "yellow",
+      "size": "small",
+      "opacity": 0.68,
+      "plx": [8, -2]
+    },
+    {
+      "name": "triangle-g",
+      "type": "triangle",
+      "color": "aqua",
+      "size": "medium",
+      "opacity": 0.68,
+      "plx": [8, -2]
+    },
+    {
+      "name": "triangle-h",
+      "type": "triangle",
+      "color": "orange",
+      "size": "small",
+      "opacity": 0.68,
+      "plx": [15, -15]
     },
     {
       "name": "dotGridA",

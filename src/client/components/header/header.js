@@ -20,7 +20,6 @@ class Header extends Component {
     this.handleSequence = this.handleSequence.bind(this);
     this.interval = 180;
     this.delay = 4000;
-    // this.delay = 0;
     this.state = {
       dotGridIndex: 0
     }
@@ -29,7 +28,9 @@ class Header extends Component {
   componentDidMount() {
     const dotGridLength = countLongestArray([
       dotGridA,
-      dotGridB
+      dotGridB,
+      dotGridC,
+      dotGridD
     ]);
 
     startSequence({

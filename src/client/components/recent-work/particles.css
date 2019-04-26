@@ -24,6 +24,18 @@
     @mixin grid-position 0, left, %, right;
     top: 80%;
   }
+  &.triangle-f {
+    @mixin grid-position 2, left, %, right;
+    top: -10%;
+  }
+  &.triangle-g {
+    @mixin grid-position 1, left, %, right;
+    top: 100%;
+  }
+  &.triangle-h {
+    @mixin grid-position 3, left, %, right;
+    top: 110%;
+  }
   &.dot-grid-a {
     top: -1%;
     left: 82%;

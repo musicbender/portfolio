@@ -24,7 +24,7 @@
         height: 100%;
         width: 100%;
         background-color: $orange;
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
         animation: splashBlockHide $slow ease-in forwards;
         animation-delay: 0;
       }
@@ -54,7 +54,7 @@
       height: 100%;
       width: 48.5%;
       background-color: $orange;
-      transform: translateX(0);
+      transform: translate3d(0, 0, 0);
       animation: hideLogoMask 1500ms $logoOut forwards;
       animation-delay: 1700ms;
     }
@@ -63,10 +63,10 @@
 
 @keyframes splashBlockHide {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-110%);
+    transform: translate3d(-110%, 0, 0);
   }
 }
 
@@ -84,9 +84,9 @@
 
 @keyframes hideLogoMask {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-5em);
+    transform: translate3d(-5em, 0, 0);
   }
 }
