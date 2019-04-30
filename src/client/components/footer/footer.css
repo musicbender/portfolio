@@ -9,4 +9,16 @@
   width: 100%;
   background-color: $dark-lines;
   z-index: -1;
+  > * {
+    display: inline-block;
+  }
+  > [class*="triangle"] {
+    margin: 5em 2.5em 0 0;
+    float: right;
+    transition: transform $fast $easeInOut;
+    &:hover {
+      cursor: pointer;
+      transform: rotate(-45deg);
+    }
+  }
 }

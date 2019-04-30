@@ -38,7 +38,7 @@ const SplashScreen = (props) => {
         {renderBlocks()}
       </div>
       <div className={cx(style.logoWrapper)}>
-        <Logo />
+        <Logo color="#242424" />
         <div className={cx(style.mask)}></div>
       </div>
 

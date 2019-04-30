@@ -37,8 +37,6 @@
     overflow: hidden;
     > [class*="logo"] {
       margin: 0 auto;
-      fill: $dark-bg;
-      stroke: $dark-bg;
       width: 10em;
       path[class*="path-line"] {
         stroke-dasharray: 90;

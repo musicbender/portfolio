@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Logo from '../logo';
 import cn from 'classnames/bind';
 import style from './toolbar.css';
 const cx = cn.bind(style);
@@ -23,7 +24,7 @@ const Toolbar = ({
   return (
     <div className={cx(style.toolbar)}>
       <div className={cx(style.innerWrapper)}>
-        {renderHamburger()}
+        <Logo classNames={cx(style.toolbarLogo)} color="rgba(255, 255, 255, 0.87)"/>
       </div>
     </div>
   );

@@ -15,6 +15,9 @@
   &.small {
     width: 2.75em;
   }
+  &.tiny {
+    width: 1em;
+  }
   &.white {
     fill: $white;
   }
