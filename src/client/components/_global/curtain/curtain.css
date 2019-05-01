@@ -1,0 +1,59 @@
+@import '../../../style/helpers/variables';
+@import '../../../style/helpers/mixins';
+
+.curtain {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 8% 17% 8% 17% 34.3% 8% 8%;
+  grid-template-rows: repeat(7, 1fr);
+  width: 100%;
+  height: 100%;
+  > .block {
+    position: relative;
+    overflow: hidden;
+    > .inner-block {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: $orange;
+      transform: translate3d(0, 0, 0);
+      animation-delay: 0;
+      &[class*="enter-"] {
+        transform: translate3d(110%, 0, 0);
+      }
+      &.enter-blocks {
+        animation: splashBlockEnter $slow ease-in forwards;
+      }
+      &.enter-rows {
+        animation: splashBlockEnter $slow ease-in forwards;
+      }
+      &.enter-full {
+        animation: splashBlockEnter 1200ms ease-in-out forwards;
+      }
+      &.exit {
+        transform: translate3d(0, 0, 0);
+        animation: splashBlockExit $slow ease-in forwards;
+      }
+    }
+  }
+}
+
+@keyframes splashBlockEnter {
+  0% {
+    transform: translate3d(110%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes splashBlockExit {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-110%, 0, 0);
+  }
+}

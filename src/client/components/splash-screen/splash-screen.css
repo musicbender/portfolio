@@ -7,29 +7,6 @@
   width: 100%;
   background-color: transparent;
   z-index: 10;
-  > .block-wrapper {
-    position: absolute;
-    display: grid;
-    grid-template-columns: 8% 17% 8% 17% 34.3% 8% 8%;
-    grid-template-rows: repeat(7, 1fr);
-    width: 100%;
-    height: 100%;
-    > .block {
-      position: relative;
-      overflow: hidden;
-      > .inner-block {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: $orange;
-        transform: translate3d(0, 0, 0);
-        animation: splashBlockHide $slow ease-in forwards;
-        animation-delay: 0;
-      }
-    }
-  }
   > .logo-wrapper {
     @mixin super-center;
     width: auto;
