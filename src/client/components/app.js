@@ -6,6 +6,7 @@ import GridLines from './_global/grid-lines';
 import Toolbar from './_global/toolbar';
 import SplashScreen from './splash-screen';
 import Footer from './footer';
+import Modal from './_global/modal';
 import { changeSplash } from '../actions/global';
 import { config } from '../../shared/config.json';
 import cn from 'classnames/bind';
@@ -19,6 +20,9 @@ import Home from './home';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      transportModalOpen: true
+    }
   }
 
   componentDidMount() {
@@ -45,7 +49,11 @@ class App extends Component {
             <Route path="/" exact component={Home} />
           </div>
         </div>
-      <Footer />
+        <Footer />
+        {
+          this.state.transportModalOpen &&
+          <Modal><p>hey</p></Modal>
+        }
       </div>
     );
   }
