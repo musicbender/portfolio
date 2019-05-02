@@ -6,7 +6,7 @@
     "gridLines": [8, 17, 8, 17, 34, 8, 8],
     "pageLoadTimeout": 4000,
     "splashScreenTimeout": 6000,
-    "transportDuration": 3000,
+    "transportDuration": 2500,
     "workItemsAmount": 5,
     "homeBottom": 5024,
     "colors": {

@@ -23,7 +23,13 @@
       &[class*="enter-"] {
         transform: translate3d(110%, 0, 0);
       }
+      &[class*="exit-"] {
+        transform: translate3d(0, 0, 0);
+      }
       &.enter-blocks {
+        animation: splashBlockEnter $slow ease-in forwards;
+      }
+      &.enter-reverse-blocks {
         animation: splashBlockEnter $slow ease-in forwards;
       }
       &.enter-rows {
@@ -32,9 +38,17 @@
       &.enter-full {
         animation: splashBlockEnter 1000ms ease-in-out forwards;
       }
-      &.exit {
-        transform: translate3d(0, 0, 0);
+      &.exit-blocks {
         animation: splashBlockExit $slow ease-in forwards;
+      }
+      &.exit-reverse-blocks {
+        animation: splashBlockExit $slow ease-in forwards;
+      }
+      &.exit-rows {
+        animation: splashBlockExit $slow ease-in forwards;
+      }
+      &.exit-full {
+        animation: splashBlockExit 1000ms ease-in-out forwards;
       }
     }
   }

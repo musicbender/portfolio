@@ -35,7 +35,7 @@ class App extends Component {
     this.props.changeTransport(true);
     window.requestTimeout(() => {
       window.scrollTo(0, 0);
-    }, config.transportDuration / 2);
+    }, config.transportDuration / 2.5);
   }
 
   render() {
@@ -59,7 +59,7 @@ class App extends Component {
         {
           this.props.transportOpen &&
           <Modal>
-            <Curtain entrance="full" duration={1000}/>
+            <Curtain entrance="full" exit="full" duration={1275}/>
           </Modal>
         }
       </div>
