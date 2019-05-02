@@ -29,12 +29,12 @@ class Curtain extends Component {
   getBlockDelay(i, j) {
     switch (true) {
       case this.state.exiting:
-      case !this.state.exiting && this.props.enterance === 'blocks':
+      case !this.state.exiting && this.props.entrance === 'blocks':
         const max = (config.gridLines.length * this.blockNum * this.baseDelay) / 2;
         return max - (this.baseDelay * ((i + 1) / 2) * (j + 1));
-      case !this.state.exiting && this.props.enterance === 'reverse-blocks':
+      case !this.state.exiting && this.props.entrance === 'reverse-blocks':
         return this.baseDelay * i;
-      case !this.state.exiting && this.props.enterance === 'rows':
+      case !this.state.exiting && this.props.entrance === 'rows':
         return this.baseDelay * ((config.gridLines.length - 1) - j);
       default:
         return this.baseDelay;
@@ -47,14 +47,14 @@ class Curtain extends Component {
 
       for (let j = 0; j < this.blockNum; j++) {
         const delay = this.getBlockDelay(i, j);
-        const isEnter = !this.state.exiting && this.props.enterance !== 'none';
+        const isEnter = !this.state.exiting && this.props.entrance !== 'none';
         blocks = [
           ...blocks,
           <div className={cx(style.block)} key={'splash-block' + i + '_' + j}>
             <div
               className={cx(
                 style.innerBlock,
-                { [style[`enter-${this.props.enterance}`]]: isEnter },
+                { [style[`enter-${this.props.entrance}`]]: isEnter },
                 { [style.exit]: this.state.exiting }
               )}
               style={{ animationDelay: delay + 'ms' }}

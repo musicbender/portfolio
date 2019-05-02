@@ -59,7 +59,7 @@ class App extends Component {
         {
           this.props.transportOpen &&
           <Modal>
-            <Curtain entrance="full" />
+            <Curtain entrance="full" duration={1000}/>
           </Modal>
         }
       </div>

@@ -30,7 +30,7 @@
         animation: splashBlockEnter $slow ease-in forwards;
       }
       &.enter-full {
-        animation: splashBlockEnter 1200ms ease-in-out forwards;
+        animation: splashBlockEnter 1000ms ease-in-out forwards;
       }
       &.exit {
         transform: translate3d(0, 0, 0);
