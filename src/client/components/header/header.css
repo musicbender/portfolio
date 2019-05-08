@@ -42,7 +42,7 @@
   > .dot-grid-a {
     position: absolute;
     top: 8em;
-    left: 42.25%;
+    left: calc($(grid-s) + 22em);
   }
   > .dot-grid-b {
     position: absolute;

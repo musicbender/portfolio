@@ -48,7 +48,7 @@ $orange: #F98D51;
 $aqua: #32D2C9;
 
 /******* Mode Colors *******/
-$dark-bg: #242424;
-$dark-lines: rgba($matte-black, 0.45);
+$dark-bg: rgb(30, 30, 30);
+$dark-lines: rgba($matte-black, 0.5);
 $light-bg: $white;
 $light-lines: rgba($matte-black, 0.1);

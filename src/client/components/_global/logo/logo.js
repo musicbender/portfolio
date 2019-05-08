@@ -14,9 +14,9 @@ const Logo = ({ color, classNames }) => (
     style={{ fill: color, stroke: color }}
   >
     <g>
-      <g opacity="0.8">
-        <path className={cx(style.pathLine)} d="M20,11.948l0,5.052l13,0l0,-13l-26,0l0.09,11.908l12.91,-11.908" />
-        <path className={cx(style.pathFill)} d="M7.864,13.807l0,-8.85l10.194,0l-10.194,8.85Z" />
+      <g>
+        <path className={cx(style.pathLine)} d="M20,11.948l0,5.052l13,0l0,-13l-15,0l0.09" />
+        <path className={cx(style.pathTriangle)} d="M20,0l-20,0l0,20l10.943,-10l9.057,-7.964l0,-2.036Z" />
       </g>
     </g>
   </svg>
@@ -24,7 +24,8 @@ const Logo = ({ color, classNames }) => (
 
 
 Logo.propTypes = {
-  classNames: PropTypes.string
+  classNames: PropTypes.string,
+  color: PropTypes.string
 }
 
 Logo.defaultProps = {
@@ -33,3 +34,6 @@ Logo.defaultProps = {
 }
 
 export default Logo;
+
+// full path
+// path className={cx(style.pathTriangle)} d="M22.058,0l-22.058,0l0,20l10.943,-10l11.115,-10Z" />

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Logo from '../logo';
 import { config } from '../../../../shared/config.json';
 import cn from 'classnames/bind';
 import style from './curtain.css';
@@ -46,28 +47,31 @@ class Curtain extends Component {
     }
   }
 
+  renderBlock(i, j) {
+    const delay = this.getBlockDelay(i, j);
+    const isEnter = !this.state.exiting && this.props.entrance !== 'none';
+    const isExit = this.state.exiting && this.props.exit !== 'none';
+
+    return (
+      <div className={cx(style.block)} key={'splash-block' + i + '_' + j}>
+        <div
+          className={cx(
+            style.innerBlock,
+            { [style[`enter-${this.props.entrance}`]]: isEnter },
+            { [style[`exit-${this.props.exit}`]]: isExit }
+          )}
+          style={{ animationDelay: delay + 'ms' }}
+        ></div>
+      </div>
+    )
+  }
+
   renderBlocks() {
     return config.gridLines.map((g, i) => {
       let blocks = [];
 
       for (let j = 0; j < this.blockNum; j++) {
-        const delay = this.getBlockDelay(i, j);
-        const isEnter = !this.state.exiting && this.props.entrance !== 'none';
-        const isExit = this.state.exiting && this.props.exit !== 'none';
-
-        blocks = [
-          ...blocks,
-          <div className={cx(style.block)} key={'splash-block' + i + '_' + j}>
-            <div
-              className={cx(
-                style.innerBlock,
-                { [style[`enter-${this.props.entrance}`]]: isEnter },
-                { [style[`exit-${this.props.entrance}`]]: isExit }
-              )}
-              style={{ animationDelay: delay + 'ms' }}
-            ></div>
-          </div>
-        ];
+        blocks = [...blocks, this.renderBlock(i, j)];
       }
 
       return blocks;
@@ -86,13 +90,25 @@ class Curtain extends Component {
 Curtain.propTypes = {
   duration: PropTypes.number,
   entrance: PropTypes.oneOf(['none', 'blocks', 'reverse-blocks', 'rows', 'full']),
-  exit: PropTypes.oneOf(['none', 'blocks', 'reverse-blocks', 'rows', 'full'])
+  exit: PropTypes.oneOf(['none', 'blocks', 'reverse-blocks', 'rows', 'full']),
+  colorLayout: PropTypes.oneOf(['blocks', 'rows', 'full']),
+  withLogo: PropTypes.bool,
+  logoProps: PropTypes.object
 }
 
 Curtain.defaultProps = {
   duration: 3000,
   entrance: 'none',
-  exit: 'blocks'
+  exit: 'blocks',
+  colorLayout: 'full',
+  withLogo: false,
+  logoProps: {}
 }
 
 export default Curtain;
+// 
+// {
+//   (j === 3 || j === 4) &&
+//   i === 5 &&
+//   <Logo />
+// }

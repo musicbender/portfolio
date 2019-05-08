@@ -13,9 +13,12 @@
   .path-line {
     fill: none;
     stroke: inherit;
-    stroke-width: 1.5px;
+    stroke-width: 2.5px;
+    /* stroke-linejoin: round; */
   }
-  .path-fill {
+  .path-triangle {
     fill: inherit;
+    fill-rule: nonzero;
+    transform: scale(0.735) translate(5px, 4.24px);
   }
 }

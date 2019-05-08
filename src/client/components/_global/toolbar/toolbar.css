@@ -19,6 +19,7 @@
       display: inline-block;
       width: 3em;
       fill: $white;
+      opacity: 0.75;
     }
     > .hamburger {
       @mixin super-center auto;

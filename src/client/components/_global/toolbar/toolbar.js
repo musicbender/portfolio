@@ -24,7 +24,7 @@ const Toolbar = ({
   return (
     <div className={cx(style.toolbar)}>
       <div className={cx(style.innerWrapper)}>
-        <Logo classNames={cx(style.toolbarLogo)} color="rgba(255, 255, 255, 0.87)"/>
+        <Logo classNames={cx(style.toolbarLogo)} color="rgba(255, 255, 255)"/>
       </div>
     </div>
   );
