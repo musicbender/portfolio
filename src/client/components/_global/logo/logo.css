@@ -7,6 +7,7 @@
   clip-rule: evenodd;
   stroke-miterlimit: 3;
   stroke: $white;
+  width: 5em;
   path {
     fill: inherit
   }

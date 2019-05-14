@@ -106,7 +106,8 @@ Curtain.defaultProps = {
 }
 
 export default Curtain;
-// 
+
+//
 // {
 //   (j === 3 || j === 4) &&
 //   i === 5 &&

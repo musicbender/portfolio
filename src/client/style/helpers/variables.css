@@ -32,7 +32,7 @@ $grid-l: $(l)%;
 
 /******* Sizes *******/
 $toolbar-height: 4em;
-$footer-height: 8em;
+$footer-height: 5em;
 
 /******* Colors *******/
 $white: #fff;

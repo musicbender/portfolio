@@ -1,6 +1,6 @@
 {
   "config": {
-    "role": "Web Engineer",
+    "role": "web_engineer",
     "name": "Pat Jacobs",
     "email": "musicbender@gmail.com",
     "gridLines": [8, 17, 8, 17, 34, 8, 8],

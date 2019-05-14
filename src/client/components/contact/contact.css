@@ -17,11 +17,7 @@
     }
     > div[class*="dot-formation"] {
       position: absolute;
-      filter: blur(0px);
       transition: filter $slow linear;
-      &[class*="blur"] {
-        filter: blur(1px);
-      }
       &[class*="big"] {
         width: 1920px;
         left: 91.9%;

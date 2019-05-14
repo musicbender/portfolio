@@ -1,6 +1,10 @@
 {
   "home": {
     "sections": {
+      "aboutMe": {
+        "heading": "about_me",
+        "body": "I'm a relentlessly curious web enginneer in Orange County, California."
+      },
       "recentWork": {
         "heading": "recent_work"
       }

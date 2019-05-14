@@ -1,4 +1,4 @@
- @import '../../style/helpers/variables';
+@import '../../style/helpers/variables';
 @import '../../style/helpers/mixins';
 
 .footer {
@@ -11,9 +11,11 @@
   z-index: -1;
   > * {
     display: inline-block;
+    margin-top: calc($(footer-height) - 3em);
   }
   > .tri-wrapper {
-    margin: 5em 2.5em 0 0;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
     float: right;
     transition: transform $fast $easeInOut;
     &:hover {

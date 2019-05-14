@@ -11,7 +11,6 @@ class Contact extends Component {
   constructor(props) {
     super(props);
     this.handleMouseMove = this.handleMouseMove.bind(this);
-    this.handleResize = this.handleResize.bind(this);
     this.gridID = 'contact-dot-grid';
     this.defaultColor = 'rgb(249, 141, 81)';
     this.hideArray = [
@@ -55,10 +54,6 @@ class Contact extends Component {
     }
   }
 
-  handleResize(e) {
-
-  }
-
   handleButton(e) {
     e.preventDefault();
     if (hasWindow()) {
@@ -71,13 +66,13 @@ class Contact extends Component {
       <div className={cx(style.contact)}>
         <div id={this.gridID} className={cx(style.dotWrapper)} onClick={this.handleButton}>
           <DotFormation
-            classNames={cx('big', {[ 'blur']: this.props.atBottom })}
+            classNames={cx('big')}
             columns={28}
             hide={!this.props.atBottom}
             hideArray={this.hideArray}
             color={this.state.color}
           />
-          <DotFormation classNames={cx('small', {[ 'blur']: this.props.atBottom })} columns={4} color={this.state.color} />
+          <DotFormation classNames={cx('small')} columns={4} color={this.state.color} />
           <div
             className={cx(
               style.contactCta,
