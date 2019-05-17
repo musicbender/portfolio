@@ -18,7 +18,7 @@ const Toolbar = ({
         <div className={cx(style.bar1)}></div>
         <div className={cx(style.bar2)}></div>
       </div>
-    )
+    );
   }
 
   return (

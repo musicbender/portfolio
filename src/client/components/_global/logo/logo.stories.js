@@ -18,6 +18,3 @@ storiesOf('Logo', module)
   .add('aqua', () => (
     <Logo color='aqua' />
   ))
-  .add('half opacity', () => (
-    <Logo opacity={0.5} />
-  ))

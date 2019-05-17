@@ -6,20 +6,12 @@
   fill-rule: evenodd;
   clip-rule: evenodd;
   stroke-miterlimit: 3;
+  stroke-linecap: square;
+  stroke-width: 3px;
   stroke: $white;
-  width: 5em;
+  width: 3em;
   path {
-    fill: inherit
-  }
-  .path-line {
     fill: none;
     stroke: inherit;
-    stroke-width: 2.5px;
-    /* stroke-linejoin: round; */
-  }
-  .path-triangle {
-    fill: inherit;
-    fill-rule: nonzero;
-    transform: scale(0.735) translate(5px, 4.24px);
   }
 }

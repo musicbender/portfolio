@@ -2,7 +2,7 @@
   "triangles": [
     {
       "size": "giant",
-      "opacity": 0.0135,
+      "opacity": 0.0185,
       "plx": [-8, 8],
       "start": 0,
       "end": 950

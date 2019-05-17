@@ -3,6 +3,7 @@
 
 .toolbar {
   $icon-size: 5em;
+  $icon-opacity: 0.75;
   position: fixed;
   width: 100%;
   height: $toolbar-height;
@@ -17,9 +18,9 @@
     > .toolbar-logo {
       @mixin super-center 4%, 0, -50%, 0;
       display: inline-block;
-      width: 3em;
+      width: 1.85em;
       fill: $white;
-      opacity: 0.75;
+      opacity: $icon-opacity;
     }
     > .hamburger {
       @mixin super-center auto;
@@ -28,6 +29,7 @@
       width: $icon-size;
       min-width: $grid-s;
       min-height: $grid-s;
+      opacity: $icon-opacity;
       > [class^="bar"] {
         position: absolute;
         left: 0;
