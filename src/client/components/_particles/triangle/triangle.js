@@ -10,11 +10,18 @@ const Triangle = ({
   opacity,
   classNames
 }) => {
+  const opacities = {
+    tiny: 1,
+    small: 0.7,
+    medium: 0.287,
+    giant: 0.0187
+  }
+
   return (
     <svg
       className={cx(style.triangle, style[color], style[size], classNames)}
       viewBox="0 0 10 11"
-      style={{ opacity }}
+      style={{ opacity: opacity || opacities[size] || 1 }}
     >
       <g>
         <g opacity="0.8">
@@ -35,7 +42,6 @@ Triangle.propTypes = {
 Triangle.defaultProps = {
   color: 'white',
   size: 'medium',
-  opacity: 1,
   classNames: '',
 }
 

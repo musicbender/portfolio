@@ -9,7 +9,7 @@ $small-desktop-width:   1024px;
 $easeOut   : cubic-bezier(0.23, 1, 0.32, 1);
 $easeIn    : cubic-bezier(0.950, 0.050, 0.795, 0.035);
 $easeInOut : cubic-bezier(0.445, 0.05, 0.55, 0.95);
-$logoIn: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+$logoIn: cubic-bezier(0.460, 0.000, 0.535, 1.000);
 $logoOut: cubic-bezier(0.155, 0.425, 0.000, 0.900);
 $slow:       750ms;
 $moderate:   425ms;

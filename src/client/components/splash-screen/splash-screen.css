@@ -14,49 +14,26 @@
     overflow: hidden;
     > [class*="logo"] {
       margin: 0 auto;
-      width: 10em;
+      width: 6em;
       transform: translate3d(0, 0, 0);
       animation: hideLogo $moderate $logoIn forwards;
-      animation-delay: 3500ms;
-      path[class*="path-line"] {
-        stroke-dasharray: 90;
-        stroke-dashoffset: -90;
-        animation: showSplashLogo 1500ms $logoIn forwards;
+      animation-delay: 3425ms;
+      path {
+        stroke-dasharray: 36;
+        stroke-dashoffset: 36;
+        animation: showSplashLogo 1000ms $logoIn forwards;
         animation-delay: 1000ms;
       }
-    }
-    > .mask {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 48.5%;
-      background-color: $matte-black;
-      transform: translate3d(-0.14em, 0, 0);
-      animation: hideLogoMask 1500ms $logoOut forwards;
-      animation-delay: 1750ms;
     }
   }
 }
 
 @keyframes showSplashLogo {
   0% {
-    stroke-dashoffset: 90;
-  }
-  50% {
-    stroke-dashoffset: 45;
-  }
-  51%, 100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes hideLogoMask {
-  0% {
-    transform: translate3d(-0.14em, 0, 0);
+    stroke-dashoffset: 36;
   }
   100% {
-    transform: translate3d(-5em, 0, 0);
+    stroke-dashoffset: 0;
   }
 }
 

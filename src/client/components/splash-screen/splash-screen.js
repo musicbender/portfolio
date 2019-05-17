@@ -9,8 +9,7 @@ const SplashScreen = () => (
   <div className={cx(style.splashScreen)}>
     <Curtain />
     <div className={cx(style.logoWrapper)}>
-      <Logo color="orange" />
-      <div className={cx(style.mask)}></div>
+      <Logo color="aqua" />
     </div>
   </div>
 );

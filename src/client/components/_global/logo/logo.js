@@ -32,8 +32,8 @@ const Logo = ({ color, classNames }) => {
 
 
 Logo.propTypes = {
-  classNames: PropTypes.oneOf(['white', 'black', ...Object.keys(config.colors)]),
-  color: PropTypes.string,
+  color: PropTypes.oneOf(['white', 'black', ...Object.keys(config.colors)]),
+  classNames: PropTypes.string,
 }
 
 Logo.defaultProps = {

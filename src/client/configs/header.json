@@ -2,7 +2,6 @@
   "triangles": [
     {
       "size": "giant",
-      "opacity": 0.0185,
       "plx": [-8, 8],
       "start": 0,
       "end": 950
@@ -10,7 +9,6 @@
     {
       "color": "orange",
       "size": "small",
-      "opacity": 0.68,
       "plx": [63, -63],
       "start": 0,
       "end": 200
@@ -18,7 +16,6 @@
     {
       "color": "purple",
       "size": "small",
-      "opacity": 0.68,
       "plx": [-100, 100],
       "start": 0,
       "end": 950
@@ -26,7 +23,6 @@
     {
       "color": "yellow",
       "size": "medium",
-      "opacity": 0.5,
       "plx": [-50, 50],
       "start": 0,
       "end": 400
@@ -34,7 +30,6 @@
     {
       "color": "aqua",
       "size": "medium",
-      "opacity": 0.5,
       "plx": [90, -90],
       "start": 0,
       "end": 800
