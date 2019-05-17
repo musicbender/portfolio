@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Plx from 'react-plx';
 import DotGrid from '../_particles/dot-grid';
 import Triangle from '../_particles/triangle';
-import { particleData } from '../../configs/recent-work.json';
+import { particleData } from './config.json';
 import dotGrids from './dots';
 import { hasWindow } from '../../util/util';
 import cn from 'classnames/bind';

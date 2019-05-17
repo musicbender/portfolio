@@ -9,7 +9,7 @@ import { Triangle, DotGrid, LilSquare } from '../_particles';
 import { dotGridA, dotGridB, dotGridC, dotGridD } from './dots';
 import { countLongestArray, hasWindow } from '../../util/util';
 import { startSequence } from '../../util/animation';
-import { triangles } from '../../configs/header.json';
+import { triangles } from './config.json';
 import { config } from '../../../shared/config.json';
 import style from './header.css';
 const cx = cn.bind(style);

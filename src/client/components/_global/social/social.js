@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import socials from '../../../configs/social';
+import socials from './config.json';
 import cn from 'classnames/bind';
 import style from './social.css';
 const cx = cn.bind(style);

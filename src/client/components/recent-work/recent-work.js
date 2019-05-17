@@ -5,7 +5,7 @@ import Heading from '../_global/heading';
 import Particles from './particles';
 import WorkItem from './work-item';
 import cn from 'classnames/bind';
-import { workData } from '../../configs/recent-work.json';
+import { workData } from './config.json';
 import contentConf from '../../configs/content';
 import { config } from '../../../shared/config';
 import style from './recent-work.css';
