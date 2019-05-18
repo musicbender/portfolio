@@ -14,7 +14,7 @@ const Triangle = ({
     tiny: 1,
     small: 0.7,
     medium: 0.287,
-    giant: 0.0187
+    giant: 0.0255
   }
 
   return (

@@ -16,9 +16,9 @@
       top: 0;
       left: 0;
       height: 100%;
-      width: 100%;
+      width: 110%;
       background-color: $matte-black;
-      transform: translate3d(0, 0, 0);
+      transform: translate3d(-5%, 0, 0);
       animation-delay: 0;
       &[class*="enter-"] {
         transform: translate3d(110%, 0, 0);
@@ -59,13 +59,13 @@
     transform: translate3d(110%, 0, 0);
   }
   100% {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(-5%, 0, 0);
   }
 }
 
 @keyframes splashBlockExit {
   0% {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(-5%, 0, 0);
   }
   100% {
     transform: translate3d(-110%, 0, 0);
