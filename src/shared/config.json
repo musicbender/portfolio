@@ -8,7 +8,7 @@
     "splashScreenTimeout": 6000,
     "transportDuration": 2500,
     "workItemsAmount": 5,
-    "homeBottom": 5850,
+    "homeBottom": 5870,
     "colors": {
       "purple": "#633DFF",
       "aqua": "#32D2C9",

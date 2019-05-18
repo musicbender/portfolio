@@ -19,7 +19,7 @@ import Contact from '../contact';
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.handleScroll = this.handleScroll.bind(this);
+    this.handleScroll = throttle(this.handleScroll.bind(this), 50);
     this.bottom = config.homeBottom;
     this.state = {
       atBottom: false
@@ -28,7 +28,11 @@ class Home extends Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    window.addEventListener('scroll', throttle(this.handleScroll, 50));
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
   }
 
   handleScroll(e) {

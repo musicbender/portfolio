@@ -66,8 +66,8 @@ class Header extends Component {
   renderTriangles() {
     return triangles.map((tri, i) => (
       <div
-        className={cx('triangle-parallax', tri.color, tri.size)}
-        key={i + tri.opacity + tri.color}
+        className={cx('triangle-parallax', tri.id, tri.color, tri.size)}
+        key={i + tri.id}
       >
         <Plx
           disabled={!hasWindow()}

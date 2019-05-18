@@ -25,8 +25,8 @@
     top: 80%;
   }
   &.triangle-f {
-    @mixin grid-position 2, left, %, right;
-    top: -10%;
+    @mixin grid-position 6, left, %, right;
+    top: -12%;
   }
   &.triangle-g {
     @mixin grid-position 1, left, %, right;

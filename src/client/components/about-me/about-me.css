@@ -2,11 +2,11 @@
 @import '../../style/helpers/mixins';
 
 .about-me {
-  margin: 0 0 20em 50%;
+  margin: 0 0 0 50%;
   width: 50%;
+  height: 52em;
   > [class*="heading"] {
     margin-left: 0;
-    margin-bottom: 5em;
   }
   .content-box {
     padding: 2em 4em;

@@ -3,7 +3,7 @@
 
 .toolbar {
   $icon-size: 5em;
-  $icon-opacity: 0.75;
+  $icon-opacity: 0.675;
   position: fixed;
   width: 100%;
   height: $toolbar-height;

@@ -173,9 +173,9 @@
     {
       "name": "triangle-f",
       "type": "triangle",
-      "color": "yellow",
-      "size": "small",
-      "plx": [8, -2]
+      "color": "orange",
+      "size": "medium",
+      "plx": [10, -10]
     },
     {
       "name": "triangle-g",

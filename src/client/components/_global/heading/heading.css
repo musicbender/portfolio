@@ -3,7 +3,7 @@
 
 .heading {
   color: rgba($white, 0.87);
-  margin: 0 0 1em $grid-s;
+  margin: 0 0 6em $grid-s;
   padding: 0;
   font-weight: 100;
   letter-spacing: 0.5em;

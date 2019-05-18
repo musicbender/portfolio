@@ -14,7 +14,7 @@
   }
   > [class*="triangle-parallax"] {
     position: absolute;
-    &[class*="giant"] {
+    &[class*="giant-1"] {
       @mixin grid-position 4, left, %, right;
       top: 2em;
       width: 53.78%;
@@ -22,21 +22,25 @@
         width: 100%;
       }
     }
-    &[class*="orange"] {
+    &[class*="orange-1"] {
       @mixin grid-position 2, left, %, right;
       top: 1em;
     }
-    &[class*="purple"] {
+    &[class*="purple-1"] {
       @mixin grid-position 1, left, %, right;
       top: 45em;
     }
-    &[class*="yellow"] {
+    &[class*="yellow-1"] {
       @mixin grid-position 5, left, %, right;
       top: 10em;
     }
-    &[class*="aqua"] {
+    &[class*="aqua-1"] {
       @mixin grid-position 3, left, %, right;
       top: 29em;
+    }
+    &[class*="yellow-2"] {
+      @mixin grid-position 2, left, %, right;
+      top: 75em;
     }
   }
   > .dot-grid-a {

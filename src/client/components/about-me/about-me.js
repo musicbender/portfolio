@@ -21,7 +21,7 @@ const AboutMe = () => {
           properties: [
             {
               startValue: 20,
-              endValue: -20,
+              endValue: -16,
               unit: '%',
               property: 'translateY'
             }
