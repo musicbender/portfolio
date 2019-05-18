@@ -7,9 +7,8 @@ import cn from 'classnames/bind';
 import style from './cavie-dots.css';
 const cx = cn.bind(style);
 
-const CavieDots = ({ atBottom, bottom }) => {
+const CavieDots = ({ atBottom, bottom, baseStart }) => {
   const dotAmount = 25;
-  const baseStart = 1000;
   const accumulator = 100;
 
   const getPlxData = (i) => {
@@ -109,11 +108,14 @@ const CavieDots = ({ atBottom, bottom }) => {
 }
 
 CavieDots.propTypes = {
-
+  baseStart: PropTypes.number,
+  atBottom: PropTypes.bool,
+  bottom: PropTypes.number
 }
 
 CavieDots.defaultProps = {
-
+  baseStart: 0,
+  bottom: config.homeBottom
 }
 
 export default CavieDots;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ItemInfo from './item-info';
 import Plx from 'react-plx';
 import Button from '../_global/button';
+import { config } from './config.json';
 import cn from 'classnames/bind';
 import style from './work-item.css';
 const cx = cn.bind(style);
@@ -13,7 +14,7 @@ const WorkItem = ({
   isStopped,
   handleWorkStops
 }) => {
-  const baseEnd = 1400;
+  const baseEnd = config.baseTop;
   const accumulator = 535;
   const imgDir = `${process.env.ASSET_ROOT}assets/images/recent-work/`;
 

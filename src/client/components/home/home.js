@@ -4,12 +4,14 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { throttle } from '../../util/util';
 import { config } from '../../../shared/config.json';
+import { config as recentWorkConf } from '../recent-work/config.json';
 import cn from 'classnames/bind';
 import style from './home.css';
 const cx = cn.bind(style);
 
 // sections
 import Header from '../header';
+import AboutMe from '../about-me';
 import RecentWork from '../recent-work';
 import CavieDots from '../cavie-dots';
 import Contact from '../contact';
@@ -53,8 +55,9 @@ class Home extends Component {
         <div className={cx(style.outterWrapper)}>
           <Header />
           <div className={cx(style.wrapper)}>
+            <AboutMe />
             <RecentWork />
-            <CavieDots atBottom={this.state.atBottom} bottom={this.bottom} />
+            <CavieDots baseStart={recentWorkConf.baseTop - 400} atBottom={this.state.atBottom} />
             <Contact atBottom={this.state.atBottom} />
           </div>
         </div>

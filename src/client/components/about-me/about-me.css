@@ -2,5 +2,18 @@
 @import '../../style/helpers/mixins';
 
 .about-me {
-
+  margin: 0 0 20em 50%;
+  width: 50%;
+  > [class*="heading"] {
+    margin-left: 0;
+    margin-bottom: 5em;
+  }
+  .content-box {
+    padding: 2em 4em;
+    background-color: $darker-black;
+    > p {
+      line-height: 1.87;
+      font-size: 1rem;
+    }
+  }
 }

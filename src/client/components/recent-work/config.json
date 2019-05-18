@@ -1,4 +1,7 @@
 {
+  "config": {
+    "baseTop": 2200
+  },
   "workData": [
     {
       "id": "blade-and-soul",

@@ -38,6 +38,8 @@ $footer-height: 5em;
 $white: #fff;
 $off-white: rgb(245,245,245);
 $black: rgb(40,40,40);
+$dark-black: rgb(30, 30, 30);
+$darker-black: rgb(17, 17, 17);
 $matte-black: #000;
 $darker-grey: #242424;
 $dark-grey: rgb(57,57,57);
@@ -48,7 +50,7 @@ $orange: #F98D51;
 $aqua: #32D2C9;
 
 /******* Mode Colors *******/
-$dark-bg: rgb(30, 30, 30);
+$dark-bg: $dark-black;
 $dark-lines: rgba($matte-black, 0.5);
 $light-bg: $white;
 $light-lines: rgba($matte-black, 0.1);
