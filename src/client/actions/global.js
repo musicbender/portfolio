@@ -3,7 +3,8 @@ import {
   SPLASH_CHANGED,
   TRANSPORT_CHANGED,
   MENU_CHANGED,
-  MODE_CHANGED
+  MODE_CHANGED,
+  RECENT_WORK_TOP_SET
 } from '../configs/constants';
 
 export function loadPage() {
@@ -30,5 +31,12 @@ export function changeMenu(open) {
   return {
     type: MENU_CHANGED,
     payload: open
+  }
+}
+
+export function setRecentWorkTop(value) {
+  return {
+    type: RECENT_WORK_TOP_SET,
+    payload: value
   }
 }

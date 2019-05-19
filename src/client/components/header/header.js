@@ -10,7 +10,7 @@ import { dotGridA, dotGridB, dotGridC, dotGridD } from './dots';
 import { countLongestArray, hasWindow } from '../../util/util';
 import { startSequence } from '../../util/animation';
 import { triangles } from './config.json';
-import { config } from '../../../shared/config.json';
+import { meta } from '../../../shared/config.json';
 import style from './header.css';
 const cx = cn.bind(style);
 
@@ -106,8 +106,8 @@ class Header extends Component {
           index={this.state.dotGridIndex}
         />
         <div className={cx(style.titleWrapper)}>
-          <h1 className={cx(style.title)}>{config.name}</h1>
-          <h2 className={cx(style.subtitle)}>{config.role}</h2>
+          <h1 className={cx(style.title)}>{meta.name}</h1>
+          <h2 className={cx(style.subtitle)}>{meta.role}</h2>
         </div>
       </div>
     );

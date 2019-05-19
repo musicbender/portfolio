@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ItemInfo from './item-info';
 import Plx from 'react-plx';
 import Button from '../_global/button';
-import { config } from './config.json';
+import { workItemPlx } from './config.json';
 import cn from 'classnames/bind';
 import style from './work-item.css';
 const cx = cn.bind(style);
@@ -12,20 +12,21 @@ const WorkItem = ({
   item,
   index,
   isStopped,
-  handleWorkStops
+  handleWorkStops,
+  baseTop
 }) => {
-  const baseEnd = config.baseTop;
+  const baseEnd = baseTop;
   const accumulator = 535;
   const imgDir = `${process.env.ASSET_ROOT}assets/images/recent-work/`;
 
-  const getPlxData = (item, i) => {
+  const getPlxData = (seg, i) => {
     return [
       {
         start: 'self',
         end: baseEnd + (accumulator * index),
         properties: [
           {
-            startValue: item.startValue,
+            startValue: seg.startValue,
             endValue: 0,
             unit: 'em',
             property: 'translateY'
@@ -36,7 +37,7 @@ const WorkItem = ({
   }
 
   const renderImageSection = () => {
-    return item.plx.image.map((seg, i) => {
+    return workItemPlx.image.map((seg, i) => {
       return (
         <Plx
           className={cx(style.parallax, style[`index-${i}`])}
@@ -65,7 +66,7 @@ const WorkItem = ({
   }
 
   const renderInfoSection = () => {
-    return item.plx.info.map((seg, i) => {
+    return workItemPlx.info.map((seg, i) => {
       return (
         <Plx
           className={cx(style.parallax, style[`index-${i}`])}
@@ -75,7 +76,7 @@ const WorkItem = ({
           <div className={cx(style.parallaxInner)}>
             <div className={cx(style.wrapper)}>
               <ItemInfo
-                title={item.label}
+                title={item.title}
                 description={item.description}
                 buttonUrl={item.url}
                 buttonClasses={cx(
@@ -100,7 +101,7 @@ const WorkItem = ({
       <div className={cx(style.infoOutterWrapper)}>
         {renderInfoSection()}
         <ItemInfo
-          title={item.label}
+          title={item.title}
           description={item.description}
           buttonUrl={item.url}
           isStatic={true}

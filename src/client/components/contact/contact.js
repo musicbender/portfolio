@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import DotFormation from '../_particles/dot-formation';
-import { config } from '../../../shared/config.json';
+import { meta } from '../../../shared/config.json';
 import { hasWindow, throttle, minMax } from '../../util/util';
 import cn from 'classnames/bind';
 import style from './contact.css';
@@ -57,7 +57,7 @@ class Contact extends Component {
   handleButton(e) {
     e.preventDefault();
     if (hasWindow()) {
-      window.location.href = `mailto:${config.email}`;
+      window.location.href = `mailto:${meta.email}`;
     }
   }
 

@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import update from 'immutability-helper';
 import PropTypes from 'prop-types';
 import Heading from '../_global/heading';
 import Particles from './particles';
 import WorkItem from './work-item';
-import cn from 'classnames/bind';
-import { workData } from './config.json';
+import { filterProjectData } from '../../util/data';
 import contentConf from '../../configs/content';
-import { config } from '../../../shared/config';
+import { config } from '../../../shared/config.json';
+import { setRecentWorkTop } from '../../actions/global';
+import cn from 'classnames/bind';
 import style from './recent-work.css';
 const cx = cn.bind(style);
 
@@ -16,10 +19,17 @@ class RecentWork extends Component {
     super(props);
     this.handleWorkStops = this.handleWorkStops.bind(this);
     this.content = contentConf.home.sections.recentWork;
-    this.defaultWorkStops = workData.map(w => false);
+    this.workData = filterProjectData('work');
+    this.defaultWorkStops = this.workData.map(w => false);
     this.state = {
       workStops: this.defaultWorkStops
     }
+  }
+
+  componentDidMount() {
+    const section = document.getElementById('recent-work-section');
+    const rect = section.getBoundingClientRect()
+    this.props.setRecentWorkTop(Math.round(rect.top - 200 + window.scrollY));
   }
 
   handleWorkStops(index, stopped) {
@@ -38,13 +48,14 @@ class RecentWork extends Component {
   }
 
   renderWorkItems() {
-    return workData.map((item, i) => {
+    return this.workData.map((item, i) => {
       return i < config.workItemsAmount && (
         <WorkItem
           item={item}
           index={i}
           isStopped={this.state.workStops[i]}
           handleWorkStops={this.handleWorkStops}
+          baseTop={this.props.recentWorkTop}
           key={item.title + `${(i * 7)}`}
         />
       );
@@ -52,8 +63,9 @@ class RecentWork extends Component {
   }
 
   render() {
+    console.log(this.workData);
     return (
-      <div className={cx(style.recentWork)}>
+      <div id="recent-work-section" className={cx(style.recentWork)}>
         <Heading text={this.content.heading} />
         <div className={cx(style.parentWrapper)}>
           <div className={cx(style.workItemsWrapper)}>
@@ -66,12 +78,16 @@ class RecentWork extends Component {
   }
 }
 
-RecentWork.propTypes = {
-
+const mapStateToProps = ({ global }) => {
+  return {
+    recentWorkTop: global.recentWorkTop
+  }
 }
 
-RecentWork.defaultProps = {
-
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({
+    setRecentWorkTop
+  }, dispatch);
 }
 
-export default RecentWork;
+export default connect(mapStateToProps, mapDispatchToProps)(RecentWork);

@@ -4,7 +4,8 @@ module.exports = {
     splashOpen: true,
     transportOpen: false,
     menuOpen: false,
-    mode: 'dark'
+    mode: 'dark',
+    recentWorkTop: 2200
   },
   stats: {
     data: null,

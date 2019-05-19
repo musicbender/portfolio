@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { throttle } from '../../util/util';
 import { config } from '../../../shared/config.json';
-import { config as recentWorkConf } from '../recent-work/config.json';
 import cn from 'classnames/bind';
 import style from './home.css';
 const cx = cn.bind(style);
@@ -27,7 +26,6 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0);
     window.addEventListener('scroll', this.handleScroll);
   }
 
@@ -61,7 +59,7 @@ class Home extends Component {
           <div className={cx(style.wrapper)}>
             <AboutMe />
             <RecentWork />
-            <CavieDots baseStart={recentWorkConf.baseTop - 400} atBottom={this.state.atBottom} />
+            <CavieDots baseStart={this.props.recentWorkTop - 400} atBottom={this.state.atBottom} />
             <Contact atBottom={this.state.atBottom} />
           </div>
         </div>
@@ -74,7 +72,8 @@ const mapStateToProps = ({ global }) => {
   return {
     pageLoaded: global.pageLoaded,
     splashOpen: global.splashOpen,
-    mode: global.mode
+    mode: global.mode,
+    recentWorkTop: global.recentWorkTop
   }
 }
 

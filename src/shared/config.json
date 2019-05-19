@@ -1,8 +1,13 @@
 {
-  "config": {
+  "meta": {
     "role": "web_engineer",
     "name": "Pat Jacobs",
+    "title": "Pat Jacobs :: Web Engineer",
+    "description": "Pat Jacobs is a full-stack web enginner based in Orange County, California.",
     "email": "musicbender@gmail.com",
+    "suffix": "  :: Pat Jacobs :: Web Engineer"
+  },
+  "config": {
     "gridLines": [8, 17, 8, 17, 34, 8, 8],
     "pageLoadTimeout": 4000,
     "splashScreenTimeout": 6000,
@@ -20,8 +25,8 @@
     "home": {
       "id": "home",
       "path": "/",
-      "title": "Pat Jacobs | Web Engineer",
-      "description": "Pat Jacobs is an experience web enginner located in Orange County, California"
+      "title": "Pat Jacobs :: Web Engineer",
+      "description": "Pat Jacobs is a full-stack web enginner based in Orange County, California."
     }
   }
 }

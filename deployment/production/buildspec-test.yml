@@ -3,7 +3,6 @@ version: 0.2
 env:
   variables:
     NODE_ENV: test
-    APP_ENV: test
 
 phases:
   pre_build:

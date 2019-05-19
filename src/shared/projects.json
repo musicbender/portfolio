@@ -1,6 +1,12 @@
-{
-  "lineage2": {
+[
+  {
+    "id": "lineage2",
     "title": "Lineage 2",
+    "type": "work",
+    "imageDesktop": "lineage2.jpg",
+    "imageMobile": "lineage2.jpg",
+    "description": "Official website for Lineage2 MMORPG",
+    "disabled": false,
     "techList": [
       "React",
       "SCSS",
@@ -52,8 +58,70 @@
       }
     ]
   },
-  "mugmath": {
+  {
+    "id": "aion",
+    "title": "Aion Online",
+    "type": "work",
+    "imageDesktop": "aion.jpg",
+    "imageMobile": "aion.jpg",
+    "description": "Official website for Aion Online MMORPG",
+    "disabled": false,
+    "techList": [
+      "React",
+      "SCSS",
+      "Node",
+      "Express",
+      "MongoDB",
+      "Webpack 4",
+      "REST",
+      "GraphQL"
+    ],
+    "url": "https://aiononline.com",
+    "content": []
+  },
+  {
+    "id": "aion-legions-of-war",
+    "title": "Aion: Legions of War",
+    "type": "work",
+    "imageDesktop": "aion-legions-of-war.jpg",
+    "imageMobile": "aion-legions-of-war.jpg",
+    "description": "Official website the mobile game Aion: Legions of War",
+    "disabled": false,
+    "techList": [
+      "React",
+      "SCSS",
+      "Webpack 4",
+      "Node"
+    ],
+    "url": "https://aionlegionsofwar.com",
+    "content": []
+  },
+  {
+    "id": "launcher",
+    "title": "NCSOFT Game Launcher",
+    "type": "work",
+    "imageDesktop": "aion-legions-of-war.jpg",
+    "imageMobile": "aion-legions-of-war.jpg",
+    "description": "Official website the mobile game Aion: Legions of War",
+    "disabled": false,
+    "techList": [
+      "React",
+      "SCSS",
+      "Webpack 4",
+      "Node",
+      "AWS"
+    ],
+    "url": "https://aionlegionsofwar.com",
+    "content": []
+  },
+  {
+    "id": "mugmath",
     "title": "Mug Math",
+    "type": "experiment",
+    "imageDesktop": "bns.jpg",
+    "imageMobile": "bns.jpg",
+    "description": "A Progressive Web App that helps coffee geeks like myself brew and roast better coffee",
+    "disabled": true,
     "techList": [
       "React",
       "Redux",
@@ -97,8 +165,14 @@
       }
     ]
   },
-  "bladeandsoul": {
+  {
+    "id": "blade-and-soul",
     "title": "Blade and Soul",
+    "type": "work",
+    "imageDesktop": "bns.jpg",
+    "imageMobile": "bns.jpg",
+    "description": "Official website for Blade and Soul MMORPG",
+    "disabled": false,
     "techList": [
       "React",
       "Jekyll",
@@ -110,7 +184,7 @@
       "REST",
       "MongoDB"
     ],
-    "url": "https://bladeandsoul.com/en",
+    "url": "https://bladeandsoul.com",
     "content": [
       {
         "type": "img",
@@ -137,8 +211,14 @@
       }
     ]
   },
-  "bns-esports": {
+  {
+    "id": "bns-esports",
     "title": "B&S Esports",
+    "type": "work",
+    "imageDesktop": "bns.jpg",
+    "imageMobile": "bns.jpg",
+    "description": "Official Esports website for Blade and Soul",
+    "disabled": true,
     "techList": [
       "React",
       "Redux",
@@ -149,7 +229,7 @@
       "Node",
       "MongoDB"
     ],
-    "url": "https://esports.bladeandsoul.com/en/",
+    "url": "https://esports.bladeandsoul.com",
     "content": [
       {
         "type": "img",
@@ -181,8 +261,14 @@
       }
     ]
   },
-  "photo-contest": {
+  {
+    "id": "photo-content",
     "title": "Photo Contest",
+    "type": "experiment",
+    "imageDesktop": "bns.jpg",
+    "imageMobile": "bns.jpg",
+    "description": "Progressive Web App to create and manage photo contests with user voting functionality",
+    "disabled": false,
     "techList": [
       "React",
       "Redux",
@@ -220,8 +306,14 @@
       }
     ]
   },
-  "sencha": {
+  {
+    "id": "sencha",
     "title": "Sencha",
+    "type": "experiment",
+    "imageDesktop": "bns.jpg",
+    "imageMobile": "bns.jpg",
+    "description": "Progressive Web App that runs functional tests for multiple sites and displays test data.",
+    "disabled": false,
     "techList": [
       "React",
       "Redux",
@@ -265,8 +357,14 @@
       }
     ]
   },
-  "launcher-tool": {
+  {
+    "id": "launcher-tool",
     "title": "Launcher Tool",
+    "type": "experiment",
+    "imageDesktop": "bns.jpg",
+    "imageMobile": "bns.jpg",
+    "description": "Large-scale web app for managing and publishes content for NCSOFT Launcher 2.0",
+    "disabled": false,
     "techList": [
       "Node",
       "Express",
@@ -320,8 +418,14 @@
       }
     ]
   },
-  "coin-counter": {
+  {
+    "id": "coin-counter",
     "title": "Coin Counter",
+    "type": "experiment",
+    "imageDesktop": "bns.jpg",
+    "imageMobile": "bns.jpg",
+    "description": "Counts how many of each user-defined coin you need after input",
+    "disabled": false,
     "techList": [
       "React",
       "Redux",
@@ -342,8 +446,14 @@
       }
     ]
   },
-  "carbine-studios": {
+  {
+    "id": "carbine-studios",
     "title": "Carbine Studios",
+    "type": "work",
+    "imageDesktop": "bns.jpg",
+    "imageMobile": "bns.jpg",
+    "description": "Official website for Carbine Studios game company",
+    "disabled": true,
     "techList": [
       "Jekyll",
       "jQuery",
@@ -367,4 +477,4 @@
       }
     ]
   }
-}
+]
