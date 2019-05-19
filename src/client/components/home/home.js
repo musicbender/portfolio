@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Page from '../_global/page';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -15,6 +16,7 @@ import RecentWork from '../recent-work';
 import CavieDots from '../cavie-dots';
 import Contact from '../contact';
 
+@Page()
 class Home extends Component {
   constructor(props) {
     super(props);

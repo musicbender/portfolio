@@ -25,10 +25,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 0);
-
     window.requestTimeout(() => {
       this.props.changeSplash(false);
     }, config.splashScreenTimeout);

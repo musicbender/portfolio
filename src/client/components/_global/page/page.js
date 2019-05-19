@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { getMetaData } from '../../../../shared/controllers/meta';
-import { hasWindow } from '../../../utils/util';
+import { hasWindow } from '../../../util/util';
 
 const Page = (config) => (WrappedComponent) => {
   return class extends Component {
@@ -14,6 +14,8 @@ const Page = (config) => (WrappedComponent) => {
     }
 
     componentDidMount() {
+      console.log(`boom`);
+      window.scrollTo(0, 0);
       this.fetchMetaData();
     }
 
@@ -37,14 +39,14 @@ const Page = (config) => (WrappedComponent) => {
 
     setHelmet() {
       const { title, description } = this.state.metaData;
-      return hasWindow() && (
+      return (
         <Helmet>
           <title>{title}</title>
           <meta name="description" content={description} />
           <meta property="og:title" content={title} />
           <meta property="og:description" content={description} />
         </Helmet>
-      )
+      );
     }
 
     pushDataLayer(data = this.state.metaData) {
@@ -62,6 +64,7 @@ const Page = (config) => (WrappedComponent) => {
       return (
         <div>
           {
+            hasWindow() &&
             this.state.metaData &&
             this.setHelmet()
           }
