@@ -63,7 +63,6 @@ class RecentWork extends Component {
   }
 
   render() {
-    console.log(this.workData);
     return (
       <div id="recent-work-section" className={cx(style.recentWork)}>
         <Heading text={this.content.heading} />

@@ -1,0 +1,10 @@
+script.
+  var css = document.createElement('link');
+  css.rel = 'stylesheet';
+  css.href = '/style.css';
+  css.type = 'text/css';
+  var godefer = document.getElementsByTagName('link')[0];
+  godefer.parentNode.insertBefore(css, godefer);
+
+script(type='text/javascript', src=assetPath + 'bundle.js', defer='')
+script(type='text/javascript', src=assetPath + 'vendor.bundle.js', defer='')

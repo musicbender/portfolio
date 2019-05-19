@@ -7,15 +7,19 @@ import mongoose from 'mongoose';
 import React from 'react';
 import graphqlHTTP from 'express-graphql';
 import schema from './api';
-import restAPI from './rest-api';
 import { createStore } from 'redux';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router';
 import App from '../client/components/app';
 import reducers from '../client/reducers';
-import graphQLSetupMiddleware from './middleware/graphql-middleware';
-import headersMiddleware from './middleware/headers-middleware';
+import {
+  headersMiddleware,
+  graphQLMiddleware,
+  logMiddleware,
+  requestIDMiddleware,
+  metaDataMiddleware,
+} from './middleware';
 
 //--//--//--// INIT //--//--//--//
 const app = new express();
@@ -65,9 +69,12 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 //--//--//--// MIDDLEWARES //--//--//--//
+app.use(requestIDMiddleware);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(headersMiddleware);
+app.use(logMiddleware());
+app.use(metaDataMiddleware);
 
 if (process.env.SERVER_STATIC === 'true') {
   app.use(express.static(path.join(__dirname, 'public/')));
@@ -77,16 +84,13 @@ if (process.env.SERVER_STATIC === 'true') {
 app.use(
   '/graphql',
   bodyParser.json(),
-  graphQLSetupMiddleware,
+  graphQLMiddleware,
   graphqlHTTP(req => ({
     schema,
     graphiql: false,
     context: { req },
     pretty: process.env.NODE_ENV === 'development'
 })));
-
-//--//--//--// REST API //--//--//--//
-app.use('/rest-api', restAPI);
 
 //--//--//--// SERVER SIDE RENDERING //--//--//--//
 app.get('*', (req, res) => {
@@ -106,6 +110,9 @@ app.get('*', (req, res) => {
     res.end();
   }
 
+  console.log(`meta data:`);
+  console.log(req.metaData);
+
   const preloadedState = store.getState();
 
   res
@@ -114,7 +121,9 @@ app.get('*', (req, res) => {
     .render('index', {
       html,
       preloadedState,
-      criticalCSS
+      criticalCSS,
+      metaData: req.metaData,
+      assetPath: process.env.ASSET_PATH || '/'
     });
 });
 

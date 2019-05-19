@@ -2,10 +2,10 @@
   "meta": {
     "role": "web_engineer",
     "name": "Pat Jacobs",
-    "title": "Pat Jacobs :: Web Engineer",
+    "title": "Pat Jacobs | Web Engineer",
     "description": "Pat Jacobs is a full-stack web enginner based in Orange County, California.",
     "email": "musicbender@gmail.com",
-    "suffix": "  :: Pat Jacobs :: Web Engineer"
+    "suffix": "  | Pat Jacobs | Web Engineer"
   },
   "config": {
     "gridLines": [8, 17, 8, 17, 34, 8, 8],
@@ -13,7 +13,7 @@
     "splashScreenTimeout": 6000,
     "transportDuration": 2500,
     "workItemsAmount": 5,
-    "homeBottom": 5870,
+    "homeBottom": 5500,
     "colors": {
       "purple": "#633DFF",
       "aqua": "#32D2C9",
@@ -25,8 +25,13 @@
     "home": {
       "id": "home",
       "path": "/",
-      "title": "Pat Jacobs :: Web Engineer",
+      "title": "Pat Jacobs | Web Engineer",
       "description": "Pat Jacobs is a full-stack web enginner based in Orange County, California."
+    },
+    "caseStudy": {
+      "id": "caseStudy",
+      "path": "/case-study/:project",
+      "dataDependency": "projects"
     }
   }
 }
