@@ -4,8 +4,11 @@ module.exports = {
     splashOpen: true,
     transportOpen: false,
     menuOpen: false,
-    mode: 'dark',
-    recentWorkTop: 2200
+    mode: 'dark'
+  },
+  home: {
+    recentWorkTop: 2200,
+    contactTop: 5500
   },
   stats: {
     data: null,

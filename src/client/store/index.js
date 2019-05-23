@@ -1,13 +1,14 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import promise from 'redux-promise';
 import reducers from '../reducers';
-import { globalMiddleware } from '../middleware';
+import { globalMiddleware, homeMiddleware } from '../middleware';
 
 const preloadedState = window.__PRELOADED_STATE__;
 delete window.__PRELOADED_STATE__;
 
 let middleware = [
   globalMiddleware,
+  homeMiddleware,
   promise
 ];
 

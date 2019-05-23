@@ -21,7 +21,6 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.handleScroll = throttle(this.handleScroll.bind(this), 50);
-    this.bottom = config.homeBottom;
     this.state = {
       atBottom: false
     }
@@ -36,13 +35,13 @@ class Home extends Component {
   }
 
   handleScroll(e) {
-    if (window.scrollY >= this.bottom) {
+    if (window.scrollY >= this.props.contactTop) {
       if (!this.state.atBottom) {
         this.setState({ atBottom: true });
       }
     }
 
-    if (window.scrollY < this.bottom) {
+    if (window.scrollY < this.props.contactTop) {
       if (this.state.atBottom) {
         this.setState({ atBottom: false });
       }
@@ -70,19 +69,14 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = ({ global }) => {
+const mapStateToProps = ({ global, home }) => {
   return {
     pageLoaded: global.pageLoaded,
     splashOpen: global.splashOpen,
     mode: global.mode,
-    recentWorkTop: global.recentWorkTop
+    recentWorkTop: home.recentWorkTop,
+    contactTop: home.contactTop
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({
-
-  }, dispatch);
-}
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Home));
+export default withRouter(connect(mapStateToProps)(Home));

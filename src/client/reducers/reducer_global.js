@@ -4,8 +4,7 @@ import {
   SPLASH_CHANGED,
   MODE_CHANGED,
   TRANSPORT_CHANGED,
-  MENU_CHANGED,
-  RECENT_WORK_TOP_SET
+  MENU_CHANGED
 } from '../configs/constants';
 
 export default function global(state = initialState.global, action) {
@@ -21,8 +20,6 @@ export default function global(state = initialState.global, action) {
       return { ...state, menuhOpen: payload };
     case MODE_CHANGED:
       return { ...state, mode: payload };
-    case RECENT_WORK_TOP_SET:
-      return { ...state, recentWorkTop: payload };
     default:
       return state;
   }

@@ -122,7 +122,7 @@ app.get('*', (req, res) => {
       html,
       preloadedState,
       criticalCSS,
-      metaData: req.metaData,
+      metaData: req.metaData || null,
       assetPath: process.env.ASSET_PATH || '/'
     });
 });

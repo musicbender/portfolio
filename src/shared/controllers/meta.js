@@ -12,7 +12,6 @@ import fetchData from '../../server/controllers/data';
 
 export const getMetaData = (path, metaData, externalData) => {
   return new Promise((resolve, reject) => {
-    console.log(`path: ${path}`);
     if (pathIsFile(path)) {
       resolve();
       return;

@@ -13,7 +13,7 @@
     background-color: $darker-black;
     > p {
       line-height: 1.87;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: rgba($white, 0.65);
     }
   }

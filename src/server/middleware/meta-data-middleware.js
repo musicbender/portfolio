@@ -4,8 +4,6 @@ const metaDataMiddleware = (req, res, next) => {
   getMetaData(req.path)
     .then((result) => {
       if (result) {
-        console.log(`middleare result:`);
-        console.log(result);
         req.metaData = result.metaData || null;
       }
 

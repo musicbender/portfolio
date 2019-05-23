@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import DotFormation from '../_particles/dot-formation';
+import { setContactTop } from '../../actions/home';
 import { meta } from '../../../shared/config.json';
 import { hasWindow, throttle, minMax } from '../../util/util';
 import cn from 'classnames/bind';
@@ -32,6 +35,7 @@ class Contact extends Component {
     const rect = elm.getBoundingClientRect();
     elm.addEventListener('mousemove', throttle(this.handleMouseMove(rect), 150));
     this.setState({ dotsWidth: rect.width, dotsHeight: rect.height });
+    this.props.setContactTop(rect.top - (rect.height / 2));
   }
 
   componentDidUpdate(prevProps) {
@@ -88,4 +92,16 @@ class Contact extends Component {
   }
 }
 
-export default Contact;
+const mapStateToProps = ({ global, home }) => {
+  return {
+    contactTop: home.contactTop
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({
+    setContactTop
+  }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Contact);

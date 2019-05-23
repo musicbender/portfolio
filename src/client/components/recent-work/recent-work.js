@@ -28,8 +28,8 @@ class RecentWork extends Component {
 
   componentDidMount() {
     const section = document.getElementById('recent-work-section');
-    const rect = section.getBoundingClientRect()
-    this.props.setRecentWorkTop(Math.round(rect.top - 200 + window.scrollY));
+    const rect = section.getBoundingClientRect();
+    this.props.setRecentWorkTop(rect.top - 200);
   }
 
   handleWorkStops(index, stopped) {
