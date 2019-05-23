@@ -15,7 +15,10 @@ const ItemInfo = ({
   <div className={cx(style.itemInfo)}>
     <h5>{title}</h5>
     <p>{description}</p>
-    <Button text={buttonText} url={buttonUrl} classNames={buttonClasses} />
+    {
+      !!buttonUrl &&
+      <Button text={buttonText} url={buttonUrl} classNames={buttonClasses} />
+    }
   </div>
 );
 

@@ -29,7 +29,7 @@ class RecentWork extends Component {
   componentDidMount() {
     const section = document.getElementById('recent-work-section');
     const rect = section.getBoundingClientRect();
-    this.props.setRecentWorkTop(rect.top - 200);
+    this.props.setRecentWorkTop(rect.top);
   }
 
   handleWorkStops(index, stopped) {
