@@ -80,21 +80,50 @@
     "content": []
   },
   {
-    "id": "aion-legions-of-war",
-    "title": "Aion: Legions of War",
+    "id": "blade-and-soul",
+    "title": "Blade and Soul",
     "type": "work",
-    "imageDesktop": "aion-legions-of-war.jpg",
-    "imageMobile": "aion-legions-of-war.jpg",
-    "description": "Official website the mobile game Aion: Legions of War",
+    "imageDesktop": "bns.jpg",
+    "imageMobile": "bns.jpg",
+    "description": "Official website for Blade and Soul MMORPG",
     "disabled": false,
     "techList": [
       "React",
+      "Jekyll",
       "SCSS",
-      "Webpack 4",
-      "Node"
+      "Mocha",
+      "Grunt",
+      "Node",
+      "Express",
+      "REST",
+      "MongoDB"
     ],
-    "url": "https://aionlegionsofwar.com",
-    "content": []
+    "url": "https://bladeandsoul.com",
+    "content": [
+      {
+        "type": "img",
+        "imgFile": "bns-1.jpg",
+        "caption": "Carousel banner for the landing page"
+      },
+      {
+        "type": "text",
+        "p1": "Blade and Soul is a popular AAA Massively Multiplayer Online game. The website serves as a marketing site, game news resource, and online store for in-game items."
+      },
+      {
+        "type": "img",
+        "imgFile": "bns-2.jpg",
+        "caption": "Event page for the Celestial Dawn update"
+      },
+      {
+        "type": "text",
+        "p1": "Much of the content on this site is managed through a custom headless CMS (built with Node and MongoDB) that I help build apon and maintain."
+      },
+      {
+        "type": "img",
+        "imgFile": "bns-3.jpg",
+        "caption": "Previous updates page"
+      }
+    ]
   },
   {
     "id": "launcher",
@@ -113,6 +142,33 @@
     ],
     "url": "",
     "content": []
+  },
+  {
+    "id": "aion-legions-of-war",
+    "title": "Aion: Legions of War",
+    "type": "work",
+    "imageDesktop": "aion-legions-of-war.jpg",
+    "imageMobile": "aion-legions-of-war.jpg",
+    "description": "Official website the mobile game Aion: Legions of War",
+    "disabled": false,
+    "techList": [
+      "React",
+      "SCSS",
+      "Webpack 4",
+      "Node"
+    ],
+    "url": "https://aionlegionsofwar.com",
+    "content": [
+      {
+        "type": "text",
+        "p1": "I built this marketing site for NCSOFT's first mobile game title in the U.S. The site serves to promote the game, but also inform potential players on game characters, features and storyline."
+      },
+      {
+        "type": "text",
+        "p1": "This project is a static site built using React and React Router 4. Many of the components were custom built and added to our reuseable react component library that I archetected and built as well. One of these components, the web comics view, was it's own reuseable npm package. This ties into a custom universal web app that acts as a CMS for the web comics content. I built the web comics CMS with react, but also AWS serverless technology. Mainly, the entire backend of the CMS is run with lambda functions, API Gateway, CloudWatch events, and DynamoDB.",
+        "p2": "The web comics content is then published from the custom CMS and the web comics react component fetches it. SInce the CMS handle multiple webcomics, all you need to do is tell the react component which comic to fetch. We plan on adding web comics for other game marketing sites so making this reuseable was essential."
+      }
+    ]
   },
   {
     "id": "mugmath",
@@ -162,52 +218,6 @@
       {
         "type": "text",
         "p1": "On top of that, it was also my goal to get a perfect lighthouse audit score. Aside from SEO being 90%, I accomplished this goal and continue to improve it as the lighthouse standards change."
-      }
-    ]
-  },
-  {
-    "id": "blade-and-soul",
-    "title": "Blade and Soul",
-    "type": "work",
-    "imageDesktop": "bns.jpg",
-    "imageMobile": "bns.jpg",
-    "description": "Official website for Blade and Soul MMORPG",
-    "disabled": false,
-    "techList": [
-      "React",
-      "Jekyll",
-      "SCSS",
-      "Mocha",
-      "Grunt",
-      "Node",
-      "Express",
-      "REST",
-      "MongoDB"
-    ],
-    "url": "https://bladeandsoul.com",
-    "content": [
-      {
-        "type": "img",
-        "imgFile": "bns-1.jpg",
-        "caption": "Carousel banner for the landing page"
-      },
-      {
-        "type": "text",
-        "p1": "Blade and Soul is a popular AAA Massively Multiplayer Online game. The website serves as a marketing site, game news resource, and online store for in-game items."
-      },
-      {
-        "type": "img",
-        "imgFile": "bns-2.jpg",
-        "caption": "Event page for the Celestial Dawn update"
-      },
-      {
-        "type": "text",
-        "p1": "Much of the content on this site is managed through a custom headless CMS (built with Node and MongoDB) that I help build apon and maintain."
-      },
-      {
-        "type": "img",
-        "imgFile": "bns-3.jpg",
-        "caption": "Previous updates page"
       }
     ]
   },

@@ -110,9 +110,6 @@ app.get('*', (req, res) => {
     res.end();
   }
 
-  console.log(`meta data:`);
-  console.log(req.metaData);
-
   const preloadedState = store.getState();
 
   res
@@ -122,7 +119,7 @@ app.get('*', (req, res) => {
       html,
       preloadedState,
       criticalCSS,
-      metaData: req.metaData || null,
+      metaData: req.metaData || {},
       assetPath: process.env.ASSET_PATH || '/'
     });
 });

@@ -77,9 +77,9 @@ class RecentWork extends Component {
   }
 }
 
-const mapStateToProps = ({ global }) => {
+const mapStateToProps = ({ home }) => {
   return {
-    recentWorkTop: global.recentWorkTop
+    recentWorkTop: home.recentWorkTop
   }
 }
 
