@@ -14,8 +14,8 @@ $logoOut: cubic-bezier(0.155, 0.425, 0.000, 0.900);
 $slow:       750ms;
 $moderate:   425ms;
 $fast:       250ms;
-$header-duration: 4.2s;
-$header-delay: 4s;
+$header-duration: 4200ms;
+$header-delay: 4000ms;
 /* $header-delay: 0s; */
 
 /*******Fonts*******/

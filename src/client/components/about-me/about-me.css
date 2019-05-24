@@ -2,11 +2,17 @@
 @import '../../style/helpers/mixins';
 
 .about-me {
+  position: relative;
   margin: 0 0 0 50%;
   width: 50%;
   height: 52em;
   > [class*="heading"] {
     margin-left: 0;
+  }
+  > .dot-grid-a {
+    position: absolute;
+    top: 18em;
+    left: -100%;
   }
   .content-box {
     padding: 2em 4em;

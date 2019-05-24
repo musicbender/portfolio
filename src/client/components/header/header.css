@@ -13,7 +13,14 @@
     transform: translate3d(-30vw, -24em, 0) rotate(0deg);
   }
   > [class*="triangle-parallax"] {
+    $accumulator: 400;
     position: absolute;
+    &[class*=small],
+    &[class*=medium] {
+      animation: enterUp $header-duration ease-out forwards;
+      opacity: 0;
+      transform: translate3d(0, 2em, 0);
+    }
     &[class*="giant-1"] {
       @mixin grid-position 4, left, %, right;
       top: 2em;
@@ -23,24 +30,34 @@
       }
     }
     &[class*="orange-1"] {
+      $delay: calc($(header-delay) + 1200ms);
       @mixin grid-position 2, left, %, right;
       top: 1em;
+      animation-delay: $delay;
     }
     &[class*="purple-1"] {
+      $delay: calc($(header-delay) + 800ms);
       @mixin grid-position 1, left, %, right;
       top: 45em;
+      animation-delay: $delay;
     }
     &[class*="yellow-1"] {
+      $delay: calc($(header-delay) + 0ms);
       @mixin grid-position 5, left, %, right;
       top: 10em;
+      animation-delay: $delay;
     }
     &[class*="aqua-1"] {
+      $delay: calc($(header-delay) + 400ms);
       @mixin grid-position 3, left, %, right;
       top: 29em;
+      animation-delay: $delay;
     }
     &[class*="yellow-2"] {
+      $delay: calc($(header-delay) + 1600ms);
       @mixin grid-position 2, left, %, right;
       top: 75em;
+      animation-delay: $delay;
     }
   }
   > .dot-grid-a {
@@ -80,7 +97,7 @@
       font-size: 1rem;
       font-weight: normal;
       letter-spacing: 0.67em;
-      animation: subTitleEnter $header-duration ease-out $header-delay forwards;
+      animation: enterUp $header-duration ease-out $header-delay forwards;
     }
   }
 }
@@ -96,7 +113,7 @@
   }
 }
 
-@keyframes subTitleEnter {
+@keyframes enterUp {
   0% {
     opacity: 0;
     transform: translate3d(0, 2em, 0);
