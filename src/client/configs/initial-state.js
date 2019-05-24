@@ -7,6 +7,7 @@ module.exports = {
     mode: 'dark'
   },
   home: {
+    aboutTop: 1200,
     recentWorkTop: 2200,
     contactTop: 5500
   },

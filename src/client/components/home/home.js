@@ -3,6 +3,7 @@ import Page from '../_global/page';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { setAboutTop } from '../../actions/home';
 import { throttle } from '../../util/util';
 import { config } from '../../../shared/config.json';
 import cn from 'classnames/bind';
@@ -20,8 +21,9 @@ import Contact from '../contact';
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.handleScroll = throttle(this.handleScroll.bind(this), 50);
+    this.handleScroll = throttle(this.handleScroll.bind(this), 40);
     this.state = {
+      atAbout: false,
       atBottom: false
     }
   }
@@ -46,6 +48,18 @@ class Home extends Component {
         this.setState({ atBottom: false });
       }
     }
+
+    if (window.scrollY >= this.props.aboutTop) {
+      if (!this.state.atAbout) {
+        this.setState({ atAbout: true });
+      }
+    }
+
+    if (window.scrollY < this.props.aboutTop) {
+      if (this.state.atAbout) {
+        this.setState({ atAbout: false });
+      }
+    }
   }
 
   handleBottom(atBottom = !this.state.atBottom) {
@@ -58,7 +72,10 @@ class Home extends Component {
         <div className={cx(style.outterWrapper)}>
           <Header />
           <div className={cx(style.wrapper)}>
-            <AboutMe />
+            <AboutMe
+              atAbout={this.state.atAbout}
+              setAboutTop={this.props.setAboutTop}
+            />
             <RecentWork />
             <CavieDots baseStart={this.props.recentWorkTop - 400} atBottom={this.state.atBottom} />
             <Contact atBottom={this.state.atBottom} />
@@ -69,14 +86,22 @@ class Home extends Component {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    setAboutTop
+  }, dispatch);
+}
+
 const mapStateToProps = ({ global, home }) => {
   return {
     pageLoaded: global.pageLoaded,
     splashOpen: global.splashOpen,
     mode: global.mode,
+    aboutTop: home.aboutTop,
     recentWorkTop: home.recentWorkTop,
-    contactTop: home.contactTop
+    contactTop: home.contactTop,
+
   }
 }
 
-export default withRouter(connect(mapStateToProps)(Home));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Home));

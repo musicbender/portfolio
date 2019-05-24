@@ -11,31 +11,41 @@ import cn from 'classnames/bind';
 import style from './about-me.css';
 const cx = cn.bind(style);
 
-const AboutMe = () => {
+const AboutMe = ({
+  atAbout,
+  setAboutTop
+}) => {
   const [ dotGridIndex, updateSequence ] = useState(0);
   const interval = 180;
-  const delay = 4000;
-
-  const handleIndex = (index) => {
-    updateSequence(index)
-  }
+  const delay = 0;
 
   // on mount
   useEffect(() => {
-    const dotGridLength = countLongestArray([
-      dotGridA
-    ]);
-
-    startSequence({
-      length: dotGridLength,
-      interval: interval,
-      delay: delay,
-      index: dotGridIndex
-    }, handleIndex);
+    const section = document.getElementById('about-section');
+    const rect = section.getBoundingClientRect();
+    setAboutTop(rect.top - 20);
   }, []);
 
+  // on update
+  useEffect(() => {
+    if (atAbout) {
+      const dotGridLength = countLongestArray([
+        dotGridA
+      ]);
+
+      startSequence({
+        length: dotGridLength,
+        interval: interval,
+        delay: delay,
+        index: dotGridIndex
+      }, updateSequence);
+    } else {
+      updateSequence(0);
+    }
+  }, [ atAbout ]);
+
   return (
-    <div className={cx(style.aboutMe)}>
+    <div id="about-section" className={cx(style.aboutMe)}>
       <Heading text={config.heading} />
       <DotGrid
         classNames={cx(style.dotGridA)}
@@ -65,6 +75,15 @@ const AboutMe = () => {
 
     </div>
   );
+}
+
+AboutMe.propTypes = {
+  atAbout: PropTypes.bool,
+  setAboutTop: PropTypes.func
+}
+
+AboutMe.defaultProps = {
+  atAbout: false
 }
 
 export default AboutMe;

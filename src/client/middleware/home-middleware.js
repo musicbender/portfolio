@@ -1,8 +1,9 @@
-import { RECENT_WORK_TOP_SET, CONTACT_TOP_SET } from '../configs/constants';
+import { ABOUT_TOP_SET, RECENT_WORK_TOP_SET, CONTACT_TOP_SET } from '../configs/constants';
 
 const homeMiddleware = store => next => action => {
   const { type, payload } = action;
   switch (type) {
+    case ABOUT_TOP_SET:
     case RECENT_WORK_TOP_SET:
     case CONTACT_TOP_SET: {
       let modifiedAction = action;
