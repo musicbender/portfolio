@@ -29,6 +29,7 @@ const Button = ({
           to={url}
           onClick={(callback) ? (e) => {callback(e)} : () => {return false}}
         >
+          <span className={cx(style.underscore)}></span>
           <p>{text}</p>
         </Link>
       );

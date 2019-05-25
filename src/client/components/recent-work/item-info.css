@@ -5,8 +5,17 @@
   width: calc($(s)vw + $(m)vw);
   text-align: left;
   color: rgba($white, 0.87);
-  background-color: color($purple shade(60%));
+  background-color: $dark-black;
+  border-width: 0.45em;
+  border-style: solid;
   padding: 1em;
+  transition: border-color $fast $easeInOut;
+  &:not(.stopped) {
+    border-color: color($purple shade(60%))
+  }
+  &.stopped {
+    border-color: color($purple shade(40%))
+  }
   > h5 {
     margin: 0 0 1em;
     font-family: $futura;

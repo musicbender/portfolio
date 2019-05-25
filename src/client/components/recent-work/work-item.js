@@ -79,6 +79,7 @@ const WorkItem = ({
                 title={item.title}
                 description={item.description}
                 buttonUrl={item.url}
+                isStopped={isStopped}
                 buttonClasses={cx(
                   'work',
                   'parallax',
@@ -104,7 +105,7 @@ const WorkItem = ({
           title={item.title}
           description={item.description}
           buttonUrl={item.url}
-          isStatic={true}
+          isStopped={isStopped}
           buttonClasses={cx(
             'work',
             'static',

@@ -17,7 +17,7 @@
     position: absolute;
     &[class*=small],
     &[class*=medium] {
-      animation: enterUp $header-duration ease-out forwards;
+      animation: triangleEnter $header-duration ease-out forwards;
       opacity: 0;
       transform: translate3d(0, 2em, 0);
     }
@@ -30,13 +30,13 @@
       }
     }
     &[class*="orange-1"] {
-      $delay: calc($(header-delay) + 1200ms);
+      $delay: calc($(header-delay) + 1800ms);
       @mixin grid-position 2, left, %, right;
       top: 1em;
       animation-delay: $delay;
     }
     &[class*="purple-1"] {
-      $delay: calc($(header-delay) + 800ms);
+      $delay: calc($(header-delay) + 1200ms);
       @mixin grid-position 1, left, %, right;
       top: 45em;
       animation-delay: $delay;
@@ -48,13 +48,13 @@
       animation-delay: $delay;
     }
     &[class*="aqua-1"] {
-      $delay: calc($(header-delay) + 400ms);
+      $delay: calc($(header-delay) + 600ms);
       @mixin grid-position 3, left, %, right;
       top: 29em;
       animation-delay: $delay;
     }
     &[class*="yellow-2"] {
-      $delay: calc($(header-delay) + 1600ms);
+      $delay: calc($(header-delay) + 2400ms);
       @mixin grid-position 2, left, %, right;
       top: 75em;
       animation-delay: $delay;
@@ -97,7 +97,7 @@
       font-size: 1rem;
       font-weight: normal;
       letter-spacing: 0.67em;
-      animation: enterUp $header-duration ease-out $header-delay forwards;
+      animation: subtitleEnter $header-duration ease-out $header-delay forwards;
     }
   }
 }
@@ -113,7 +113,18 @@
   }
 }
 
-@keyframes enterUp {
+@keyframes triangleEnter {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 2em, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes subtitleEnter {
   0% {
     opacity: 0;
     transform: translate3d(0, 2em, 0);

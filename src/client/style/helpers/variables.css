@@ -31,7 +31,7 @@ $grid-m: $(m)%;
 $grid-l: $(l)%;
 
 /******* Sizes *******/
-$toolbar-height: 4em;
+$toolbar-height: 6em;
 $footer-height: 5em;
 
 /******* Colors *******/

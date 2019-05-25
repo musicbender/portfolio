@@ -8,11 +8,12 @@ const cx = cn.bind(style);
 const ItemInfo = ({
   title,
   description,
+  isStopped,
   buttonUrl,
   buttonText,
   buttonClasses
 }) => (
-  <div className={cx(style.itemInfo)}>
+  <div className={cx(style.itemInfo, { [style.stopped]: isStopped })}>
     <h5>{title}</h5>
     <p>{description}</p>
     {
@@ -25,6 +26,7 @@ const ItemInfo = ({
 ItemInfo.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
+  isStopped: PropTypes.bool,
   buttonUrl: PropTypes.string,
   buttonText: PropTypes.string,
   buttonClasses: PropTypes.string
