@@ -15,11 +15,21 @@ const Button = ({
 }) => {
   const buttonClass = cx(style.btn, style[type], classNames);
 
+  const getInnerContent = (
+    <div className={style.innerWrapper}>
+      {
+        type === 'line' &&
+        <span className={cx(style.line)}></span>
+      }
+      <p>{text}</p>
+    </div>
+  );
+
   switch (true) {
     case isExternal:
       return (
         <a className={classnames(buttonClass)} href={url}>
-          <p>{text}</p>
+          {getInnerContent}
         </a>
       );
     case url:
@@ -29,8 +39,7 @@ const Button = ({
           to={url}
           onClick={(callback) ? (e) => {callback(e)} : () => {return false}}
         >
-          <span className={cx(style.underscore)}></span>
-          <p>{text}</p>
+          {getInnerContent}
         </Link>
       );
     default:
@@ -39,7 +48,7 @@ const Button = ({
           className={cx(buttonClass)}
           onClick={(e) => { callback(e) }}
         >
-          <p>{text}</p>
+          {getInnerContent}
         </div>
       );
   }
