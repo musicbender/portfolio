@@ -70,7 +70,7 @@ class Header extends Component {
         key={i + tri.id}
       >
         <Plx
-          disabled={!hasWindow()}
+          disabled={!hasWindow() || this.props.isMobile}
           parallaxData={this.getPlxData(tri)}
         >
           <Triangle {...tri} />
@@ -85,29 +85,32 @@ class Header extends Component {
         <ColorDots />
         <LilSquare />
         {this.renderTriangles()}
-        <DotGrid
-          classNames={cx(style.dotGridA)}
-          sequence={dotGridA}
-          index={this.state.dotGridIndex}
-        />
-        <DotGrid
-          classNames={cx(style.dotGridB)}
-          sequence={dotGridB}
-          index={this.state.dotGridIndex}
-        />
-        <DotGrid
-          classNames={cx(style.dotGridC)}
-          sequence={dotGridC}
-          index={this.state.dotGridIndex}
-        />
-        <DotGrid
-          classNames={cx(style.dotGridD)}
-          sequence={dotGridD}
-          index={this.state.dotGridIndex}
-        />
+        <div className={cx(style.dotGridWrapper)}>
+          <DotGrid
+            classNames={cx(style.dotGridA)}
+            sequence={dotGridA}
+            index={this.state.dotGridIndex}
+          />
+          <DotGrid
+            classNames={cx(style.dotGridB)}
+            sequence={dotGridB}
+            index={this.state.dotGridIndex}
+          />
+          <DotGrid
+            classNames={cx(style.dotGridC)}
+            sequence={dotGridC}
+            index={this.state.dotGridIndex}
+          />
+          <DotGrid
+            classNames={cx(style.dotGridD)}
+            sequence={dotGridD}
+            index={this.state.dotGridIndex}
+          />
+        </div>
         <div className={cx(style.titleWrapper)}>
           <h1 className={cx(style.title)}>{meta.name}</h1>
           <h2 className={cx(style.subtitle)}>{meta.role}</h2>
+          <ColorDots forMobile />
         </div>
       </div>
     );
@@ -118,7 +121,8 @@ const mapStateToProps = ({ global }) => {
   return {
     pageLoaded: global.pageLoaded,
     splashOpen: global.splashOpen,
-    mode: global.mode
+    mode: global.mode,
+    isMobile: global.isMobile
   }
 }
 

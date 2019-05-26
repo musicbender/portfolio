@@ -2,17 +2,20 @@
 @import '../../style/helpers/mixins';
 
 .cavie-dots {
-  display: block;
+  display: none;
   position: fixed;
   top: 0;
   left: 50%;
   width: 50vw;
   height: 100vh;
-  &.show {
-    display: grid;
-  }
-  &.hide {
-    display: none;
+  @media (min-width: $small-desktop-width) {
+    display: block;
+    &.show {
+      display: grid;
+    }
+    &.hide {
+      display: none;
+    }
   }
   > .wrapper {
     position: relative;

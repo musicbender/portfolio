@@ -2,44 +2,100 @@
 @import '../../style/helpers/mixins';
 
 .color-dots-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
+  $diameter: 0.7em;
   width: 100%;
-  height: 100%;
-  > .dot {
-    $diameter: 13px;
+  height: $diameter;
+  margin-top: 2.75em;
+  @media (min-width: $small-desktop-width) {
     position: absolute;
-    left: 0;
     top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .dot {
     width: $diameter;
     height: $diameter;
     border-radius: $diameter;
-    animation-duration: $header-duration;
-    animation-delay: $header-delay;
-    animation-timing-function: steps(1);
-    animation-fill-mode: forwards;
-    opacity: 0;
     &.yellow {
       background-color: $yellow;
-      transform: translate3d(10vw, 5em, 0);
-      animation-name: yellowDot;
     }
     &.purple {
       background-color: $purple;
-      transform: translate3d(34vw, 0em, 0);
-      animation-name: purpleDot;
     }
     &.orange {
       background-color: $orange;
-      transform: translate3d(86vw, 13em, 0);
-      animation-name: orangeDot;
     }
     &.aqua {
       background-color: $aqua;
-      transform: translate3d(86vw, 13em, 0);
-      animation-name: aquaDot;
     }
+  }
+  > .desktop-wrapper {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @media (min-width: $small-desktop-width) {
+      display: block;
+    }
+    > .dot {
+      position: absolute;
+      left: 0;
+      top: 0;
+      animation-duration: $header-duration;
+      animation-delay: $header-delay;
+      animation-timing-function: steps(1);
+      animation-fill-mode: forwards;
+      opacity: 0;
+      &.yellow {
+        transform: translate3d(10vw, 5em, 0);
+        animation-name: yellowDot;
+      }
+      &.purple {
+        transform: translate3d(34vw, 0em, 0);
+        animation-name: purpleDot;
+      }
+      &.orange {
+        transform: translate3d(86vw, 13em, 0);
+        animation-name: orangeDot;
+      }
+      &.aqua {
+        transform: translate3d(86vw, 13em, 0);
+        animation-name: aquaDot;
+      }
+    }
+  }
+  > .mobileWrapper {
+    display: block;
+    width: 100%;
+    @media (min-width: $small-desktop-width) {
+      display: none;
+    }
+    > .dot {
+      display: inline-block;
+      float: left;
+      margin-right: calc($(diameter) * 2);
+      opacity: 0;
+      transform: translate3d(0, 2em, 0);
+      animation: mobileDot $slow $easeInOut forwards;
+      &:nth-child(1) { animation-delay: calc($(header-delay) + 1000ms)}
+      &:nth-child(2) { animation-delay: calc($(header-delay) + 1500ms)}
+      &:nth-child(3) { animation-delay: calc($(header-delay) + 2000ms)}
+      &:nth-child(4) { animation-delay: calc($(header-delay) + 2500ms)}
+    }
+  }
+}
+
+@keyframes mobileDot {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 2em, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 

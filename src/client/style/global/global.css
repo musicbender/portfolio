@@ -59,7 +59,10 @@ p,h1,h2,h3,h4,h5,h6,svg {
     z-index: 1;
     > .page-wrapper {
       height: auto;
-      padding-top: $toolbar-height;
+      padding-top: 0;
+      @media (min-width: $small-desktop-width) {
+        padding-top: $toolbar-height;
+      }
     }
   }
 }
