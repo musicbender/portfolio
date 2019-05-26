@@ -4,6 +4,8 @@
 .home-header {
   position: relative;
   height: 110vh;
+  overflow-x: hidden;
+  overflow-y: visible;
   > [class*="lil-square"] {
     position: absolute;
     top: 33em;

@@ -4,7 +4,8 @@ import {
   TRANSPORT_CHANGED,
   MENU_CHANGED,
   MODE_CHANGED,
-  RECENT_WORK_TOP_SET
+  RECENT_WORK_TOP_SET,
+  IS_MOBILE_SET
 } from '../configs/constants';
 
 export function loadPage() {
@@ -38,5 +39,11 @@ export function setRecentWorkTop(value) {
   return {
     type: RECENT_WORK_TOP_SET,
     payload: value
+  }
+}
+
+export function setIsMobile() {
+  return {
+    type: IS_MOBILE_SET
   }
 }

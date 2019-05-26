@@ -14,6 +14,7 @@
     "transportDuration": 2500,
     "workItemsAmount": 5,
     "homeBottom": 5562,
+    "mobileBreakpoint": 768,
     "colors": {
       "purple": "#633DFF",
       "aqua": "#32D2C9",

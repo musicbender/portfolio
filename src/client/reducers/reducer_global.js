@@ -4,7 +4,8 @@ import {
   SPLASH_CHANGED,
   MODE_CHANGED,
   TRANSPORT_CHANGED,
-  MENU_CHANGED
+  MENU_CHANGED,
+  IS_MOBILE_SET
 } from '../configs/constants';
 
 export default function global(state = initialState.global, action) {
@@ -20,6 +21,8 @@ export default function global(state = initialState.global, action) {
       return { ...state, menuhOpen: payload };
     case MODE_CHANGED:
       return { ...state, mode: payload };
+    case IS_MOBILE_SET:
+      return { ...state, isMobile: payload };
     default:
       return state;
   }

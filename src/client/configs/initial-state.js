@@ -4,7 +4,8 @@ module.exports = {
     splashOpen: true,
     transportOpen: false,
     menuOpen: false,
-    mode: 'dark'
+    mode: 'dark',
+    isMobile: false
   },
   home: {
     aboutTop: 1200,

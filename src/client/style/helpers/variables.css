@@ -4,6 +4,11 @@ $extra-large-width:     1600px;
 $site-max-width:        1320px;
 $desktop-odd-width:     1280px;
 $small-desktop-width:   1024px;
+$tablet-width: 768px;
+$mobile-width: 480px;
+$small-mobile-width: 414px;
+$tiny-mobile-width: 375px;
+$tablet-only: "(min-width: #{$mobile-width}) and (max-width: #{$tablet-width})";
 
 /*******Animation*******/
 $easeOut   : cubic-bezier(0.23, 1, 0.32, 1);

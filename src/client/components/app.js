@@ -8,7 +8,8 @@ import SplashScreen from './splash-screen';
 import Footer from './footer';
 import Modal from './_global/modal';
 import Curtain from './_global/curtain';
-import { changeSplash, changeTransport } from '../actions/global';
+import { changeSplash, changeTransport, setIsMobile } from '../actions/global';
+import { throttle } from '../util/util';
 import { config } from '../../shared/config.json';
 import cn from 'classnames/bind';
 import style from '../style/main.css';
@@ -22,12 +23,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.handleToTop = this.handleToTop.bind(this);
+    this.handleResize = throttle(this.handleResize.bind(this), 100);
   }
 
   componentDidMount() {
+    this.props.setIsMobile();
+
     window.requestTimeout(() => {
       this.props.changeSplash(false);
     }, config.splashScreenTimeout);
+
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
   }
 
   handleToTop() {
@@ -35,6 +45,16 @@ class App extends Component {
     window.requestTimeout(() => {
       window.scrollTo(0, 0);
     }, config.transportDuration / 2.5);
+  }
+
+  handleResize() {
+    if (this.props.isMobile && window.innerWidth > config.mobileBreakpoint) {
+      this.props.setIsMobile();
+    }
+
+    if (!this.props.isMobile && window.innerWidth < config.mobileBreakpoint) {
+      this.props.setIsMobile();
+    }
   }
 
   render() {
@@ -69,14 +89,16 @@ class App extends Component {
 const mapStateToProps = ({ global }) => {
   return {
     splashOpen: global.splashOpen,
-    transportOpen: global.transportOpen
+    transportOpen: global.transportOpen,
+    isMobile: global.isMobile
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators({
     changeSplash,
-    changeTransport
+    changeTransport,
+    setIsMobile
   }, dispatch)
 }
 
