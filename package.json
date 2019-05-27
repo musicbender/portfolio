@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-v2",
+  "name": "portfolio",
   "version": "1.0.0",
   "description": "Brand spanking new portfolio site",
   "main": "index.js",
@@ -91,7 +91,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/musicbender/portfolio-v2.git"
+    "url": "git+https://github.com/musicbender/portfolio.git"
   },
   "keywords": [],
   "author": "Pat Jacobs",
