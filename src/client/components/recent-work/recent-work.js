@@ -7,6 +7,7 @@ import Heading from '../_global/heading';
 import Particles from './particles';
 import WorkItem from './work-item';
 import { filterProjectData } from '../../util/data';
+import { throttle } from '../../util/util';
 import contentConf from '../../configs/content';
 import { config } from '../../../shared/config.json';
 import { setRecentWorkTop } from '../../actions/global';
@@ -21,12 +22,26 @@ class RecentWork extends Component {
     this.content = contentConf.home.sections.recentWork;
     this.workData = filterProjectData('work');
     this.defaultWorkStops = this.workData.map(w => false);
+    this.handleResize = throttle(this.handleResize.bind(this), 100);
     this.state = {
       workStops: this.defaultWorkStops
     }
   }
 
   componentDidMount() {
+    this.setTop();
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+
+  handleResize() {
+    this.setTop();
+  }
+
+  setTop() {
     const section = document.getElementById('recent-work-section');
     const rect = section.getBoundingClientRect();
     this.props.setRecentWorkTop(rect.top);

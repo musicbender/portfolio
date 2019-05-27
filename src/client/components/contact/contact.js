@@ -16,6 +16,7 @@ class Contact extends Component {
     this.handleMouseMove = this.handleMouseMove.bind(this);
     this.gridID = 'contact-dot-grid';
     this.defaultColor = 'rgb(249, 141, 81)';
+    this.handleResize = throttle(this.handleResize.bind(this), 100);
     this.hideArray = [
       23, 24, 25, 26, 27,
       51, 52, 53, 54, 55,
@@ -33,15 +34,27 @@ class Contact extends Component {
   componentDidMount() {
     const elm = document.getElementById(this.gridID);
     const rect = elm.getBoundingClientRect();
+
+    window.addEventListener('resize', this.handleResize);
     elm.addEventListener('mousemove', throttle(this.handleMouseMove(rect), 150));
     this.setState({ dotsWidth: rect.width, dotsHeight: rect.height });
-    this.props.setContactTop(rect.top - (rect.height / 2));
+    this.setTop();
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.atBottom && !this.props.atBottom) {
       this.setState({ color: this.defaultColor })
     }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListner('resize', this.handleResize);
+  }
+
+  setTop() {
+    const elm = document.getElementById(this.gridID);
+    const rect = elm.getBoundingClientRect();
+    this.props.setContactTop(rect.top - (rect.height / 2));
   }
 
   handleMouseMove(rect) {
@@ -56,6 +69,10 @@ class Contact extends Component {
 
       this.setState({ color: `rgb(${r}, ${g}, ${b})`});
     }
+  }
+
+  handleResize() {
+    this.setTop();
   }
 
   handleButton(e) {
