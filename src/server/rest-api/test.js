@@ -1,5 +1,5 @@
 import express from 'express';
-import { apiResponse } from '../util/util';
+import { apiResponse } from '../controllers/util';
 
 const router = express.Router();
 

@@ -9,3 +9,11 @@ export const pathIsFile = (path) => {
   const output = path.match(regex);
   return !output;
 }
+
+export const apiResponse = (res, httpCode = 200, code = 3, message='success', data={}) => {
+  let responseData = {};
+  responseData.code = code;
+  responseData.message = message;
+  responseData.data = data;
+  res.status(httpCode).json(responseData)
+}

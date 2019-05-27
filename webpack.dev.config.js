@@ -22,9 +22,6 @@ const config = {
     publicPath: 'http://localhost:' + process.env.PORT + '/',
     chunkFilename: '[name].bundle.js'
   },
-  watchOptions: {
-    ignored: ['server/temp/*', 'node_modules']
-  },
   module: {
     rules: [
       {

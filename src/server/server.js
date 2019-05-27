@@ -3,7 +3,6 @@ import http from 'http';
 import fs from 'fs';
 import path from 'path';
 import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
 import helmet from 'helmet';
 import React from 'react';
 import { createStore } from 'redux';
