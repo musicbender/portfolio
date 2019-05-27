@@ -74,8 +74,7 @@ const config = {
       { from: 'client/assets/favicons', to: 'assets/favicons' },
       { from: 'client/assets/images/', to: 'assets/images', ignore: [ '.DS_Store' ] },
       { from: 'manifest.json', to: '' }
-    ]),
-    new BundleAnalyzerPlugin({ analyzerMode: 'disabled' })
+    ])
   ],
   optimization: {
     minimizer: [

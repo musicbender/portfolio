@@ -38,8 +38,7 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin([
       { from: 'server/views/', to: 'views', flatten: true },
-    ]),
-    new BundleAnalyzerPlugin({ analyzerMode: 'disabled' })
+    ])
   ],
   optimization: {
     minimizer: [
