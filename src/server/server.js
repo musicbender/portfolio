@@ -4,9 +4,8 @@ import fs from 'fs';
 import path from 'path';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
+import helmet from 'helmet';
 import React from 'react';
-import graphqlHTTP from 'express-graphql';
-import schema from './api';
 import { createStore } from 'redux';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
@@ -15,7 +14,6 @@ import App from '../client/components/app';
 import reducers from '../client/reducers';
 import {
   headersMiddleware,
-  graphQLMiddleware,
   logMiddleware,
   requestIDMiddleware,
   metaDataMiddleware,
@@ -30,24 +28,6 @@ const viewDir = process.env.NODE_ENV === 'production'
 
 app.set('view engine', 'pug');
 app.set('views', viewDir);
-
-//--//--//--// CONNECT DATABASE //--//--//--//
-mongoose.Promise = global.Promise;
-mongoose.connect(
-  `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/portfolio`,
-  {
-    useNewUrlParser: true,
-    autoReconnect: true
-  }
-);
-
-mongoose.set('useCreateIndex', true);
-
-const db = mongoose.connection;
-
-db.on('error', err => {
-  console.error(err);
-});
 
 //--//--//--// RUN WEBPACK WHEN IN DEV MODE //--//--//--//
 if (process.env.NODE_ENV === 'development') {
@@ -68,6 +48,25 @@ if (process.env.NODE_ENV === 'development') {
   }));
 }
 
+//--//--//--// HELMET MIDDLEWARES//--//--//--//
+if (process.env.HELMET_DISABLED !== 'true') {
+   if (process.env.HELMET_HOSTS_DISABLED !== 'true') {
+     app.use(helmet.hsts());
+   }
+
+   if (process.env.HELMET_NO_CACHE_ENABLED === 'true') {
+     app.use(helmet.noCache());
+   }
+
+   if (process.env.HELMET_CROSS_DOMAIN_DISABLED !== 'true') {
+     app.use(helmet.permittedCrossDomainPolicies());
+   }
+
+   if (process.env.HELMET_HIDE_POWERED_BY_DISABLED !== 'true') {
+     app.use(helmet.hidePoweredBy());
+   }
+}
+
 //--//--//--// MIDDLEWARES //--//--//--//
 app.use(requestIDMiddleware);
 app.use(bodyParser.json());
@@ -79,18 +78,6 @@ app.use(metaDataMiddleware);
 if (process.env.SERVER_STATIC === 'true') {
   app.use(express.static(path.join(__dirname, 'public/')));
 }
-
-//--//--//--// GRAPHQL API //--//--//--//
-app.use(
-  '/graphql',
-  bodyParser.json(),
-  graphQLMiddleware,
-  graphqlHTTP(req => ({
-    schema,
-    graphiql: false,
-    context: { req },
-    pretty: process.env.NODE_ENV === 'development'
-})));
 
 //--//--//--// SERVER SIDE RENDERING //--//--//--//
 app.get('*', (req, res) => {
