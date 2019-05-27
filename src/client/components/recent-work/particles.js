@@ -15,8 +15,7 @@ const Particles = ({ isMobile }) => {
     return [
       {
         start: 'self',
-        end: 'self',
-        endOffset: '100vh',
+        duration: '100vh',
         properties: [
           {
             startValue: values[0],

@@ -85,7 +85,7 @@
     {
       "name": "dotGridA",
       "type": "dots",
-      "plx": [0, -18]
+      "plx": [1, -18]
     },
     {
       "name": "dotGridB",

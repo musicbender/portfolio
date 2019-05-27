@@ -12,16 +12,28 @@ const ItemInfo = ({
   buttonUrl,
   buttonText,
   buttonClasses
-}) => (
-  <div className={cx(style.itemInfo, { [style.stopped]: isStopped })}>
-    <h5>{title}</h5>
-    <p>{description}</p>
-    {
-      !!buttonUrl &&
-      <Button text={buttonText} url={buttonUrl} classNames={buttonClasses} />
+}) => {
+  const handleParentClick = () => {
+    if (isMobile) {
+      // TODO: change to js routing link when case study pages are built
+      window.href = buttonUrl;
     }
-  </div>
-);
+  }
+
+  return (
+    <div
+      className={cx(style.itemInfo, { [style.stopped]: isStopped })}
+      onClick={handleParentClick}
+    >
+      <h5>{title}</h5>
+      <p>{description}</p>
+      {
+        !!buttonUrl &&
+        <Button text={buttonText} url={buttonUrl} classNames={buttonClasses} />
+      }
+    </div>
+  );
+};
 
 ItemInfo.propTypes = {
   title: PropTypes.string,

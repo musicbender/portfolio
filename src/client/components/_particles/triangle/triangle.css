@@ -9,9 +9,6 @@
   pointer-events: auto;
   &.giant {
     width: 70%;
-    @media (min-width: $small-desktop-width) {
-      width: 53.78%
-    }
   }
   &.medium {
     width: 5.5em;
