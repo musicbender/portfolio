@@ -51,11 +51,19 @@
   }
   &.triangle-g {
     @mixin grid-position 1, left, %, right;
+    display: none;
     top: 100%;
+    @media (min-width: $tablet-width) {
+      display: block;
+    }
   }
   &.triangle-h {
     @mixin grid-position 3, left, %, right;
+    display: none;
     top: 110%;
+    @media (min-width: $tablet-width) {
+      display: block;
+    }
   }
   &.dot-grid-a {
     top: -1%;

@@ -5,7 +5,10 @@
   position: relative;
   > .outter-wrapper {
     position: relative;
-    margin-bottom: $footer-height;
+    margin-bottom: $footer-height-m;
+    @media (min-width: $tablet-width) {
+      margin-bottom: $footer-height;
+    }
     > .wrapper {
       padding: 0;
       overflow-x: hidden;

@@ -2,11 +2,15 @@
 @import '../../style/helpers/mixins';
 
 .contact {
+  display: none;
   position: relative;
   margin-top: 45em;
   height: 32em;
   width: 100%;
   overflow: hidden;
+  @media (min-width: $small-desktop-width) {
+    display: block;
+  }
   > .dot-wrapper {
     position: relative;
     height: 100%;

@@ -4,25 +4,37 @@
 .social {
   height: 1.15em;
   > .wrapper {
-    display: inline-block;
-    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
     height: 100%;
     margin: 0 auto;
+    @media (min-width: $tablet-width) {
+      display: inline-block;
+      width: auto;
+    }
     &:before {
-      content: '';
-      display: table;
-      clear: both;
+      @media (min-width: $tablet-width) {
+        content: '';
+        display: table;
+        clear: both;
+      }
     }
     > a {
       display: inline-block;
-      margin: 0 2.5em;
+      margin: 0;
       color: rgba($white, 0.7);
       text-decoration: none;
       float: left;
+      transform: rotate(-90deg);
       &:hover,
       &:focus {
         cursor: pointer;
         text-decoration: underline;
+      }
+      @media (min-width: $tablet-width) {
+        margin: 0 2.5em;
+        transform: none;
       }
     }
   }

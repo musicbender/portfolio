@@ -38,6 +38,7 @@ $grid-l: $(l)%;
 /******* Sizes *******/
 $toolbar-height: 6em;
 $footer-height: 5em;
+$footer-height-m: 8em;
 
 /******* Colors *******/
 $white: #fff;

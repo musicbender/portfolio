@@ -5,19 +5,31 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  height: $footer-height;
+  height: $footer-height-m;
   width: 100%;
   background-color: $dark-lines;
   z-index: -1;
+  @media (min-width: $tablet-width) {
+    height: $footer-height;
+  }
   > * {
     display: inline-block;
-    margin-top: calc($(footer-height) - 3em);
+    margin-top: calc($(footer-height-m) - 4.5em);
+    @media (min-width: $tablet-width) {
+      margin-top: calc($(footer-height) - 3em);
+    }
+  }
+  > [class*="social"] {
+    width: 50%;
   }
   > .tri-wrapper {
     margin-left: 2.5em;
     margin-right: 2.5em;
     float: right;
     transition: transform $fast $easeInOut;
+    @media (max-width: $tablet-width) {
+      margin-top: 5em;
+    }
     &:hover {
       cursor: pointer;
       transform: rotate(-45deg);
