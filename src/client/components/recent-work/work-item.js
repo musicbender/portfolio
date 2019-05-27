@@ -81,6 +81,7 @@ const WorkItem = ({
                 description={item.description}
                 buttonUrl={item.url}
                 isStopped={isStopped}
+                isMobile={isMobile}
                 buttonClasses={cx(
                   'work',
                   'parallax',

@@ -28,16 +28,16 @@ const Button = ({
   switch (true) {
     case isExternal:
       return (
-        <a className={classnames(buttonClass)} href={url}>
+        <a className={cx(buttonClass)} href={url} target="_blank">
           {getInnerContent}
         </a>
       );
-    case url:
+    case !!url:
       return (
         <Link
           className={cx(buttonClass)}
           to={url}
-          onClick={(callback) ? (e) => {callback(e)} : () => {return false}}
+          onClick={(callback) ? callback : null}
         >
           {getInnerContent}
         </Link>

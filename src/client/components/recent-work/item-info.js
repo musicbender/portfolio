@@ -9,27 +9,26 @@ const ItemInfo = ({
   title,
   description,
   isStopped,
+  isMobile,
   buttonUrl,
   buttonText,
   buttonClasses
 }) => {
   const handleParentClick = () => {
-    if (isMobile) {
       // TODO: change to js routing link when case study pages are built
       window.href = buttonUrl;
-    }
   }
 
   return (
     <div
       className={cx(style.itemInfo, { [style.stopped]: isStopped })}
-      onClick={handleParentClick}
+      onClick={isMobile ? handleParentClick : null}
     >
       <h5>{title}</h5>
       <p>{description}</p>
       {
         !!buttonUrl &&
-        <Button text={buttonText} url={buttonUrl} classNames={buttonClasses} />
+        <Button text={buttonText} url={buttonUrl} classNames={buttonClasses} isExternal />
       }
     </div>
   );
