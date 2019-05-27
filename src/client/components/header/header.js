@@ -82,7 +82,7 @@ class Header extends Component {
   render() {
     return (
       <div className={cx(style.homeHeader)}>
-        <ColorDots />
+        <ColorDots splashOpen={this.props.splashOpen} />
         <LilSquare />
         {this.renderTriangles()}
         <div className={cx(style.dotGridWrapper)}>
@@ -110,7 +110,7 @@ class Header extends Component {
         <div className={cx(style.titleWrapper)}>
           <h1 className={cx(style.title)}>{meta.name}</h1>
           <h2 className={cx(style.subtitle)}>{meta.role}</h2>
-          <ColorDots forMobile />
+          <ColorDots splashOpen={this.props.splashOpen} forMobile />
         </div>
       </div>
     );
