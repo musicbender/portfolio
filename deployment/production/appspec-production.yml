@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/patjacobs
+    destination: /var/www/portfolio
 permissions:
-  - object: /var/www/patjacobs
+  - object: /var/www/portfolio
     owner: ubuntu
     group: ubuntu
     mode: 777

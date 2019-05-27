@@ -1,7 +1,7 @@
 const getEnv = require('../../../lib/get-env');
 const config = require('../../app-production');
 
-getEnv('patjacobs')
+getEnv('portfolio-live')
   .then(function (env) {
     let app = config.apps[0];
     Object.keys(env).forEach(function (key) {

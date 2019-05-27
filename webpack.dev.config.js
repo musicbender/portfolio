@@ -68,8 +68,7 @@ const config = {
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      'process.env.ASSET_ROOT': JSON.stringify(process.env.ASSET_ROOT),
-      'process.env.MOCK_DATA': process.env.MOCK_DATA
+      'process.env.ASSET_ROOT': JSON.stringify(process.env.ASSET_ROOT)
     }),
     new CopyWebpackPlugin([
       { from: 'src/client/assets/', to: 'assets', ignore: [ '.DS_Store' ] }

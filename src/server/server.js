@@ -10,6 +10,7 @@ import { createStore } from 'redux';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router';
+import restAPI from './rest-api';
 import App from '../client/components/app';
 import reducers from '../client/reducers';
 import {
@@ -78,6 +79,9 @@ app.use(metaDataMiddleware);
 if (process.env.SERVER_STATIC === 'true') {
   app.use(express.static(path.join(__dirname, 'public/')));
 }
+
+//--//--//--// REST API //--//--//--//
+app.use('/rest-api', restAPI);
 
 //--//--//--// SERVER SIDE RENDERING //--//--//--//
 app.get('*', (req, res) => {

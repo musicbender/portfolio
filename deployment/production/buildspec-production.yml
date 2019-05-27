@@ -3,6 +3,7 @@ version: 0.2
 env:
   variables:
     NODE_ENV: production
+    ASSET_ROOT: /
 
 phases:
   pre_build:
