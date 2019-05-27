@@ -70,8 +70,7 @@ const config = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      'process.env.IS_QA': process.env.IS_QA,
-      'process.env.IS_LIVE': process.env.IS_LIVE
+      'process.env.ASSET_ROOT': JSON.stringify(process.env.ASSET_ROOT)
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new MiniCssExtractPlugin({

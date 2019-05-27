@@ -12,7 +12,7 @@ phases:
       - npm install
   build:
     commands:
-      - webpack --config webpack.prod.config.js
+      - webpack --config webpack.client.config.js
       - webpack --config webpack.server.config.js
   post_build:
     commands:
