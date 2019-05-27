@@ -80,7 +80,8 @@ const AboutMe = ({
 
 AboutMe.propTypes = {
   atAbout: PropTypes.bool,
-  setAboutTop: PropTypes.func
+  setAboutTop: PropTypes.func,
+  isMobile: PropTypes.bool
 }
 
 AboutMe.defaultProps = {

@@ -15,6 +15,14 @@
       {
         "startValue": -2
       }
+    ],
+    "mobileInfo": [
+      {
+        "startValue": -7
+      },
+      {
+        "startValue": 7
+      }
     ]
   },
   "particleData": [

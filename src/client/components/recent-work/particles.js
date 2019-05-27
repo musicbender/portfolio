@@ -10,7 +10,7 @@ import cn from 'classnames/bind';
 import style from './particles.css';
 const cx = cn.bind(style);
 
-const Particles = () => {
+const Particles = ({ isMobile }) => {
   const getPlxData = (values) => {
     return [
       {
@@ -48,13 +48,17 @@ const Particles = () => {
         <Plx
           className={cx(style.plxInner)}
           parallaxData={getPlxData(p.plx)}
-          disabled={!hasWindow()}
+          disabled={!hasWindow() || isMobile}
         >
           {getParticle(p)}
         </Plx>
       </div>
     );
   });
+}
+
+Particles.propTypes = {
+  isMobile: PropTypes.bool
 }
 
 export default Particles;

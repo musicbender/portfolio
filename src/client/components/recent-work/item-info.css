@@ -2,14 +2,20 @@
 @import '../../style/helpers/mixins';
 
 .item-info {
-  width: calc($(s)vw + $(m)vw);
+  width: 84vw;
+  margin-left: $grid-s;
   text-align: left;
   color: rgba($white, 0.87);
   background-color: $dark-black;
-  border-width: 0.45em;
+  border-width: 0.6em;
   border-style: solid;
   padding: 1em;
   transition: border-color $fast $easeInOut;
+  @media (min-width: $tablet-width) {
+    width: calc($(s)vw + $(m)vw);
+    margin-left: 0;
+    border-width: 0.45em;
+  }
   &:not(.stopped) {
     border-color: color($purple shade(60%))
   }

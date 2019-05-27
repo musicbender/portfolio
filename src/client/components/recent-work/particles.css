@@ -4,25 +4,46 @@
 
 .particle {
   position: absolute;
+  &[class*="dot-grid-"] {
+    display: none;
+    @media (min-width: $tablet-width) {
+      display: block;
+    }
+  }
   &.triangle-a {
     @mixin grid-position 0, left, %, right;
     top: 6%;
   }
   &.triangle-b {
-    @mixin grid-position 1, left, %, right;
-    top: 37%;
+    @mixin grid-position 4, left, %, right;
+    top: 62%;
+    @media (min-width: $tablet-width) {
+      @mixin grid-position 1, left, %, right;
+      top: 37%;
+    }
   }
   &.triangle-c {
     @mixin grid-position 3, left, %, right;
+    display: none;
     top: 55%;
+    @media (min-width: $tablet-width) {
+      display: blok
+    }
   }
   &.triangle-d {
     @mixin grid-position 6, left, %, right;
-    top: 64%;
+    top: 87%;
+    @media (min-width: $tablet-width) {
+      top: 64%;
+    }
   }
   &.triangle-e {
     @mixin grid-position 0, left, %, right;
+    display: none;
     top: 80%;
+    @media (min-width: $tablet-width) {
+      display: block;
+    }
   }
   &.triangle-f {
     @mixin grid-position 6, left, %, right;

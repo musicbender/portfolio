@@ -3,12 +3,23 @@
 
 .recent-work {
   position: relative;
-  height: 193em;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  @media (min-width: $tablet-width) {
+    height: 193em;
+  }
   > .parent-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: block;
+    @media (min-width: $tablet-width) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
     > .work-items-wrapper {
-      padding-left: calc($grid-s * 2);
+      padding: 0;
+      @media (min-width: $tablet-width) {
+        padding-left: calc($grid-s * 2);
+      }
     }
   }
   > .dot-grid-a {

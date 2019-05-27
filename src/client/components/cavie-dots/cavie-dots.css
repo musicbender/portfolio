@@ -8,7 +8,7 @@
   left: 50%;
   width: 50vw;
   height: 100vh;
-  @media (min-width: $small-desktop-width) {
+  @media (min-width: $tablet-width) {
     display: block;
     &.show {
       display: grid;

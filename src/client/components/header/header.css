@@ -4,7 +4,7 @@
 .home-header {
   position: relative;
   height: 100vh;
-  @media (min-width: $small-desktop-width) {
+  @media (min-width: $tablet-width) {
     height: 110vh;
   }
   > [class*="lil-square"] {
@@ -37,7 +37,7 @@
       @mixin grid-position 2, left, %, right;
       top: -1em;
       animation-delay: $delay;
-      @media (min-width: $small-desktop-width) {
+      @media (min-width: $tablet-width) {
         top: 1em;
       }
     }
@@ -50,17 +50,17 @@
     &[class*="yellow-1"] {
       $delay: calc($(header-delay) + 0ms);
       @mixin grid-position 5, left, %, right;
-      top: 10em;
+      top: 4em;
       animation-delay: $delay;
+      @media (min-width: $tablet-width) {
+        top: 10em;
+      }
     }
     &[class*="aqua-1"] {
       $delay: calc($(header-delay) + 600ms);
       @mixin grid-position 3, left, %, right;
-      top: 35em;
+      top: 29em;
       animation-delay: $delay;
-      @media (min-width: $small-desktop-width) {
-        top: 29em;
-      }
     }
     &[class*="yellow-2"] {
       $delay: calc($(header-delay) + 2400ms);
@@ -81,7 +81,7 @@
       position: absolute;
       top: 8em;
       left: 51%;
-      @media (min-width: $small-desktop-width) {
+      @media (min-width: $tablet-width) {
         display: block;
       }
     }
@@ -89,7 +89,7 @@
       position: absolute;
       top: 32em;
       left: 2%;
-      @media (min-width: $small-desktop-width) {
+      @media (min-width: $tablet-width) {
         top: 5em;
       }
     }
@@ -98,7 +98,7 @@
       top: -4em;
       left: 170%;
       transform: translateX(-100%);
-      @media (min-width: $small-desktop-width) {
+      @media (min-width: $tablet-width) {
         left: 100%;
       }
     }
@@ -111,7 +111,10 @@
   }
   > .title-wrapper {
     margin: 0 0 0 $grid-s;
-    padding-top: 10em;
+    padding-top: 5em;
+    @media (min-width: $tablet-width) {
+      padding-top: 10em;
+    }
     > .title {
       margin: 0 0 0.45em -0.08em;
       font-family: $futura;
@@ -119,7 +122,7 @@
       font-weight: normal;
       line-height: 1.1;
       animation: titleEnter $header-duration ease-out $header-delay forwards;
-      @media (min-width: $small-desktop-width) {
+      @media (min-width: $tablet-width) {
         margin-bottom: 0.25em;
         font-size: 6rem;
         line-height: normal;

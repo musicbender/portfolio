@@ -56,6 +56,7 @@ class RecentWork extends Component {
           isStopped={this.state.workStops[i]}
           handleWorkStops={this.handleWorkStops}
           baseTop={this.props.recentWorkTop}
+          isMobile={this.props.isMobile}
           key={item.title + `${(i * 7)}`}
         />
       );
@@ -71,15 +72,16 @@ class RecentWork extends Component {
             {this.renderWorkItems()}
           </div>
         </div>
-        <Particles />
+        <Particles isMobile={this.props.isMobile} />
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ home }) => {
+const mapStateToProps = ({ global, home }) => {
   return {
-    recentWorkTop: home.recentWorkTop
+    recentWorkTop: home.recentWorkTop,
+    isMobile: global.isMobile
   }
 }
 

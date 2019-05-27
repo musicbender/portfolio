@@ -6,7 +6,7 @@
   width: 84%;
   height: auto;
   margin: 0 auto 10em;
-  @media (min-width: $small-desktop-width) {
+  @media (min-width: $tablet-width) {
     width: 50%;
     height: 52em;
     margin: 0 0 0 50%;

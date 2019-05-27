@@ -3,12 +3,20 @@
 
 .work-item {
   position: relative;
-  height: 23.5em;
-  margin-bottom: 10em;
+  margin-bottom: 0;
+  height: 15em;
+  @media (min-width: $tablet-width) {
+    height: 23.5em;
+    margin-bottom: 10em;
+  }
   > .image-outter-wrapper {
+    display: none;
     position: relative;
     width: 59.52%;
     height: 100%;
+    @media (min-width: $tablet-width) {
+      display: block;
+    }
     > .parallax {
       position: absolute;
       height: 100%;
@@ -46,19 +54,12 @@
             height: 100%;
           }
           > .image {
+            display: none;
             background-size: cover;
             background-position: left;
             background-repeat: no-repeat;
-            &.mobile {
-              @media (min-width: $small-desktop-width) {
-                display: none;
-              }
-            }
-            &.desktop {
-              display: none;
-              @media (min-width: $small-desktop-width) {
-                display: block;
-              }
+            @media (min-width: $tablet-width) {
+              display: block;
             }
             &.index-0 {
               background-position: left;
@@ -87,25 +88,48 @@
   }
   > .info-outter-wrapper {
     position: absolute;
-    top: 6em;
+    top: 0;
     left: 0;
-    width: 59.52%;
+    width: 100%;
+    height: 100%;
+    @media (min-width: $tablet-width) {
+      top: 6em;
+      width: 59.52%;
+    }
     > [class*="item-info"] {
       visibility: hidden;
       position: absolute;
-      left: calc(17% * 4);
+      top: 0;
+      @media (min-width: $tablet-width) {
+        left: calc(17% * 4);
+        top: auto;
+      }
     }
     > .parallax {
       position: absolute;
+      [class*="item-info"] {
+        margin: 0;
+      }
       &.index-0 {
-        left: calc($grid-m * 4);
-        width: calc($grid-s * 4);
+        left: $grid-s;
+        width: calc($grid-m + $grid-s + $grid-m);
+        @media (min-width: $tablet-width) {
+          left: calc($grid-m * 4);
+          width: calc($grid-s * 4);
+        }
       }
       &.index-1 {
-        left: calc(($grid-m * 4) + ($grid-s * 4));
-        width: calc($grid-m * 4);
+        left: 50vw;
+        width: calc(42vw);
         [class*="item-info"] {
-          transform: translateX(-$(s)vw);
+          transform: translateX(-42vw);
+        }
+        @media (min-width: $tablet-width) {
+          left: calc(($grid-m * 4) + ($grid-s * 4));
+          width: calc($grid-m * 4);
+          [class*="item-info"] {
+            transform: translateX(-$(s)vw);
+          }
         }
       }
       > .parallax-inner {
@@ -124,40 +148,10 @@
     > .info-outter-wrapper {
       > [class*="item-info"] {
         visibility: visible;
-        /* > [class*="btn"] {
-          > p {
-            transform: translate3d(0, 0, 0);
-            transition: transform $moderate ease-in-out $slow;
-          }
-          &:before {
-            width: calc(4em - 0.3em);
-            transform: translate3d(0, 0, 0);
-            transition: transform $moderate ease-in-out $baseDelay, width $moderate ease-in-out $slow;
-          }
-        } */
       }
       > .parallax {
         visibility: hidden;
       }
-    }
-  }
-  &:not(.stopped) {
-    [class*="item-info"][class*="static"] {
-      /* > [class*="btn"] {
-        > p {
-          transform: translate3d(100%, 0, 0);
-          transition: transform $fast $easeInOut;
-        }
-        &:before {
-          width: 100%;
-          transform: translate3d(100%, 0, 0);
-        }
-      } */
-    }
-    .parallax [class*="item-info"]  {
-      /* > [class*="btn"] {
-        animation: showBtn $fast $easeInOut forwards;
-      } */
     }
   }
 }
