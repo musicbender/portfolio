@@ -3,7 +3,10 @@
 
 .home-header {
   position: relative;
-  height: 110vh;
+  height: 100vh;
+  @media (min-width: $small-desktop-width) {
+    height: 110vh;
+  }
   > [class*="lil-square"] {
     position: absolute;
     top: 33em;

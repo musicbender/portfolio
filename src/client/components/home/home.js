@@ -75,6 +75,7 @@ class Home extends Component {
             <AboutMe
               atAbout={this.state.atAbout}
               setAboutTop={this.props.setAboutTop}
+              isMobile={this.props.isMobile}
             />
             <RecentWork />
             <CavieDots baseStart={this.props.recentWorkTop - 400} atBottom={this.state.atBottom} />
@@ -97,10 +98,10 @@ const mapStateToProps = ({ global, home }) => {
     pageLoaded: global.pageLoaded,
     splashOpen: global.splashOpen,
     mode: global.mode,
+    isMobile: global.isMobile,
     aboutTop: home.aboutTop,
     recentWorkTop: home.recentWorkTop,
-    contactTop: home.contactTop,
-
+    contactTop: home.contactTop
   }
 }
 

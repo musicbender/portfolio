@@ -13,7 +13,8 @@ const cx = cn.bind(style);
 
 const AboutMe = ({
   atAbout,
-  setAboutTop
+  setAboutTop,
+  isMobile
 }) => {
   const [ dotGridIndex, updateSequence ] = useState(0);
   const interval = 180;
@@ -53,7 +54,7 @@ const AboutMe = ({
         index={dotGridIndex}
       />
       <Plx
-        disabled={!hasWindow()}
+        disabled={!hasWindow() || isMobile}
         parallaxData={[{
           start: 'self',
           end: 'self',
