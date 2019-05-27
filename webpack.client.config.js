@@ -11,7 +11,7 @@ const config = {
     extensions: ['.js', '.json'],
   },
   entry: {
-    index: [path.join(__dirname, '/client/index.js')],
+    index: [path.join(__dirname, '/src/client/index.js')],
     vendor: ['react', 'react-dom', 'react-router-dom']
   },
   output: {
@@ -52,7 +52,7 @@ const config = {
           {
             loader: 'file-loader',
             options: {
-              context: './client/assets/',
+              context: '../src/client/assets/',
               name: '[path][name].[ext]',
               outputPath: 'assets/'
             }
@@ -71,8 +71,8 @@ const config = {
       filename: "style.css"
     }),
     new CopyWebpackPlugin([
-      { from: 'client/assets/favicons', to: 'assets/favicons' },
-      { from: 'client/assets/images/', to: 'assets/images', ignore: [ '.DS_Store' ] },
+      { from: 'src/client/assets/favicons', to: 'assets/favicons' },
+      { from: 'src/client/assets/images/', to: 'assets/images', ignore: [ '.DS_Store' ] },
       { from: 'manifest.json', to: '' }
     ])
   ],

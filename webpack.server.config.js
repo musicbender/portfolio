@@ -17,7 +17,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json']
   },
-  entry: path.join(__dirname, './server/server.js'),
+  entry: path.join(__dirname, './src/server/server.js'),
   output: {
     path: path.join(__dirname, './dist'),
     filename: 'server.bundle.js',
@@ -37,7 +37,7 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin([
-      { from: 'server/views/', to: 'views', flatten: true },
+      { from: 'src/server/views/', to: 'views', flatten: true },
     ])
   ],
   optimization: {
