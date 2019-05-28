@@ -1,6 +1,6 @@
 import webpack from 'webpack';
 import config from '../webpack.server.config';
-import { chalkError, chalkSuccess, chalkWarning, chalkProcessing } from './chalkConfig';
+import { chalkError, chalkSuccess, chalkWarning, chalkProcessing } from './chalk-config';
 
 console.log(chalkProcessing('Generating minified bundle. This will take a moment...'));
 

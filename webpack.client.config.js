@@ -28,18 +28,19 @@ const config = {
         exclude: /node_modules/,
       },
       {
-        test: /\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader'
-        ]
-      },
-      {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader'
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true,
+              camelCase: 'dashes',
+              localIdentName: '[folder]__[local]___[hash:base64:5]'
+            }
+          },
+          'postcss-loader'
         ],
       },
       {
@@ -73,7 +74,7 @@ const config = {
     new CopyWebpackPlugin([
       { from: 'src/client/assets/favicons', to: 'assets/favicons' },
       { from: 'src/client/assets/images/', to: 'assets/images', ignore: [ '.DS_Store' ] },
-      { from: 'manifest.json', to: '' }
+      { from: 'src/client/assets/manifests/manifest.json', to: '' }
     ])
   ],
   optimization: {

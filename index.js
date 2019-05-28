@@ -9,10 +9,6 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   require('@babel/register')();
 
-  require.extensions['.scss'] = () => {
-    return;
-  };
-
   require.extensions['.css'] = (module, filename) => {
     module.exports = fs.readFileSync(filename, 'utf8');
   };

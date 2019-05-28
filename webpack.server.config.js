@@ -30,8 +30,24 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        loader: 'file-loader?name=[path][name].[ext]'
+      },
+      {
         test: /\.css$/,
-        loader: 'css-loader'
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true,
+              camelCase: 'dashes',
+              localIdentName: '[folder]__[local]___[hash:base64:5]'
+            }
+          },
+          'postcss-loader'
+        ]
       }
     ]
   },
