@@ -4,11 +4,12 @@ env:
   variables:
     NODE_ENV: production
     ASSET_ROOT: /
+    APP_NODE_VERSION: 10.13.0
 
 phases:
   pre_build:
     commands:
-      - nvm use
+      - deployment/production/scripts/pre_build/install_nvm.sh
       - npm install -g webpack webpack-cli
       - npm install
   build:
