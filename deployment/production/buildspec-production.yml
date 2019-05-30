@@ -8,6 +8,7 @@ env:
 phases:
   pre_build:
     commands:
+      - nvm use
       - npm install -g webpack webpack-cli
       - npm install
   build:
