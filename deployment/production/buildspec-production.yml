@@ -9,7 +9,6 @@ env:
 phases:
   pre_build:
     commands:
-      - sudo bash deployment/production/scripts/pre_build/install_nvm.sh
       - npm install -g webpack webpack-cli pm2
       - npm install
   build:
