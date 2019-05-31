@@ -1,7 +1,7 @@
 {
   "apps": [{
     "name": "portfolio",
-    "script": "/var/www/portfolio/dist/server.bundle.js",
+    "script": "/var/www/portfolio/index.js",
     "instances": 0,
     "autorestart": true,
     "exec_mode": "cluster",
