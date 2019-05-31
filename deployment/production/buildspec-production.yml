@@ -10,7 +10,6 @@ phases:
   pre_build:
     commands:
       - sudo bash deployment/production/scripts/pre_build/install_nvm.sh
-      - nvm use 10.3.0
       - npm install -g webpack webpack-cli pm2
       - npm install
   build:
