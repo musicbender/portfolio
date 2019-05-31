@@ -1,6 +1,6 @@
 {
   "apps": [{
-    "name": "launcher-tool",
+    "name": "portfolio",
     "script": "/var/www/portfolio/dist/server.bundle.js",
     "instances": 0,
     "autorestart": true,
