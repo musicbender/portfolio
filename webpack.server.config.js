@@ -36,7 +36,6 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
           {
             loader: 'css-loader',
             options: {
@@ -53,7 +52,7 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin([
-      { from: 'src/server/views/', to: 'views', flatten: true },
+      { from: 'src/server/views/', to: 'views' },
     ])
   ],
   optimization: {

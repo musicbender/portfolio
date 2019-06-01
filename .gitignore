@@ -15,4 +15,5 @@ dist
 server/temp/*
 server/config.js
 .env
+.env.*
 .git

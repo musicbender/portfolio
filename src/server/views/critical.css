@@ -1,6 +1,4 @@
 body {
   display: block;
-}
-p,h1,h2,h3,h4,h5,h6,svg {
-  opacity: 1;
+  background-color: rgb(30,30,30);
 }

@@ -4,6 +4,12 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
+if (process.env.USE_DOTENV) {
+  require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}`,
+  });
+}
+
 const config = {
   mode: 'production',
   target: 'web',

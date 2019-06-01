@@ -9,7 +9,7 @@ import Footer from './footer';
 import Modal from './_global/modal';
 import Curtain from './_global/curtain';
 import { changeSplash, changeTransport, setIsMobile } from '../actions/global';
-import { throttle } from '../util/util';
+import { throttle, hasWindow } from '../util/util';
 import { config } from '../../shared/config.json';
 import cn from 'classnames/bind';
 import style from '../style/main.css';

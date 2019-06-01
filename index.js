@@ -1,7 +1,9 @@
 const fs = require('fs');
 
 if (process.env.USE_DOTENV) {
-  require('dotenv').config();
+  require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}`,
+  });
 }
 
 if (process.env.NODE_ENV === 'production') {

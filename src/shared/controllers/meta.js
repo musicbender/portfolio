@@ -22,10 +22,8 @@ export const getMetaData = (path, metaData, externalData) => {
     const needsData = pageData.hasOwnProperty('dataDependency') && !!fetchData[pageData.dataDependency];
 
     if (needsData) {
-      console.log(`needs DATA`);
       fetchData[pageData.dataDependency](path, externalData).then(resolve).catch(reject);
     } else {
-      console.log(`resolving meta data`);
       resolve({ metaData: getMeta(pageData) });
     }
   });

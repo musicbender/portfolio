@@ -75,8 +75,8 @@ app.use(headersMiddleware);
 app.use(logMiddleware());
 app.use(metaDataMiddleware);
 
-if (process.env.SERVER_STATIC === 'true') {
-  app.use(express.static(path.join(__dirname, 'public/')));
+if (process.env.SERVE_STATIC === 'true') {
+  app.use(process.env.ASSET_ROOT, express.static(path.join(__dirname, 'public/')));
 }
 
 //--//--//--// REST API //--//--//--//
@@ -101,7 +101,6 @@ app.get('*', (req, res) => {
   }
 
   const preloadedState = store.getState();
-
   res
     .set('Content-Type', 'text/html')
     .status(200)
@@ -110,7 +109,7 @@ app.get('*', (req, res) => {
       preloadedState,
       criticalCSS,
       metaData: req.metaData || {},
-      assetPath: process.env.ASSET_PATH || '/'
+      assetPath: process.env.ASSET_ROOT || '/'
     });
 });
 
