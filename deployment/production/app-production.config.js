@@ -1,0 +1,16 @@
+module.exports = {
+  apps : [
+    {
+      name : 'portfolio',
+      script : '/var/www/portfolio/index.js',
+      instances : 'max',
+      autorestart : 'true',
+      exec_mode : 'cluster',
+      log_date_format : 'YYYY-MM-DD HH:mm:ss',
+      merge_logs : 'true',
+      env : {
+        PORT : 3019
+      }
+    }
+  ]
+}
