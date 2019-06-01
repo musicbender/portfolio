@@ -8,7 +8,6 @@ module.exports = function (SecretId, region = 'us-east-2') {
 
   const params = { SecretId };
 
-  console.log(`aws params:`);
   console.log(params);
 
   return secretsmanager
