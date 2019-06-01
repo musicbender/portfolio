@@ -1,5 +1,5 @@
-const getEnv = require('../../lib/get-env');
-const config = require('../app-production');
+const getEnv = require('../../../lib/get-env');
+const config = require('../../app-production');
 
 getEnv('portfolio-live')
   .then(function (env) {
