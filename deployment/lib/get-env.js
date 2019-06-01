@@ -8,14 +8,10 @@ module.exports = function (SecretId, region = 'us-east-2') {
 
   const params = { SecretId };
 
-  console.log(params);
-
   return secretsmanager
     .getSecretValue(params)
     .promise()
     .then(function (result) {
-      console.log(`result:`);
-      console.log(result);
       return JSON.parse(result.SecretString);
     })
     .catch(function (err) {
