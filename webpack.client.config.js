@@ -78,8 +78,7 @@ const config = {
       filename: "style.css"
     }),
     new CopyWebpackPlugin([
-      { from: 'src/client/assets/favicons', to: 'assets/favicons' },
-      { from: 'src/client/assets/images/', to: 'assets/images', ignore: [ '.DS_Store' ] },
+      { from: 'src/client/assets/', to: 'assets', ignore: [ '.DS_Store' ] },
       { from: 'src/client/assets/manifests/site.webmanifest', to: '' }
     ])
   ],

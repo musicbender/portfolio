@@ -8,6 +8,10 @@ const homeMiddleware = store => next => action => {
     case CONTACT_TOP_SET: {
       let modifiedAction = action;
       modifiedAction.payload = Math.round(payload - 200 + (window.scrollY || 0));
+
+      console.log(`middleware for action: ${type}`);
+      console.log(modifiedAction);
+      
       next(modifiedAction);
       break;
     }
