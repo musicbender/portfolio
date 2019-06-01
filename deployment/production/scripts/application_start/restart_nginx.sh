@@ -1,3 +1,3 @@
 #!/bin/sh
 
-systemctl nginx restart
+service nginx restart
