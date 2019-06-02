@@ -10,16 +10,18 @@
   border-width: 0.6em;
   border-style: solid;
   padding: 1em;
-  transition: border-color $fast $easeInOut;
+  transition: border-color $fast $easeInOut, color $fast $easeInOut;
   @media (min-width: $tablet-width) {
     width: calc($(s)vw + $(m)vw);
     margin-left: 0;
     border-width: 0.45em;
   }
   &:not(.stopped) {
+    color: rgba($white, 0.4);
     border-color: color($purple shade(60%))
   }
   &.stopped {
+    color: rgba($white, 0.87);
     border-color: color($purple shade(40%))
   }
   > h5 {
@@ -34,6 +36,7 @@
     margin: 0 0 1.5em;
     font-family: $inconsolata;
     font-size: 1rem;
-    color: rgba($white, 0.5);
+    color: inherit;
+    opacity: 0.6;
   }
 }

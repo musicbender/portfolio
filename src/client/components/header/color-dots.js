@@ -12,6 +12,7 @@ const ColorDots = ({ forMobile }) => {
 
   // on update
   useEffect(() => {
+    console.log(`BLAH`);
     if (!entering && !mounted) {
       setMounted(true);
 

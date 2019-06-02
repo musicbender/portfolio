@@ -28,10 +28,11 @@ class App extends Component {
 
   componentDidMount() {
     this.props.setIsMobile();
+    const splashTimeout = config.splashScreenDebug ? 6000000 : config.splashScreenTimeout;
 
     window.requestTimeout(() => {
       this.props.changeSplash(false);
-    }, config.splashScreenTimeout);
+    }, splashTimeout);
 
     window.addEventListener('resize', this.handleResize);
   }

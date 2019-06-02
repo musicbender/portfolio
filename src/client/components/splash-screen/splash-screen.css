@@ -26,6 +26,11 @@
         animation-delay: 1000ms;
       }
     }
+    &.debug {
+      > [class*="logo"] {
+        animation-delay: 3000000ms;
+      }
+    }
   }
 }
 
