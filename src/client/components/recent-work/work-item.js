@@ -26,6 +26,7 @@ const WorkItem = ({
       {
         start: 'self',
         end: baseEnd + (accumulator * index),
+        startOffset: '-100px',
         properties: [
           {
             startValue: seg.startValue,

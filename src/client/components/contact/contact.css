@@ -4,7 +4,7 @@
 .contact {
   display: none;
   position: relative;
-  margin-top: 45em;
+  margin-top: 15em;
   height: 32em;
   width: 100%;
   overflow: hidden;
@@ -49,12 +49,18 @@
       }
       > p {
         margin: 0;
-        font-size: 14rem;
+        font-size: 7rem;
         font-family: $futura;
         text-transform: uppercase;
         filter: contrast(66%);
         white-space: nowrap;
         transition: color 150ms linear;
+        @media (min-width: $small-desktop-width) {
+          font-size: 9rem;
+        }
+        @media (min-width: $site-max-width {
+          font-size: 14rem;
+        }
       }
     }
   }

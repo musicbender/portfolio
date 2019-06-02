@@ -17,14 +17,14 @@
     background-color: $darker-red;
     border-radius: 5px;
     padding: 1em 2em;
-    @media (min-width: $small-desktop-width) {
+    @media (min-width: $tablet-width) {
       padding: 1em 6em;
     }
     > h1 {
       font-family: $AdelonBook;
       color: $white;
       font-size: 33px;
-      @media (min-width: $small-desktop-width) {
+      @media (min-width: $tablet-width) {
         font-size: 60px;
       }
     }

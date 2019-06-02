@@ -2,15 +2,15 @@
   "workItemPlx": {
     "image": [
       {
-        "startValue": 9
+        "startValue": 5
       },
       {
-        "startValue": 16
+        "startValue": 11
       }
     ],
     "info": [
       {
-        "startValue": 7
+        "startValue": 8
       },
       {
         "startValue": -2
@@ -18,7 +18,7 @@
     ],
     "mobileInfo": [
       {
-        "startValue": -7
+        "startValue": -6
       },
       {
         "startValue": 7

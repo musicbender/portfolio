@@ -12,13 +12,13 @@
   }
   &.medium {
     width: 5.5em;
-    @media (min-width: $small-desktop-width) {
+    @media (min-width: $tablet-width) {
       width: 7em;
     }
   }
   &.small {
     width: 2em;
-    @media (min-width: $small-desktop-width) {
+    @media (min-width: $tablet-width) {
       width: 2.75em;
     }
   }

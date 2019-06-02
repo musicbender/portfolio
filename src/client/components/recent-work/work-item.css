@@ -76,7 +76,7 @@
             background-color: $dark-grey;
             opacity: 0.93;
             transform: translate3d(0, 0, 0);
-            transition: transform 350ms $easeOut;
+            transition: transform 350ms $easeIn;
             &.stopped {
               transform: translate3d(-100%, 0, 0);
               transition: transform 350ms $easeIn;
@@ -143,8 +143,6 @@
     }
   }
   &.stopped {
-    $baseDelay: 150ms;
-    $delay: $baseDelay + 2000ms;
     > .info-outter-wrapper {
       > [class*="item-info"] {
         visibility: visible;

@@ -2,7 +2,7 @@ html {
   font-size: 16px;
   box-sizing: border-box;
   background-color: $dark-bg;
-  @media screen and (min-width: $small-desktop-width) {
+  @media screen and (min-width: $tablet-width) {
     font-size: 17px;
   }
 }
@@ -60,7 +60,7 @@ p,h1,h2,h3,h4,h5,h6,svg {
     > .page-wrapper {
       height: auto;
       padding-top: 0;
-      @media (min-width: $small-desktop-width) {
+      @media (min-width: $tablet-width) {
         padding-top: $toolbar-height;
       }
     }

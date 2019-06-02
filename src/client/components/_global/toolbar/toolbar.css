@@ -9,7 +9,7 @@
   height: $toolbar-height;
   background-color: transparent;
   z-index: 9;
-  @media (min-width: $small-desktop-width) {
+  @media (min-width: $tablet-width) {
     position: fixed;
   }
   > .inner-wrapper {
@@ -24,7 +24,7 @@
       width: 1.85em;
       fill: $white;
       opacity: $icon-opacity;
-      @media (min-width: $small-desktop-width) {
+      @media (min-width: $tablet-width) {
         left: calc($(grid-s) / 2);
       }
     }

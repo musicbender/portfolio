@@ -52,7 +52,7 @@
   &.triangle-g {
     @mixin grid-position 1, left, %, right;
     display: none;
-    top: 100%;
+    top: 92%;
     @media (min-width: $tablet-width) {
       display: block;
     }
@@ -60,7 +60,7 @@
   &.triangle-h {
     @mixin grid-position 3, left, %, right;
     display: none;
-    top: 110%;
+    top: 99%;
     @media (min-width: $tablet-width) {
       display: block;
     }
@@ -71,7 +71,7 @@
   }
   &.dot-grid-b {
     top: 78%;
-    left: 79.3%;
+    left: 75.3%;
   }
   &.dot-grid-c {
     top: 50%;
