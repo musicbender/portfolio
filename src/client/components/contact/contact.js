@@ -38,6 +38,7 @@ class Contact extends Component {
     window.addEventListener('resize', this.handleResize);
     elm.addEventListener('mousemove', throttle(this.handleMouseMove(rect), 150));
     this.setState({ dotsWidth: rect.width, dotsHeight: rect.height });
+
     this.setTop();
   }
 
@@ -54,6 +55,8 @@ class Contact extends Component {
   setTop() {
     const elm = document.getElementById(this.gridID);
     const rect = elm.getBoundingClientRect();
+    console.log('contect rect:');
+    console.log(rect);
     this.props.setContactTop(rect.top - (rect.height / 2));
   }
 

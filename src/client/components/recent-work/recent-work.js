@@ -67,12 +67,6 @@ class RecentWork extends Component {
   }
 
   renderWorkItems() {
-    console.group("Recent work logs")
-    console.log(`baseTop: ${this.props.recentWorkTop}`)
-    console.log(`isMobile: ${this.props.isMobile}`);
-    console.log(`isStopped: `);
-    console.log(this.state.workStops);
-    console.groupEnd()
     return this.workData.map((item, i) => {
       return i < config.workItemsAmount && (
         <WorkItem

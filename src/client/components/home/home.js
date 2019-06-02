@@ -21,7 +21,7 @@ import Contact from '../contact';
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.handleScroll = throttle(this.handleScroll.bind(this), 40);
+    this.handleScroll = throttle(this.handleScroll.bind(this), 90);
     this.state = {
       atAbout: false,
       atBottom: false
@@ -37,29 +37,32 @@ class Home extends Component {
   }
 
   handleScroll(e) {
-    if (window.scrollY >= this.props.contactTop) {
-      if (!this.state.atBottom) {
-        this.setState({ atBottom: true });
-      }
-    }
+    const scrollY = window.scrollY;
 
-    if (window.scrollY < this.props.contactTop) {
-      if (this.state.atBottom) {
-        this.setState({ atBottom: false });
-      }
-    }
-
-    if (window.scrollY >= this.props.aboutTop) {
+    if (scrollY >= this.props.aboutTop) {
       if (!this.state.atAbout) {
         this.setState({ atAbout: true });
       }
-    }
 
-    if (window.scrollY < this.props.aboutTop) {
-      if (this.state.atAbout) {
-        this.setState({ atAbout: false });
+      if (scrollY >= this.props.contactTop) {
+        if (!this.state.atBottom) {
+          this.setState({ atBottom: true });
+        }
       }
     }
+
+    if (scrollY < this.props.contactTop) {
+      if (this.state.atBottom) {
+        this.setState({ atBottom: false });
+      }
+
+      if (scrollY < this.props.aboutTop) {
+        if (this.state.atAbout) {
+          this.setState({ atAbout: false });
+        }
+      }
+    }
+
   }
 
   handleBottom(atBottom = !this.state.atBottom) {
