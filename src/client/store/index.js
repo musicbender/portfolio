@@ -13,8 +13,6 @@ let middleware = [
   promise
 ];
 
-console.log(`hasWindow: ${hasWindow()}`);
-
 let store;
 
 // CHANGE BACK

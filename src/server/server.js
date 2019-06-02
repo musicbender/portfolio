@@ -76,7 +76,7 @@ app.use(logMiddleware());
 app.use(metaDataMiddleware);
 
 if (process.env.SERVE_STATIC === 'true') {
-  app.use(process.env.ASSET_ROOT, express.static(path.join(__dirname, 'public/')));
+  app.use(process.env.ASSET_ROOT, express.static(path.join(__dirname, process.env.ASSET_ROOT || '/')));
 }
 
 //--//--//--// REST API //--//--//--//

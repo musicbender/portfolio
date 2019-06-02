@@ -37,7 +37,6 @@ class RecentWork extends Component {
   }
 
   handleResize() {
-    console.log(`resizing`);
     this.setTop();
   }
 

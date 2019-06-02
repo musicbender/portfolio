@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     NODE_ENV: test
-    ASSET_ROOT: /
+    ASSET_ROOT: /public/
 
 phases:
   pre_build:
