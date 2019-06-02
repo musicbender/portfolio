@@ -81,7 +81,10 @@ class Header extends Component {
 
   render() {
     return (
-      <div className={cx(style.homeHeader)}>
+      <div className={cx(
+        style.homeHeader,
+        { [style.splashOpen]: this.props.splashOpen }
+      )}>
         <ColorDots splashOpen={this.props.splashOpen} />
         <LilSquare />
         {this.renderTriangles()}

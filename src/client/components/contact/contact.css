@@ -58,7 +58,7 @@
         @media (min-width: $small-desktop-width) {
           font-size: 9rem;
         }
-        @media (min-width: $site-max-width {
+        @media (min-width: $site-max-width) {
           font-size: 14rem;
         }
       }

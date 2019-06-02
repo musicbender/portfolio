@@ -7,6 +7,9 @@
   @media (min-width: $tablet-width) {
     height: 61em;
   }
+  &.splash-open {
+    overflow: hidden;
+  }
   > [class*="lil-square"] {
     position: absolute;
     top: 33em;
@@ -86,27 +89,35 @@
       }
     }
     > .dot-grid-b {
+      display: none;
       position: absolute;
       top: 32em;
       left: 2%;
       @media (min-width: $tablet-width) {
+        display: block;
         top: 5em;
       }
     }
     > .dot-grid-c {
+      display: none;
       position: absolute;
       top: -4em;
       left: 170%;
       transform: translateX(-100%);
       @media (min-width: $tablet-width) {
+        display: block;
         left: 100%;
       }
     }
     > .dot-grid-d {
+      display: none;
       position: absolute;
       top: 38em;
       left: 100%;
       transform: translateX(-100%);
+      @media (min-width: $tablet-width) {
+        display: block;
+      }
     }
   }
   > .title-wrapper {

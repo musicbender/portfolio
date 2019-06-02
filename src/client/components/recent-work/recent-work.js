@@ -29,7 +29,6 @@ class RecentWork extends Component {
   }
 
   componentDidMount() {
-    this.setTop();
     window.addEventListener('resize', this.handleResize);
   }
 
@@ -38,16 +37,13 @@ class RecentWork extends Component {
   }
 
   handleResize() {
+    console.log(`resizing`);
     this.setTop();
   }
 
   setTop() {
     const section = document.getElementById('recent-work-section');
     const rect = section.getBoundingClientRect();
-    console.group('^^^Work setting top^^^')
-    console.log(rect)
-    console.log(section);
-    console.groupEnd()
     this.props.setRecentWorkTop(rect.top);
   }
 

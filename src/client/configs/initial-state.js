@@ -5,12 +5,12 @@ module.exports = {
     transportOpen: false,
     menuOpen: false,
     mode: 'dark',
-    isMobile: false
+    isMobile: true
   },
   home: {
-    aboutTop: 1200,
-    recentWorkTop: 2200,
-    contactTop: 5500
+    aboutTop: 915,
+    recentWorkTop: 1819,
+    contactTop: 5082
   },
   stats: {
     data: null,

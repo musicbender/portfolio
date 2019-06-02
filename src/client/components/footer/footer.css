@@ -20,7 +20,10 @@
     }
   }
   > [class*="social"] {
-    width: 75%;
+    width: 50%;
+    @media (min-width: $tablet-width) {
+      width: 75%;
+    }
   }
   > .tri-wrapper {
     margin-left: 2.5em;

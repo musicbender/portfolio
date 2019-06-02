@@ -24,9 +24,9 @@ const AboutMe = ({
   useEffect(() => {
     const section = document.getElementById('about-section');
     const rect = section.getBoundingClientRect();
-    setTimeout(() => {
-      setAboutTop(rect.top - 20)
-    }, 500)
+    // setTimeout(() => {
+    //   setAboutTop(rect.top - 20)
+    // }, 500)
   }, []);
 
   // on update

@@ -22,8 +22,10 @@
       path {
         stroke-dasharray: 36;
         stroke-dashoffset: 36;
+        opacity: 0;
         animation: showSplashLogo 1000ms $logoIn forwards;
         animation-delay: 1000ms;
+        /* animation-delay: 1000000ms */
       }
     }
     &.debug {
@@ -36,9 +38,15 @@
 
 @keyframes showSplashLogo {
   0% {
+    opacity: 0;
+    stroke-dashoffset: 36;
+  }
+  1% {
+    opacity: 1;
     stroke-dashoffset: 36;
   }
   100% {
+    opacity: 1;
     stroke-dashoffset: 0;
   }
 }

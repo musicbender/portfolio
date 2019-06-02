@@ -20,6 +20,7 @@ const WorkItem = ({
   const baseEnd = baseTop;
   const accumulator = isMobile ? 275 : 535;
   const imgDir = `${process.env.ASSET_ROOT}assets/images/recent-work/`;
+  const onClient = hasWindow();
 
   const getPlxData = (seg, i) => {
     return [
@@ -45,7 +46,7 @@ const WorkItem = ({
         <Plx
           className={cx(style.parallax, style[`index-${i}`])}
           parallaxData={getPlxData(seg, i)}
-          disabled={!hasWindow()}
+          disabled={!onClient}
           key={`${i}` + item.title + 'image' + JSON.stringify(seg)}
         >
           <div className={cx(style.parallaxInner)}>
@@ -70,9 +71,9 @@ const WorkItem = ({
         <Plx
           className={cx(style.parallax, style[`index-${i}`])}
           parallaxData={getPlxData(plxSeg, i)}
-          onPlxStart={handleWorkStops(index, false)}
-          onPlxEnd={handleWorkStops(index, true)}
-          disabled={!hasWindow()}
+          onPlxStart={onClient ? handleWorkStops(index, false) : null}
+          onPlxEnd={onClient ? handleWorkStops(index, true) : null}
+          disabled={!onClient}
           key={`${i}` + item.label + 'info' + JSON.stringify(seg)}
         >
           <div className={cx(style.parallaxInner)}>

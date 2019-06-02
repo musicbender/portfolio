@@ -21,6 +21,12 @@
     max-width: 10em;
     width: 75%;
     overflow-x: hidden;
+    @media (min-width: $tablet-width) {
+      width: 100%;
+    }
+    @media (min-width: $small-desktop-width) {
+      width: 75%;
+    }
     > .inner-wrapper {
       width: 250%;
       transform: translate3d(-63%, 0, 0);

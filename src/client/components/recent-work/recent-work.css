@@ -5,10 +5,13 @@
   position: relative;
   width: 100%;
   height: auto;
-  margin: 0 0 12em;
+  margin: 0;
+  padding-bottom: 30em;
+  overflow: hidden;
   @media (min-width: $tablet-width) {
     height: 193em;
     margin: 0;
+    overflow: visible;
   }
   > .parent-wrapper {
     display: block;
