@@ -53,15 +53,16 @@ const CavieDots = ({ atBottom, bottom, baseStart }) => {
       <Plx
         className={cx(style.dotPlx, style.dot)}
         parallaxData={getPlxData(i)}
-        tagName="rect"
+        tagName="svg"
         disabled={!hasWindow()}
         animateWhenNotInViewport={true}
         key={`cavie-dot-$${i}-${i + x + y}`}
         width={size}
         height={size}
-        x={x}
-        y={y}
-      />
+        style={{ left: `${x}%`, top: `${y}%` }}
+      >
+        <rect width={size} height={size} />
+      </Plx>
     );
   }
 
@@ -69,12 +70,25 @@ const CavieDots = ({ atBottom, bottom, baseStart }) => {
     let dots = [];
     const dotSize = 12;
     const grid = Math.round(Math.sqrt(dotAmount));
-    const spacing = dotSize * grid;
-    const size = spacing * grid;
+    const size = 100;
+    const spacing = size / (grid - 1);
+
+    console.group('-----render dots-----');
+    console.log(`grid: ${grid}`);
+    console.log(`spacing: ${spacing}`);
+    console.groupEnd()
 
     for (let i = 0; i < dotAmount; i++) {
-      const y = Math.floor(i / grid) * spacing;
-      const x = (i * spacing) - Math.floor((i * spacing) / size) * size;
+      const row = Math.floor(i / grid);
+      const y = row * spacing;
+      const x = (i * spacing) - ((row * size) + (row * spacing));
+
+      console.group('dot')
+      console.log(`i: ${i}`);
+      console.log(`y: ${y}`);
+      console.log(`x: ${x}`);
+      console.log(`row: ${row}`);
+      console.groupEnd()
 
       dots = [
         ...dots,
@@ -83,14 +97,12 @@ const CavieDots = ({ atBottom, bottom, baseStart }) => {
     }
 
     return (
-      <svg
+      <div
         className={cx(style.dots, { [style.hide]: atBottom })}
-        viewBox={`0 0 ${size - 45} ${size}`}
-        height={size * 2}
-        width={size}
+        // style={{ height: `${size * 2}px`, width: `${size}px` }}
       >
         {dots}
-      </svg>
+      </div>
     );
   }
 

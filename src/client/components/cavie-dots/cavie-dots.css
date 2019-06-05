@@ -22,14 +22,20 @@
     > .dots {
       position: absolute;
       left: 84.1%;
-      bottom: 0;
+      bottom: 10em;
+      width: 50%;
+      padding-bottom: 48%;
       transform: translateX(-100%);
       &.hide {
         display: none;
       }
       > .dot {
+        position: absolute;
         fill: $purple;
         transform: translateY(150%);
+        > rect {
+          fill: inherit;
+        }
       }
     }
   }
