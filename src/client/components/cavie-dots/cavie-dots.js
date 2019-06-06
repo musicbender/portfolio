@@ -22,9 +22,9 @@ const CavieDots = ({ atBottom, bottom, baseStart }) => {
         end: i === 0 ? 200 : start + accumulator * 2,
         properties: [
           {
-            startValue: i === 0 ? 0 : 150,
+            startValue: i === 0 ? 0 : 56,
             endValue: 0,
-            unit: '%',
+            unit: 'vh',
             property: 'translateY'
           }
         ]
@@ -48,20 +48,23 @@ const CavieDots = ({ atBottom, bottom, baseStart }) => {
     ];
   }
 
-  const renderDot = (i, size, x, y) => {
+  const renderDot = ({ index, dotSize, x, y, xOffset, yOffset }) => {
     return (
       <Plx
         className={cx(style.dotPlx, style.dot)}
-        parallaxData={getPlxData(i)}
+        parallaxData={getPlxData(index)}
         tagName="svg"
         disabled={!hasWindow()}
         animateWhenNotInViewport={true}
-        key={`cavie-dot-$${i}-${i + x + y}`}
-        width={size}
-        height={size}
-        style={{ left: `${x}%`, top: `${y}%` }}
+        key={`cavie-dot-$${index}-${index + x + y}`}
+        width={dotSize}
+        height={dotSize}
+        style={{
+          left: `calc(${x}% - ${xOffset}px)`,
+          top: `calc(${y}% - ${yOffset}px)`
+        }}
       >
-        <rect width={size} height={size} />
+        <rect width={dotSize} height={dotSize} />
       </Plx>
     );
   }
@@ -73,34 +76,27 @@ const CavieDots = ({ atBottom, bottom, baseStart }) => {
     const size = 100;
     const spacing = size / (grid - 1);
 
-    console.group('-----render dots-----');
-    console.log(`grid: ${grid}`);
-    console.log(`spacing: ${spacing}`);
-    console.groupEnd()
-
     for (let i = 0; i < dotAmount; i++) {
       const row = Math.floor(i / grid);
-      const y = row * spacing;
-      const x = (i * spacing) - ((row * size) + (row * spacing));
+      const dotConfig = {
+        index: i,
+        dotSize,
+        y: row * spacing,
+        x: (i * spacing) - ((row * size) + (row * spacing))
+      }
 
-      console.group('dot')
-      console.log(`i: ${i}`);
-      console.log(`y: ${y}`);
-      console.log(`x: ${x}`);
-      console.log(`row: ${row}`);
-      console.groupEnd()
+      dotConfig.xOffset = (dotConfig.x / spacing) * 3;
+      dotConfig.yOffset = (dotConfig.y / spacing) * 3;
+
 
       dots = [
         ...dots,
-        renderDot(i, dotSize, x, y)
+        renderDot(dotConfig)
       ];
     }
 
     return (
-      <div
-        className={cx(style.dots, { [style.hide]: atBottom })}
-        // style={{ height: `${size * 2}px`, width: `${size}px` }}
-      >
+      <div className={cx(style.dots, { [style.hide]: atBottom })}>
         {dots}
       </div>
     );
