@@ -1,4 +1,6 @@
-module.exports = {
+import { config } from '../../shared/config.json';
+
+export default {
   global: {
     pageLoaded: false,
     splashOpen: true,
@@ -10,7 +12,7 @@ module.exports = {
   home: {
     aboutTop: 915,
     recentWorkTop: 1819,
-    contactTop: 5082
+    contactTop: config.contactTop
   },
   stats: {
     data: null,

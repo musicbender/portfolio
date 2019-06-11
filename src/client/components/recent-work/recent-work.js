@@ -37,13 +37,20 @@ class RecentWork extends Component {
   }
 
   handleResize() {
-    this.setTop();
+    this.setTop(true);
   }
 
-  setTop() {
-    const section = document.getElementById('recent-work-section');
-    const rect = section.getBoundingClientRect();
-    this.props.setRecentWorkTop(rect.top);
+  setTop(didResize = false, input) {
+    let value = input;
+
+    if (value == null) {
+      const section = document.getElementById('recent-work-section');
+      const rect = section.getBoundingClientRect();
+      value = rect.top;
+    }
+
+
+    this.props.setRecentWorkTop({ value, didResize });
   }
 
   handleWorkStops(index, stopped) {
