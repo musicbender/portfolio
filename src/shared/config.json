@@ -16,6 +16,7 @@
     "workItemsAmount": 5,
     "homeBottom": 5562,
     "mobileBreakpoint": 768,
+    "windowHeightConstant": 939,
     "colors": {
       "purple": "#633DFF",
       "aqua": "#32D2C9",

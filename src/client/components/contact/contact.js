@@ -38,6 +38,7 @@ class Contact extends Component {
     window.addEventListener('resize', this.handleResize);
     elm.addEventListener('mousemove', throttle(this.handleMouseMove(rect), 150));
     this.setState({ dotsWidth: rect.width, dotsHeight: rect.height });
+    this.setTop();
   }
 
   componentDidUpdate(prevProps) {
