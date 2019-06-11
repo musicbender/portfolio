@@ -10,7 +10,8 @@
   border-width: 0.6em;
   border-style: solid;
   padding: 1em;
-  transition: border-color $fast $easeInOut, color $fast $easeInOut;
+  transition: border-color $fast $easeInOut,
+    color $fast $easeInOut;
   @media (min-width: $tablet-width) {
     width: calc($(s)vw + $(m)vw);
     margin-left: 0;

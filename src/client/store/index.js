@@ -15,8 +15,7 @@ let middleware = [
 
 let store;
 
-// CHANGE BACK
-if (process.env.NODE_ENV === "production" && hasWindow() && window.__REDUX_DEVTOOLS_EXTENSION__) {
+if (process.env.NODE_ENV !== "production" && hasWindow() && window.__REDUX_DEVTOOLS_EXTENSION__) {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   const enhancer = composeEnhancers(applyMiddleware(...middleware));
   store = createStore(reducers, preloadedState, enhancer);

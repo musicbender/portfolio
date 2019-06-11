@@ -15,46 +15,60 @@ const DotFormation = ({
 }) => {
   const hideEnabled = hide && hideArray && hideArray.length > 0;
 
-  const renderDot = ({ i, size, x, y, hide }) => {
+  const renderDot = ({ i, x, y, hide }) => {
     return (
-      <rect
+      <svg
         className={cx(
           style.dot,
           `dot-${i}`,
           { [style.hide]: hide }
         )}
         key={`dot-formation-$${i}-${i + x + y}`}
-        width={size}
-        height={size}
-        x={x}
-        y={y}
-        style={{ fill: color }}
-      />
+        width={dotSize}
+        height={dotSize}
+        style={{
+          fill: color,
+          left: `calc(${x}%)`,
+          top:  `calc(${y}%)`
+        }}
+      >
+        <rect width={dotSize} height={dotSize} />
+      </svg>
     );
   }
 
   const renderDots = () => {
     let dots = [];
-    const spacing = dotSize * 5;
+    const ySpacing = 100 / (rows - 1);
+    const xSpacing = 100 / (columns - 1);
     const dotAmount = columns * rows;
-    const width = columns * spacing;
-    const height = rows * spacing;
+    const width = columns * xSpacing;
+    const height = rows * ySpacing;
 
     for (let i = 0; i < dotAmount; i++) {
-      const y = Math.floor(i / columns) * spacing;
-      const x = (i * spacing) - Math.floor((i * spacing) / width) * width;
+      const row = Math.floor(i / columns);
+      // const y = row * spacing;
+      // const x = (i * spacing) - Math.floor((i * spacing) / width) * width;
       const hide = hideEnabled && hideArray.indexOf(i) > -1;
+
+      const dotConfig = {
+        i,
+        y: row * ySpacing,
+        // x: (i * spacing) - ((row * 100) + (row * spacing)),
+        x: (i * xSpacing) - Math.floor((i * xSpacing) *  row),
+        hide: hideEnabled && hideArray.indexOf(i) > -1
+      }
 
       dots = [
         ...dots,
-        renderDot({ i, size: dotSize, x, y, hide })
+        renderDot(dotConfig)
       ];
     }
 
     return (
-      <svg className={cx(style.dots)} viewBox={`0 0 ${width} ${height}`} height={height} width={width}>
+      <div className={cx(style.dots)}>
         {dots}
-      </svg>
+      </div>
     );
   }
 
@@ -78,7 +92,7 @@ DotFormation.propTypes = {
 DotFormation.defaultProps = {
   columns: 32,
   rows: 8,
-  dotSize: 14.12,
+  dotSize: 12,
   hide: false,
   color: '#F98D51',
   classNames: ''

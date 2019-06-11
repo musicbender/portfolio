@@ -32,7 +32,8 @@
       > .dot {
         position: absolute;
         fill: $purple;
-        transform: translateY(54vh);
+        transform: translateY(100vh);
+        transition: transform $fast ease-out;
         > rect {
           fill: inherit;
         }

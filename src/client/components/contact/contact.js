@@ -14,16 +14,17 @@ class Contact extends Component {
   constructor(props) {
     super(props);
     this.handleMouseMove = this.handleMouseMove.bind(this);
+    this.handleResize = throttle(this.handleResize.bind(this), 100);
     this.gridID = 'contact-dot-grid';
     this.defaultColor = 'rgb(249, 141, 81)';
-    this.handleResize = throttle(this.handleResize.bind(this), 100);
-    this.hideArray = [
-      23, 24, 25, 26, 27,
-      51, 52, 53, 54, 55,
-      79, 80, 81, 82, 83,
-      107, 108, 109, 110, 111,
-      135, 136, 137, 138, 139
-    ];
+    // this.hideArray = [
+    //   23, 24, 25, 26, 27,
+    //   51, 52, 53, 54, 55,
+    //   79, 80, 81, 82, 83,
+    //   107, 108, 109, 110, 111,
+    //   135, 136, 137, 138, 139
+    // ];
+    this.hideArray = [];
     this.state = {
       dotsWidth: 0,
       dotsHeight: 0,
@@ -36,7 +37,7 @@ class Contact extends Component {
     const rect = elm.getBoundingClientRect();
 
     window.addEventListener('resize', this.handleResize);
-    elm.addEventListener('mousemove', throttle(this.handleMouseMove(rect), 150));
+    // elm.addEventListener('mousemove', throttle(this.handleMouseMove(rect), 150));
     this.setState({ dotsWidth: rect.width, dotsHeight: rect.height });
   }
 
@@ -84,15 +85,14 @@ class Contact extends Component {
   render() {
     return (
       <div className={cx(style.contact)}>
-        <div id={this.gridID} className={cx(style.dotWrapper)} onClick={this.handleButton}>
+        <div id={this.gridID} className={cx(style.dotWrapper)}>
           <DotFormation
             classNames={cx('big')}
-            columns={28}
+            columns={16}
             hide={!this.props.atBottom}
             hideArray={this.hideArray}
             color={this.state.color}
           />
-          <DotFormation classNames={cx('small')} columns={4} color={this.state.color} />
           <div
             className={cx(
               style.contactCta,

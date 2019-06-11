@@ -20,6 +20,7 @@
     > .parallax {
       position: absolute;
       height: 100%;
+      transition: transform 300ms ease-out;
       &.index-0 {
         left: 0;
         width: calc($grid-m * 4);
@@ -107,6 +108,7 @@
     }
     > .parallax {
       position: absolute;
+      transition: transform $fast ease-out;
       [class*="item-info"] {
         margin: 0;
       }
