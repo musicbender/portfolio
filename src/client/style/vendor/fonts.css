@@ -1,4 +1,4 @@
-/* @font-face {
+@font-face {
   font-family: 'Futura';
   font-weight: normal;
   src: url('../../assets/fonts/Futura-Medium.woff2') format('woff2'),
@@ -20,4 +20,4 @@
   src: url('../../assets/fonts/Inconsolata.woff2') format('woff2'),
        url('../../assets/fonts/Inconsolata.woff') format('woff'),
        url('../../assets/fonts/Inconsolata.ttf')  format('truetype');
-} */
+}

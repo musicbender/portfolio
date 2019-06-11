@@ -52,6 +52,16 @@ const config = {
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         loader: 'file-loader?name=[path][name].[ext]'
+        use: [
+          {
+            lader: 'file-laoder',
+            options: {
+              content: '../src/client/assets/',
+              name: '[path][name].[ext]',
+              outputPath: 'assets/'
+            }
+          }
+        ]
       },
       {
         test: /\.(jpe?g|png|gif)$/i,
