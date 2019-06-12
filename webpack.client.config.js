@@ -22,8 +22,8 @@ const config = {
   },
   output: {
     path: path.join(__dirname, '/dist/public'),
+    publicPath: process.env.ASSET_ROOT || '/public',
     filename: 'bundle.js',
-    publicPath: '/public',
     chunkFilename: '[name].bundle.js'
   },
   module: {
@@ -55,9 +55,9 @@ const config = {
           {
             loader: 'file-loader',
             options: {
-              content: '../src/client/assets/',
+              content: 'src/client/assets/',
               name: '[path][name].[ext]',
-              outputPath: 'assets/'
+              outputPath: '/assets/'
             }
           }
         ]
@@ -68,7 +68,7 @@ const config = {
           {
             loader: 'file-loader',
             options: {
-              context: '../src/client/assets/',
+              context: 'src/client/assets/',
               name: '[path][name].[ext]',
               outputPath: 'assets/'
             }

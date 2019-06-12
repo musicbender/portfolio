@@ -20,16 +20,6 @@ const homeMiddleware = store => next => action => {
         modifiedAction.payload = payload.value - heightOffset;
       }
 
-      console.group('middlewares')
-      console.log(`innnerHeight: ${window.innerHeight}`);
-      console.log(`heightOffset: ${heightOffset}`);
-      console.log(`heightOffset div by 2: ${heightOffset / 2}`);
-      console.log(`payload: ${payload.value}`);
-      console.log(`didResize: ${payload.didResize}`);
-      console.log(`scrollY: ${window.scrollY}`);
-      console.log(`output: ${modifiedAction.payload}`);
-      console.groupEnd();
-
       next(modifiedAction);
       break;
     }

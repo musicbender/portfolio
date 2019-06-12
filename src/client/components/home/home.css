@@ -3,6 +3,7 @@
 
 .home {
   position: relative;
+  background-image: url('/assets/images/recent-work/bns.jpg');
   > .outter-wrapper {
     position: relative;
     margin-bottom: $footer-height-m;

@@ -70,7 +70,6 @@ class Home extends Component {
   }
 
   render() {
-    console.log(`contactTop: ${this.props.contactTop}`);
     return (
       <main className={cx(style.home, 'page')}>
         <div className={cx(style.outterWrapper)}>

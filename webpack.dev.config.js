@@ -19,7 +19,7 @@ const config = {
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'bundle.js',
-    publicPath: 'http://localhost:' + process.env.PORT + '/',
+    publicPath: process.env.ASSET_ROOT || '/',
     chunkFilename: '[name].bundle.js'
   },
   module: {
@@ -48,7 +48,14 @@ const config = {
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=[path][name].[ext]'
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+            }
+          }
+        ]
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i, loader: "file-loader?name=[path][name].[ext]"
