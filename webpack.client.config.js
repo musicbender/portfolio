@@ -4,7 +4,11 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
+console.log(`asset root: ${process.env.ASSET_ROOT}`);
+console.log(process.env.USE_DOTENV);
+
 if (process.env.USE_DOTENV) {
+  console.log(`using dot env in webpack`);
   require('dotenv').config({
     path: `.env.${process.env.NODE_ENV}`,
   });
@@ -52,27 +56,13 @@ const config = {
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         use: [
-          {
-            loader: 'file-loader',
-            options: {
-              content: 'src/client/assets/',
-              name: '[path][name].[ext]',
-              outputPath: '/assets/'
-            }
-          }
+          'file-loader'
         ]
       },
       {
         test: /\.(jpe?g|png|gif)$/i,
         use: [
-          {
-            loader: 'file-loader',
-            options: {
-              context: 'src/client/assets/',
-              name: '[path][name].[ext]',
-              outputPath: 'assets/'
-            }
-          }
+          'file-loader'
         ]
       }
     ],
@@ -87,7 +77,7 @@ const config = {
       filename: "style.css"
     }),
     new CopyWebpackPlugin([
-      { from: 'src/client/assets/', to: 'assets', ignore: [ '.DS_Store' ] },
+      { from: 'src/client/assets/', to: 'assets', ignore: [ '.DS_Store', 'fonts/*' ] },
       { from: 'src/client/assets/manifests/site.webmanifest', to: '' }
     ])
   ],
@@ -117,5 +107,7 @@ const config = {
     }
   },
 };
+
+console.log(config.output);
 
 module.exports = config;

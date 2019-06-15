@@ -29,10 +29,10 @@ module.exports = {
         loader: "babel-loader",
         exclude: /node_modules/
       },
-      {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=[path][name].[ext]'
-      },
+      // {
+      //   test: /\.(eot|svg|ttf|woff|woff2)$/,
+      //   loader: 'file-loader?name=[path][name].[ext]'
+      // },
       {
         test: /\.css$/,
         use: [

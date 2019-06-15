@@ -49,12 +49,7 @@ const config = {
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-            }
-          }
+          'file-loader'
         ]
       },
       {
