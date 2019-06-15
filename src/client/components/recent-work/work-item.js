@@ -17,8 +17,8 @@ const WorkItem = ({
   baseTop,
   isMobile
 }) => {
-  const baseEnd = baseTop;
-  const accumulator = isMobile ? 275 : 535;
+  const baseEnd = isMobile ? baseTop - 400 : baseTop;
+  const accumulator = isMobile ? 250 : 535;
   const imgDir = `${process.env.ASSET_ROOT}assets/images/recent-work/`;
   const onClient = hasWindow();
 

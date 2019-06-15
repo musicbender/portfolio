@@ -6,11 +6,12 @@
   width: 100%;
   height: auto;
   margin: 0;
-  padding-bottom: 30em;
+  padding-bottom: 10em;
   overflow: hidden;
   @media (min-width: $tablet-width) {
     height: 193em;
     margin: 0;
+    padding-bottom: 30em;
     overflow: visible;
   }
   > .parent-wrapper {
