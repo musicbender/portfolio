@@ -22,12 +22,19 @@
     left: -92%;
   }
   .content-box {
-    padding: 2em 4em;
+    padding: 2em;
     background-color: $darker-black;
+    @media (min-width: $tablet-width) {
+      padding: 2em 4em;
+    }
     > p {
-      line-height: 1.87;
-      font-size: 1.2rem;
+      line-height: 1.65;
+      font-size: 1rem;
       color: rgba($white, 0.65);
+      @media (min-width: $tablet-width) {
+        font-size: 1.2rem;
+        line-height: 1.87;
+      }
     }
   }
 }

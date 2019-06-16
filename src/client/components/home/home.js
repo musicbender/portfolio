@@ -21,7 +21,7 @@ import Contact from '../contact';
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.handleScroll = throttle(this.handleScroll.bind(this), 90);
+    this.handleScroll = throttle(this.handleScroll.bind(this), 80);
     this.state = {
       atAbout: false,
       atBottom: false

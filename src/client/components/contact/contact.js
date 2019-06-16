@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import DotFormation from '../_particles/dot-formation';
 import { setContactTop } from '../../actions/home';
-import { meta } from '../../../shared/config.json';
+import { meta, config } from '../../../shared/config.json';
 import { hasWindow, throttle, minMax } from '../../util/util';
 import cn from 'classnames/bind';
 import style from './contact.css';
@@ -39,6 +39,7 @@ class Contact extends Component {
     window.addEventListener('resize', this.handleResize);
     // elm.addEventListener('mousemove', throttle(this.handleMouseMove(rect), 150));
     this.setState({ dotsWidth: rect.width, dotsHeight: rect.height });
+    this.setTop(false, config.contactTop);
   }
 
   componentDidUpdate(prevProps) {
@@ -51,10 +52,16 @@ class Contact extends Component {
     window.removeEventListner('resize', this.handleResize);
   }
 
-  setTop() {
-    const elm = document.getElementById(this.gridID);
-    const rect = elm.getBoundingClientRect();
-    this.props.setContactTop(rect.top - (rect.height / 2));
+  setTop(didResize = false, input) {
+    let value = input;
+
+    if (value == null) {
+      const elm = document.getElementById(this.gridID);
+      const rect = elm.getBoundingClientRect();
+      value = rect.top - (rect.height / 2)
+    }
+
+    this.props.setContactTop({ value, didResize });
   }
 
   handleMouseMove(rect) {
@@ -72,7 +79,7 @@ class Contact extends Component {
   }
 
   handleResize() {
-    this.setTop();
+    this.setTop(true);
   }
 
   handleButton(e) {
@@ -88,7 +95,7 @@ class Contact extends Component {
         <div id={this.gridID} className={cx(style.dotWrapper)}>
           <DotFormation
             classNames={cx('big')}
-            columns={16}
+            columns={15}
             hide={!this.props.atBottom}
             hideArray={this.hideArray}
             color={this.state.color}

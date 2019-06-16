@@ -3,7 +3,7 @@
 
 .dot-formation {
   position: relative;
-  height: 45em;
+  height: 23em;
   > .dots {
     position: absolute;
     margin: 0 auto;

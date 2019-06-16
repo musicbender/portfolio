@@ -15,7 +15,7 @@ const DotFormation = ({
 }) => {
   const hideEnabled = hide && hideArray && hideArray.length > 0;
 
-  const renderDot = ({ i, x, y, hide }) => {
+  const renderDot = ({ i, x, y, hide, xOffset, yOffset }) => {
     return (
       <svg
         className={cx(
@@ -28,8 +28,8 @@ const DotFormation = ({
         height={dotSize}
         style={{
           fill: color,
-          left: `calc(${x}%)`,
-          top:  `calc(${y}%)`
+          left: `calc(${x}% - ${xOffset}px)`,
+          top:  `calc(${y}% - ${yOffset}px)`
         }}
       >
         <rect width={dotSize} height={dotSize} />
@@ -47,17 +47,18 @@ const DotFormation = ({
 
     for (let i = 0; i < dotAmount; i++) {
       const row = Math.floor(i / columns);
-      // const y = row * spacing;
-      // const x = (i * spacing) - Math.floor((i * spacing) / width) * width;
+      const column = i - (columns * row);
       const hide = hideEnabled && hideArray.indexOf(i) > -1;
 
       const dotConfig = {
         i,
         y: row * ySpacing,
-        // x: (i * spacing) - ((row * 100) + (row * spacing)),
-        x: (i * xSpacing) - Math.floor((i * xSpacing) *  row),
+        x: column * xSpacing,
         hide: hideEnabled && hideArray.indexOf(i) > -1
       }
+
+      dotConfig.xOffset = ((column + 1) / columns) * dotSize;
+      dotConfig.yOffset = ((row + 1) / rows) * dotSize;
 
       dots = [
         ...dots,

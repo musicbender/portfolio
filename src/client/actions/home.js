@@ -4,24 +4,24 @@ import {
   CONTACT_TOP_SET
 } from '../configs/constants';
 
-export function setAboutTop(value) {
+export function setAboutTop(params) {
   return {
     type: ABOUT_TOP_SET,
-    payload: value
+    payload: params
   }
 }
 
 
-export function setRecentWorkTop(value) {
+export function setRecentWorkTop(params) {
   return {
     type: RECENT_WORK_TOP_SET,
-    payload: value
+    payload: params
   }
 }
 
-export function setContactTop(value) {
+export function setContactTop(params) {
   return {
     type: CONTACT_TOP_SET,
-    payload: value
+    payload: params
   }
 }

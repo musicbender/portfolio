@@ -15,7 +15,9 @@
     "transportDuration": 2500,
     "workItemsAmount": 5,
     "homeBottom": 5562,
+    "contactTop": 5082,
     "mobileBreakpoint": 768,
+    "windowHeightConstant": 939,
     "colors": {
       "purple": "#633DFF",
       "aqua": "#32D2C9",

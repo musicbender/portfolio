@@ -1,4 +1,9 @@
-import { ABOUT_TOP_SET, RECENT_WORK_TOP_SET, CONTACT_TOP_SET } from '../configs/constants';
+import { config } from '../../shared/config.json';
+import {
+  ABOUT_TOP_SET,
+  RECENT_WORK_TOP_SET,
+  CONTACT_TOP_SET
+} from '../configs/constants';
 
 const homeMiddleware = store => next => action => {
   const { type, payload } = action;
@@ -7,7 +12,13 @@ const homeMiddleware = store => next => action => {
     case RECENT_WORK_TOP_SET:
     case CONTACT_TOP_SET: {
       let modifiedAction = action;
-      modifiedAction.payload = Math.round(payload - 200 + (window.scrollY || 0));
+      const heightOffset = window.innerHeight - config.windowHeightConstant;
+
+      if (payload.didResize) {
+        modifiedAction.payload = Math.round((payload.value - 200 + (window.scrollY || 0)));
+      } else {
+        modifiedAction.payload = payload.value - heightOffset;
+      }
 
       next(modifiedAction);
       break;

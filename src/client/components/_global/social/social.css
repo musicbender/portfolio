@@ -25,7 +25,7 @@
       margin: 0;
       color: rgba($white, 0.7);
       text-decoration: none;
-      float: left;
+      justify-self: center;
       transform: rotate(-90deg);
       &:hover,
       &:focus {
@@ -35,6 +35,7 @@
       @media (min-width: $tablet-width) {
         margin: 0 2.5em;
         transform: none;
+        float: left;
       }
     }
   }
