@@ -9,4 +9,4 @@ export const IS_MOBILE_SET = 'IS_MOBILE_SET';
 // home
 export const ABOUT_TOP_SET = 'ABOUT_TOP_SET';
 export const RECENT_WORK_TOP_SET = 'RECENT_WORK_TOP_SET';
-export const CONTACT_TOP_SET = 'CONTACT_TOP_SET';
+export const SKILLS_TOP_SET = 'SKILLS_TOP_SET';

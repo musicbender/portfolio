@@ -12,7 +12,7 @@ export default {
   home: {
     aboutTop: 915,
     recentWorkTop: 1819,
-    contactTop: config.contactTop
+    skillsTop: config.skillsTop
   },
   stats: {
     data: null,

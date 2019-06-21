@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Triangle from '../triangle';
 import cn from 'classnames/bind';
 import style from './dot-formation.css';
 const cx = cn.bind(style);
@@ -11,6 +12,7 @@ const DotFormation = ({
   hide,
   hideArray,
   color,
+  shape,
   classNames
 }) => {
   const hideEnabled = hide && hideArray && hideArray.length > 0;
@@ -32,7 +34,14 @@ const DotFormation = ({
           top:  `calc(${y}% - ${yOffset}px)`
         }}
       >
-        <rect width={dotSize} height={dotSize} />
+        {
+          shape === 'square' &&
+          <rect width={dotSize} height={dotSize} />
+        }
+        {
+          shape === 'triangle' &&
+          <Triangle width="micro" color="orange" opacity={1} />
+        }
       </svg>
     );
   }
@@ -87,6 +96,7 @@ DotFormation.propTypes = {
   hide: PropTypes.bool,
   hideArray: PropTypes.arrayOf(PropTypes.number),
   color: PropTypes.string,
+  shape: PropTypes.oneOf(['square', 'triangle']),
   classNames: PropTypes.string
 }
 
@@ -96,6 +106,7 @@ DotFormation.defaultProps = {
   dotSize: 12,
   hide: false,
   color: '#F98D51',
+  shape: 'square',
   classNames: ''
 }
 

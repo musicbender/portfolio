@@ -15,7 +15,7 @@
     "transportDuration": 2500,
     "workItemsAmount": 5,
     "homeBottom": 5562,
-    "contactTop": 5082,
+    "skillsTop": 5360,
     "mobileBreakpoint": 768,
     "windowHeightConstant": 939,
     "colors": {
