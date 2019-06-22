@@ -7,6 +7,7 @@ import DotFormation from '../_particles/dot-formation';
 import { setSkillsTop } from '../../actions/home';
 import { meta, config } from '../../../shared/config.json';
 import { hasWindow, throttle, minMax } from '../../util/util';
+import skillsData from '../../../shared/skills.json';
 import cn from 'classnames/bind';
 import style from './skills.css';
 const cx = cn.bind(style);
@@ -102,6 +103,7 @@ class Skills extends Component {
             hide={!this.props.atBottom}
             hideArray={this.hideArray}
             color={this.state.color}
+            textConfig={skillsData}
           />
           <div
             className={cx(

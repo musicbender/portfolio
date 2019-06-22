@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import TextEmbeds from './text-embeds';
 import Triangle from '../triangle';
 import cn from 'classnames/bind';
 import style from './dot-formation.css';
@@ -13,9 +14,20 @@ const DotFormation = ({
   hideArray,
   color,
   shape,
+  textConfig,
   classNames
 }) => {
   const hideEnabled = hide && hideArray && hideArray.length > 0;
+  const ySpacing = 100 / (rows - 1);
+  const xSpacing = 100 / (columns - 1);
+  const dotAmount = columns * rows;
+  const width = columns * xSpacing;
+  const height = rows * ySpacing;
+
+  const getDotOffset = (index, axis) => {
+    const vector = axis === 'x' ? columns : rows;
+    return ((index + 1) / vector) * dotSize;
+  }
 
   const renderDot = ({ i, x, y, hide, xOffset, yOffset }) => {
     return (
@@ -48,11 +60,6 @@ const DotFormation = ({
 
   const renderDots = () => {
     let dots = [];
-    const ySpacing = 100 / (rows - 1);
-    const xSpacing = 100 / (columns - 1);
-    const dotAmount = columns * rows;
-    const width = columns * xSpacing;
-    const height = rows * ySpacing;
 
     for (let i = 0; i < dotAmount; i++) {
       const row = Math.floor(i / columns);
@@ -66,8 +73,8 @@ const DotFormation = ({
         hide: hideEnabled && hideArray.indexOf(i) > -1
       }
 
-      dotConfig.xOffset = ((column + 1) / columns) * dotSize;
-      dotConfig.yOffset = ((row + 1) / rows) * dotSize;
+      dotConfig.xOffset = getDotOffset(column, 'x');
+      dotConfig.yOffset = getDotOffset(row, 'y');
 
       dots = [
         ...dots,
@@ -84,7 +91,16 @@ const DotFormation = ({
 
   return (
     <div className={cx(style.dotFormation, classNames)}>
-      {renderDots()}
+      { renderDots() }
+      {
+        textConfig &&
+        <TextEmbeds
+          textConfig={textConfig}
+          spacing={[xSpacing, ySpacing]}
+          getDotOffset={getDotOffset}
+          dotSize={dotSize}
+        />
+      }
     </div>
   );
 }
@@ -97,6 +113,7 @@ DotFormation.propTypes = {
   hideArray: PropTypes.arrayOf(PropTypes.number),
   color: PropTypes.string,
   shape: PropTypes.oneOf(['square', 'triangle']),
+  textConfig: PropTypes.arrayOf(PropTypes.object),
   classNames: PropTypes.string
 }
 

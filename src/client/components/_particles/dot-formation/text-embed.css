@@ -1,0 +1,28 @@
+@import '../../../style/helpers/variables';
+@import '../../../style/helpers/mixins';
+
+.text-embed {
+  position: absolute;
+  white-space: nowrap;
+  > span {
+    display: inline-block;
+    width: auto;
+    color: $white;
+    font-size: 1.2rem;
+  }
+  &.right {
+    transform-origin: center left;
+    transform: rotate(0deg)
+  }
+  &.up {
+    transform-origin: calc(0% + 6px) calc(50% + 1px);
+    transform: rotate(-90deg);
+  }
+  &.down {
+    transform-origin: 8% 60%;
+    transform: rotate(90deg);
+  }
+  &[class*="aws"] {
+    transform-origin: 18% 60%;
+  }
+}
