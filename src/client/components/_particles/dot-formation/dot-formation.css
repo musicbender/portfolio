@@ -11,7 +11,7 @@
     height: 100%;
     > .dot {
       position: absolute;
-      opacity: 0.87;
+      opacity: 1;
       transition: fill 150ms linear;
       &.hide {
         opacity: 0;

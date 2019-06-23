@@ -24,13 +24,16 @@ const TextEmbed = ({
         width
       }}
     >
-      {
-        text
-          .split('')
-          .map((letter, i) => (
-            <span key={letter + i + text}>{letter}</span>
-          ))
-      }
+      <div className={cx(style.textWrapper)}>
+        {
+          text
+            .split('')
+            .map((letter, i) => (
+              <span key={letter + i + text}>{letter}</span>
+            ))
+        }
+      </div>
+      <div className={cx(style.revealBar)} />
     </div>
   );
 }

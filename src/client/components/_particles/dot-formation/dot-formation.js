@@ -24,15 +24,13 @@ const DotFormation = ({
   const width = columns * xSpacing;
   const height = rows * ySpacing;
 
-  console.log(`spacing:`);
-  console.log(`x: ${xSpacing} y: ${ySpacing}`);
-
   const getDotOffset = (index, axis) => {
     const vector = axis === 'x' ? columns : rows;
     return ((index + 1) / vector) * dotSize;
   }
 
-  const renderDot = ({ i, x, y, hide, xOffset, yOffset }) => {
+  const renderDot = (config) => {
+    const { i, x, y, row, column, hide, xOffset, yOffset } = config;
     return (
       <svg
         className={cx(
@@ -73,6 +71,8 @@ const DotFormation = ({
         i,
         y: row * ySpacing,
         x: column * xSpacing,
+        row,
+        column,
         hide: hideEnabled && hideArray.indexOf(i) > -1
       }
 
