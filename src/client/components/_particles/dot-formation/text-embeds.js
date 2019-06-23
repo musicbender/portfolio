@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TextEmbed from './text-embed';
+import { getTextWidth } from '../../../util/dot-grid';
 import cn from 'classnames/bind';
 import style from './text-embeds.css';
 const cx = cn.bind(style);
@@ -11,6 +12,24 @@ const TextEmbeds = ({
   getDotOffset,
   dotSize
 }) => {
+  const getTextOffset = (item) => {
+    return item.direction === 'right'
+      ? getDotOffset(item.position[0], 'x')
+      : getDotOffset(item.position[1], 'y')
+  }
+
+
+  const getTextSpacing = (direction) => {
+    switch(direction) {
+      case 'up':
+        return spacing[1] / 2;
+      case 'down':
+        return (spacing[1] / 2) - 0.25;
+      default:
+        return spacing[0];
+    }
+  }
+
   return (
     <div className={cx(style.textEmbeds)}>
       {
@@ -22,6 +41,11 @@ const TextEmbeds = ({
               x: getDotOffset(item.position[0], 'x'),
               y: getDotOffset(item.position[1], 'y') + (dotSize / 2)
             }}
+            width={getTextWidth({
+              text: item.text,
+              spacing: getTextSpacing(item.direction),
+              offset: getTextOffset(item)
+            })}
             key={item.text + i}
           />
         ))

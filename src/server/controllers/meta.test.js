@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { regexEscape } from './util';
+import { getPageData } from './meta';
 import mockPageData from '../../../test/mocks/page-config.json';
 
 describe('meta.js', function () {

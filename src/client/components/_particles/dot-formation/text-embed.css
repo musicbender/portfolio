@@ -2,11 +2,13 @@
 @import '../../../style/helpers/mixins';
 
 .text-embed {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(5px, 1fr) );
+  grid-template-rows: 1fr;
   position: absolute;
   white-space: nowrap;
   > span {
     display: inline-block;
-    width: auto;
     color: $white;
     font-size: 1.2rem;
   }
@@ -19,10 +21,10 @@
     transform: rotate(-90deg);
   }
   &.down {
-    transform-origin: 8% 60%;
+    transform-origin: 3% 55%;
     transform: rotate(90deg);
   }
   &[class*="aws"] {
-    transform-origin: 18% 60%;
+    transform-origin: 7% 55%;
   }
 }

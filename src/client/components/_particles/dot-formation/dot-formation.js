@@ -24,6 +24,9 @@ const DotFormation = ({
   const width = columns * xSpacing;
   const height = rows * ySpacing;
 
+  console.log(`spacing:`);
+  console.log(`x: ${xSpacing} y: ${ySpacing}`);
+
   const getDotOffset = (index, axis) => {
     const vector = axis === 'x' ? columns : rows;
     return ((index + 1) / vector) * dotSize;

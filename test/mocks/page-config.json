@@ -1,0 +1,97 @@
+{
+  "home": {
+    "id": "home",
+    "path": "/",
+    "title": "Official Website | Lineage II",
+    "description": "Lineage II brings you into an expansive free-to-play MMORPG experience where you create your own destiny in the realm of Aden."
+  },
+  "about": {
+    "id": "about",
+    "path": "/about",
+    "title": "About The Game | Lineage II",
+    "description": "Welcome to Lineage II, a free-to-play MMORPG where you engage in colossal PvP siege battles, join epic raid encounters and build your own clan of allies."
+  },
+  "newsArticle": {
+    "id": "newsArticle",
+    "path": "/news/:article",
+    "dataDependency": "newsData"
+  },
+  "news": {
+    "id": "news",
+    "path": "/news",
+    "title": "Official News | Lineage II",
+    "description": "Get the latest official news for Lineage II, the free-to-play MMORPG where you engage in colossal PvP siege battles, join epic raid encounters and build your own clan of allies."
+  },
+  "racesHuman": {
+    "id": "racesHuman",
+    "path": "/races/human",
+    "title": "Races and Classes | Lineage II",
+    "description": "Shape your journey in Lineage II by creating a unique avatar from a selection of 7 unique races leading you to a path of more than 30 potential classes you can evolve into."
+  },
+  "races": {
+    "id": "races",
+    "path": "/races",
+    "title": "Races and Classes | Lineage II",
+    "description": "Shape your journey in Lineage II by creating a unique avatar from a selection of 7 unique races leading you to a path of more than 30 potential classes you can evolve into."
+  },
+  "classesHumanFighter": {
+    "id": "classesHumanFighter",
+    "path": "/classes/human/fighter",
+    "title": "Races and Classes | Lineage II",
+    "description": "Shape your journey in Lineage II by creating a unique avatar from a selection of 7 unique races leading you to a path of more than 30 potential classes you can evolve into."
+  },
+  "classesOrcMystic": {
+    "id": "classesOrcMystic",
+    "path": "/classes/orc/mystic",
+    "title": "Races and Classes | Lineage II",
+    "description": "Shape your journey in Lineage II by creating a unique avatar from a selection of 7 unique races leading you to a path of more than 30 potential classes you can evolve into."
+  },
+  "anyWizard": {
+    "id": "anyWizard",
+    "path": "/classes/:race/wizard",
+    "title": "Races and Classes | Lineage II",
+    "description": "Shape your journey in Lineage II by creating a unique avatar from a selection of 7 unique races leading you to a path of more than 30 potential classes you can evolve into."
+  },
+  "anyClass": {
+    "id": "anyClass",
+    "path": "/classes/:race/:class",
+    "title": "Races and Classes | Lineage II",
+    "description": "Shape your journey in Lineage II by creating a unique avatar from a selection of 7 unique races leading you to a path of more than 30 potential classes you can evolve into."
+  },
+  "classes": {
+    "id": "classes",
+    "path": "/classes",
+    "title": "Races and Classes | Lineage II",
+    "description": "Shape your journey in Lineage II by creating a unique avatar from a selection of 7 unique races leading you to a path of more than 30 potential classes you can evolve into."
+  },
+  "shopOverview": {
+    "id": "shop",
+    "path": "/shop",
+    "title": "Galleria | Lineage II",
+    "description": "Sign up for a Prestige Pack subscription, recharge your NCoin balance or send your character to a new adventure on a new server."
+  },
+  "prestige": {
+    "id": "prestige",
+    "path": "/shop/prestige",
+    "title": "Prestige Pack | Lineage II",
+    "description": "Subscribe to the Lineage II Prestige Pack and receive exclusive items and great bonuses for both PvE and PvP."
+  },
+  "ncoin": {
+    "id": "ncoin",
+    "path": "/shop/ncoin",
+    "title": "NCoin | Lineage II",
+    "description": "NCoin is the virtual currency used to buy your favorite items in the L2 Store."
+  },
+  "freetoplay": {
+    "id": "freetoplay",
+    "path": "/freetoplay",
+    "title": "Play For Free | Lineage II",
+    "description": "Create an NCSOFT Account and play Lineage II for FREE"
+  },
+  "classic": {
+    "id": "classic",
+    "path": "/classic",
+    "title": "Lineage II Classic",
+    "description": "Enter the classic world of Lineage II and rediscover the magic of how it all began."
+  }
+}
