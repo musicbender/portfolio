@@ -9,7 +9,8 @@ const TextEmbed = ({
   data,
   spacing,
   offsets,
-  width
+  width,
+  active
 }) => {
   const { text, position, direction } = data;
   const x = position[0] * spacing[0];
@@ -17,7 +18,12 @@ const TextEmbed = ({
 
   return (
     <div
-      className={cx(style.textEmbed, style[direction], text)}
+      className={cx(
+        style.textEmbed,
+        style[direction],
+        text,
+        { [style.active]: active }
+      )}
       style={{
         left: `calc(${x}% - ${offsets.x}px)`,
         top: `calc(${y}% - ${offsets.y}px)`,

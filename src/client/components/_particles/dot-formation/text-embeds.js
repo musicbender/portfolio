@@ -10,7 +10,8 @@ const TextEmbeds = ({
   textConfig,
   spacing,
   getDotOffset,
-  dotSize
+  dotSize,
+  active
 }) => {
   const getTextOffset = (item) => {
     return item.direction === 'right'
@@ -37,6 +38,7 @@ const TextEmbeds = ({
           <TextEmbed
             data={item}
             spacing={spacing}
+            active={active}
             offsets={{
               x: getDotOffset(item.position[0], 'x'),
               y: getDotOffset(item.position[1], 'y') + (dotSize / 2)

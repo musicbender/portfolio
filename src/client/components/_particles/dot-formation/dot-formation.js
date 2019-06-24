@@ -10,14 +10,14 @@ const DotFormation = ({
   columns,
   rows,
   dotSize,
-  hide,
+  active,
   hideArray,
   color,
   shape,
   textConfig,
   classNames
 }) => {
-  const hideEnabled = hide && hideArray && hideArray.length > 0;
+  const hideEnabled = !active && hideArray && hideArray.length > 0;
   const ySpacing = 100 / (rows - 1);
   const xSpacing = 100 / (columns - 1);
   const dotAmount = columns * rows;
@@ -102,6 +102,7 @@ const DotFormation = ({
           spacing={[xSpacing, ySpacing]}
           getDotOffset={getDotOffset}
           dotSize={dotSize}
+          active={active}
         />
       }
     </div>
@@ -112,7 +113,7 @@ DotFormation.propTypes = {
   columns: PropTypes.number,
   rows: PropTypes.number,
   dotSize: PropTypes.number,
-  hide: PropTypes.bool,
+  active: PropTypes.bool,
   hideArray: PropTypes.arrayOf(PropTypes.number),
   color: PropTypes.string,
   shape: PropTypes.oneOf(['square', 'triangle']),
@@ -124,7 +125,7 @@ DotFormation.defaultProps = {
   columns: 32,
   rows: 8,
   dotSize: 12,
-  hide: false,
+  active: false,
   color: '#F98D51',
   shape: 'square',
   classNames: ''

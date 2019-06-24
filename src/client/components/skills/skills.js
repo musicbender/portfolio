@@ -100,7 +100,7 @@ class Skills extends Component {
           <DotFormation
             classNames={cx('big')}
             columns={15}
-            hide={!this.props.atBottom}
+            active={this.props.atBottom}
             hideArray={this.hideArray}
             color={this.state.color}
             textConfig={skillsData}
