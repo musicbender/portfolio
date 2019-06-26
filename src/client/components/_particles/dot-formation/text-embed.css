@@ -18,7 +18,7 @@
       font-size: 1.2rem;
       opacity: 0;
       transform: translateX(-1em);
-      transition: opacity 1s $easeInOut, transform 1s $easeInOut;
+      transition: opacity $moderate $easeInOut, transform $moderate $easeInOut;
     }
   }
   > .reveal-bar {
@@ -52,12 +52,12 @@
       > span {
         opacity: 1;
         transform: translateX(0);
-        transition: opacity 2s $easeInOut, transform 2s $easeInOut;
+        transition: opacity $moderate $easeInOut, transform $moderate $easeInOut;
       }
     }
     > .reveal-bar {
       transform: translateX(110%);
-      transition: transform 2s $easeInOut;
+      transition: transform $skills-reveal-duration $easeInOut;
     }
   }
 }

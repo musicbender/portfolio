@@ -86,7 +86,7 @@ const DotFormation = ({
     }
 
     return (
-      <div className={cx(style.dots)}>
+      <div className={cx(style.dots, { [style.sctive]: active })}>
         {dots}
       </div>
     );

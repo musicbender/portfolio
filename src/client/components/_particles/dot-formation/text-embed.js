@@ -35,7 +35,9 @@ const TextEmbed = ({
           text
             .split('')
             .map((letter, i) => (
-              <span key={letter + i + text}>{letter}</span>
+              <span style={{ transitionDelay: `${i * 200}ms` }} key={letter + i + text}>
+                {letter}
+              </span>
             ))
         }
       </div>

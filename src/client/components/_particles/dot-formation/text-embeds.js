@@ -43,10 +43,7 @@ const TextEmbeds = ({
               x: getDotOffset(item.position[0], 'x'),
               y: getDotOffset(item.position[1], 'y') + (dotSize / 2)
             }}
-            width={getTextWidth({
-              text: item.text,
-              spacing: getTextSpacing(item.direction),
-              offset: getTextOffset(item)
+            width={getTextWidth(item.text, getTextSpacing(item.direction), getTextOffset(item)
             })}
             key={item.text + i}
           />
