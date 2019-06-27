@@ -15,6 +15,7 @@ const TextEmbed = ({
   const { text, position, direction } = data;
   const x = position[0] * spacing[0];
   const y = position[1] * spacing[1];
+  const baseDelay = active ? 785 : 0;
 
   return (
     <div
@@ -35,7 +36,7 @@ const TextEmbed = ({
           text
             .split('')
             .map((letter, i) => (
-              <span style={{ transitionDelay: `${i * 200}ms` }} key={letter + i + text}>
+              <span style={{ transitionDelay: `${baseDelay + (i * 100)}ms` }} key={letter + i + text}>
                 {letter}
               </span>
             ))

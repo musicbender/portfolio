@@ -80,8 +80,21 @@ export const dotsFromCoords = (position = [0, 0], text = '', direction = 'right'
   return output;
 }
 
-export const mapDotsWithText = (textConfig, gridInfo) => {
-  return textConfig.map((textItem) => {
+/**
+ * mapDotsWithText - maps over each tect config item to find dot indexes
+ * @param {object} textConfig - config for text that includes text, direction, and position
+ * @param {number} columns - number of columns in grid
+ * @return {array} array of all dot indexes
+ **/
 
+export const mapDotsWithText = (textConfig, columns) => {
+  let output = [];
+
+  textConfig.forEach((item) => {
+    const { position, text, direction } = item;
+    const dotArr = dotsFromCoords(position, text, direction, columns);
+    output = [ ...output, ...dotArr ];
   });
+
+  return [ ...new Set(output) ];
 }

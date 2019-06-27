@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TextEmbeds from './text-embeds';
 import Triangle from '../triangle';
+import { mapDotsWithText } from '../../../util/dot-grid';
 import cn from 'classnames/bind';
 import style from './dot-formation.css';
 const cx = cn.bind(style);
@@ -23,6 +24,7 @@ const DotFormation = ({
   const dotAmount = columns * rows;
   const width = columns * xSpacing;
   const height = rows * ySpacing;
+  const textAffectedDots = textConfig ? mapDotsWithText(textConfig, columns) : [];
 
   const getDotOffset = (index, axis) => {
     const vector = axis === 'x' ? columns : rows;
@@ -36,7 +38,8 @@ const DotFormation = ({
         className={cx(
           style.dot,
           `dot-${i}`,
-          { [style.hide]: hide }
+          { [style.hide]: hide },
+          { [style.hasText]: textAffectedDots.indexOf(i) > -1}
         )}
         key={`dot-formation-$${i}-${i + x + y}`}
         width={dotSize}
@@ -86,7 +89,7 @@ const DotFormation = ({
     }
 
     return (
-      <div className={cx(style.dots, { [style.sctive]: active })}>
+      <div className={cx(style.dots, { [style.active]: active })}>
         {dots}
       </div>
     );

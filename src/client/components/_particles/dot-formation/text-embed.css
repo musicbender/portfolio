@@ -16,6 +16,8 @@
       display: inline-block;
       color: $white;
       font-size: 1.2rem;
+      font-family: $futura;
+      font-weight: 500;
       opacity: 0;
       transform: translateX(-1em);
       transition: opacity $moderate $easeInOut, transform $moderate $easeInOut;
@@ -37,15 +39,15 @@
     transform: rotate(0deg)
   }
   &.up {
-    transform-origin: calc(0% + 6px) calc(50% + 1px);
+    transform-origin: calc(0% + 6px) calc(43% + 1px);
     transform: rotate(-90deg);
   }
   &.down {
-    transform-origin: 3% 55%;
+    transform-origin: 2.25% 51%;
     transform: rotate(90deg);
   }
   &[class*="aws"] {
-    transform-origin: 7% 55%;
+    transform-origin: 4.5% 51%;
   }
   &.active {
     > .text-wrapper {
