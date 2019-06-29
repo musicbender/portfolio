@@ -11,7 +11,6 @@ export function setAboutTop(params) {
   }
 }
 
-
 export function setRecentWorkTop(params) {
   return {
     type: RECENT_WORK_TOP_SET,
