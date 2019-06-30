@@ -73,6 +73,14 @@ p,h1,h2,h3,h4,h5,h6,svg {
   animation-fill-mode: forwards;
 }
 
+.pj-portfolio > .scroll-debug {
+  position: absolute;
+  left: 0;
+  height: 1px;
+  width: 100vw;
+  background-color: red;
+}
+
 @keyframes show-err {
   0% {
     opacity: 0;

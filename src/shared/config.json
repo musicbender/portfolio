@@ -15,9 +15,10 @@
     "transportDuration": 2500,
     "workItemsAmount": 5,
     "homeBottom": 5562,
-    "skillsTop": 5360,
+    "skillsTop": 5280,
     "mobileBreakpoint": 768,
     "windowHeightConstant": 939,
+    "scrollDebug": true,
     "colors": {
       "purple": "#633DFF",
       "aqua": "#32D2C9",

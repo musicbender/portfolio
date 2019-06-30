@@ -22,8 +22,8 @@
     > .dots {
       position: absolute;
       left: 83.95%;
-      bottom: 10em;
-      width: 49.1%;
+      top: 47%;
+      width: 49.2%;
       padding-bottom: 48%;
       transform: translateX(-100%);
       &.hide {

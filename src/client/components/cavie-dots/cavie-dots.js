@@ -31,7 +31,7 @@ const CavieDots = ({ atBottom, bottom, baseStart }) => {
       },
       {
         start: bottom - 1400,
-        end: bottom,
+        end: bottom - 300,
         properties: [
           {
             startValue: config.colors.purple,

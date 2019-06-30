@@ -59,7 +59,7 @@ class Skills extends Component {
     if (value == null) {
       const elm = document.getElementById(this.gridID);
       const rect = elm.getBoundingClientRect();
-      value = (rect.top - (rect.height / 2)) + 300;
+      value = (rect.top - (rect.height / 2)) + 375;
     }
 
     this.props.setSkillsTop({ value, didResize });
