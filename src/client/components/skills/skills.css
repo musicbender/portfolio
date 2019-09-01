@@ -2,15 +2,11 @@
 @import '../../style/helpers/mixins';
 
 .skills {
-  display: none;
   position: relative;
   margin-top: 15em;
   height: 73em;
   width: 100%;
   overflow: hidden;
-  @media (min-width: $tablet-width) {
-    display: block;
-  }
   > .dot-wrapper {
     position: relative;
     height: 100%;
@@ -23,10 +19,19 @@
       position: absolute;
       padding-bottom: 41.5%;
       transition: filter $slow linear;
-      &[class*="big"] {
-        width: calc($(grid-m) + $(grid-s) + $(grid-m) + $(grid-l) + $(grid-s));
-        left: 92%;
-        transform: translateX(-100%);
+      width: calc($(grid-m) + $(grid-s) + $(grid-m) + $(grid-l) + $(grid-s));
+      left: 92%;
+      transform: translateX(-100%);
+      &[class*="desktop"] {
+        display: none;
+        @media (min-width: $tablet-width) {
+          display: block;
+        }
+      &[class*="mobile"] {
+        @media (min-width: $tablet-width) {
+          display: none;
+        }
+      }
       }
     }
     > .skills-cta {

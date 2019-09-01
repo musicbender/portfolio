@@ -18,7 +18,6 @@ class Skills extends Component {
     this.handleResize = throttle(this.handleResize.bind(this), 100);
     this.gridID = 'skills-dot-grid';
     this.defaultColor = 'rgb(249, 141, 81)';
-
     this.hideArray = [
       10, 11, 12, 13, 14,
       25, 26, 27, 28, 29,
@@ -56,21 +55,11 @@ class Skills extends Component {
   setTop(didResize = false, input) {
     let value = input;
 
-    console.group('----- skills setTop() ----')
-    console.log(value);
-
     if (value == null) {
       const elm = document.getElementById(this.gridID);
       const rect = elm.getBoundingClientRect();
       value = (rect.top - (rect.height / 2)) + 490;
-      console.log('rect because value was null')
-      console.log(rect);
     }
-
-   
-    console.log('value at end:')
-    console.log(value);
-    console.groupEnd();
 
     this.props.setSkillsTop({ value, didResize });
   }
@@ -92,12 +81,20 @@ class Skills extends Component {
         <Heading text="tech_i_know" />
         <div id={this.gridID} className={cx(style.dotWrapper)}>
           <DotFormation
-            classNames={cx('big')}
+            classNames={cx('desktop')}
             columns={15}
             active={this.props.atBottom}
             hideArray={this.hideArray}
             color={this.state.color}
-            textConfig={skillsData}
+            textConfig={skillsData.desktop}
+          />
+          <DotFormation
+            classNames={cx('mobile')}
+            columns={8}
+            rows={20}
+            active={true}
+            color={this.state.color}
+            textConfig={skillsData.mobile}
           />
           <div
             className={cx(
