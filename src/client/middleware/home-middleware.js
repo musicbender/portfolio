@@ -12,7 +12,7 @@ const homeMiddleware = store => next => action => {
     case RECENT_WORK_TOP_SET:
     case SKILLS_TOP_SET: {
       let modifiedAction = action;
-      const heightOffset = window.innerHeight - config.windowHeightConstant;
+      const heightOffset = 123;
 
       if (payload.didResize) {
         modifiedAction.payload = Math.round((payload.value - 200 + (window.scrollY || 0)));

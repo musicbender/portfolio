@@ -56,11 +56,21 @@ class Skills extends Component {
   setTop(didResize = false, input) {
     let value = input;
 
+    console.group('----- skills setTop() ----')
+    console.log(value);
+
     if (value == null) {
       const elm = document.getElementById(this.gridID);
       const rect = elm.getBoundingClientRect();
-      value = (rect.top - (rect.height / 2)) + 375;
+      value = (rect.top - (rect.height / 2)) + 490;
+      console.log('rect because value was null')
+      console.log(rect);
     }
+
+   
+    console.log('value at end:')
+    console.log(value);
+    console.groupEnd();
 
     this.props.setSkillsTop({ value, didResize });
   }

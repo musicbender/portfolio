@@ -15,7 +15,7 @@
     "transportDuration": 2500,
     "workItemsAmount": 5,
     "homeBottom": 5562,
-    "skillsTop": 5280,
+    "skillsTop": 5535, 
     "mobileBreakpoint": 768,
     "windowHeightConstant": 939,
     "scrollDebug": true,
@@ -29,7 +29,7 @@
   "pages": {
     "home": {
       "id": "home",
-      "path": "/",
+      "path": "/", 
       "title": "Pat Jacobs | Web Engineer",
       "description": "Pat Jacobs is a full-stack web enginner based in Orange County, California."
     },
