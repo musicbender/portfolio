@@ -18,7 +18,7 @@
     "skillsTop": 5535, 
     "mobileBreakpoint": 768,
     "windowHeightConstant": 939,
-    "scrollDebug": true,
+    "scrollDebug": false,
     "colors": {
       "purple": "#633DFF",
       "aqua": "#32D2C9",
