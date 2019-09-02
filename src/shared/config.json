@@ -15,7 +15,7 @@
     "transportDuration": 2500,
     "workItemsAmount": 5,
     "homeBottom": 5562,
-    "skillsTop": 5535, 
+    "skillsTop": 5540, 
     "mobileBreakpoint": 768,
     "windowHeightConstant": 939,
     "scrollDebug": false,

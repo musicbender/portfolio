@@ -18,6 +18,7 @@
       font-size: 1.2rem;
       font-family: $futura;
       font-weight: 500;
+      line-height: 20px;
       opacity: 0;
       transform: translateX(-1em);
       transition: opacity $moderate $easeInOut, transform $moderate $easeInOut;
@@ -32,18 +33,18 @@
     background-color: $orange;
     transform: translateX(-110%);
     transform-origin: left;
-    transition: transform 0;
+    transition: transform 0ms;
   }
   &.right {
     transform-origin: center left;
     transform: rotate(0deg)
   }
   &.up {
-    transform-origin: calc(0% + 6px) calc(43% + 1px);
+    transform-origin: calc(-1.5% + 6px) calc(37% + 1px);
     transform: rotate(-90deg);
   }
   &.down {
-    transform-origin: 2.25% 51%;
+    transform-origin: 3% 51%;
     transform: rotate(90deg);
   }
   &[class*="aws"] {
