@@ -4,9 +4,14 @@
 .skills {
   position: relative;
   margin-top: 15em;
-  height: 73em;
+  height: auto;
   width: 100%;
+  padding-bottom: 238%;
   overflow: hidden;
+  @media (min-width: $tablet-width) {
+    height: 73em;
+    padding: 0;
+  }
   > .dot-wrapper {
     position: relative;
     height: 100%;
@@ -17,21 +22,22 @@
     }
     > div[class*="dot-formation"] {
       position: absolute;
-      padding-bottom: 41.5%;
       transition: filter $slow linear;
       width: calc($(grid-m) + $(grid-s) + $(grid-m) + $(grid-l) + $(grid-s));
       left: 92%;
       transform: translateX(-100%);
       &[class*="desktop"] {
         display: none;
+        padding-bottom: 41.5%;
         @media (min-width: $tablet-width) {
           display: block;
         }
+      }
       &[class*="mobile"] {
+        padding-bottom: 225%;
         @media (min-width: $tablet-width) {
           display: none;
         }
-      }
       }
     }
     > .skills-cta {

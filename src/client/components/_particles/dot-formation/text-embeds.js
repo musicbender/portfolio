@@ -11,7 +11,8 @@ const TextEmbeds = ({
   spacing,
   getDotOffset,
   dotSize,
-  active
+  active,
+  rowMajority
 }) => {
   const getTextOffset = (item) => {
     return item.direction === 'right'
@@ -19,13 +20,16 @@ const TextEmbeds = ({
       : getDotOffset(item.position[1], 'y')
   }
 
-
   const getTextSpacing = (direction) => {
     switch(direction) {
       case 'up':
-        return spacing[1] / 2;
+        return rowMajority 
+          ? spacing[0]
+          : spacing[1] / 2;
       case 'down':
-        return (spacing[1] / 2) - 0.25;
+        return rowMajority 
+          ? (spacing[0]) - 0.25
+          : (spacing[1] / 2) - 0.25;
       default:
         return spacing[0];
     }

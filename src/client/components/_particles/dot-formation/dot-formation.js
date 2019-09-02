@@ -22,8 +22,6 @@ const DotFormation = ({
   const ySpacing = 100 / (rows - 1);
   const xSpacing = 100 / (columns - 1);
   const dotAmount = columns * rows;
-  const width = columns * xSpacing;
-  const height = rows * ySpacing;
   const textAffectedDots = textConfig ? mapDotsWithText(textConfig, columns) : [];
 
   const getDotOffset = (index, axis) => {
@@ -106,6 +104,7 @@ const DotFormation = ({
           getDotOffset={getDotOffset}
           dotSize={dotSize}
           active={active}
+          rowMajority={rows > columns}
         />
       }
     </div>
