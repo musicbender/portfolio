@@ -3,13 +3,13 @@
 
 .skills {
   position: relative;
-  margin-top: 15em;
   height: auto;
   width: 100%;
   padding-bottom: 238%;
   overflow: hidden;
   @media (min-width: $tablet-width) {
     height: 73em;
+    margin-top: 15em;
     padding: 0;
   }
   > .dot-wrapper {

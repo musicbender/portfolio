@@ -31,11 +31,13 @@
       "id": "home",
       "path": "/", 
       "title": "Pat Jacobs | Web Engineer",
+      "hasTitleSuffix": false,
       "description": "Pat Jacobs is a full-stack web enginner based in Orange County, California."
     },
     "caseStudy": {
       "id": "caseStudy",
       "path": "/case-study/:project",
+      "hasTitleSuffix": true,
       "dataDependency": "projects"
     }
   }

@@ -18,8 +18,14 @@ export const getPageData = (path, pageData = pages) => {
 
 // get static meta data from meta config.json
 export const getMeta = (pageData) => {
+  const title = pageData.title
+    ? pageData.hasTitleSuffix
+    ? pageData.title + meta.suffix
+    : pageData.title
+    : meta.title;
+
   return {
-    title: pageData.title ? pageData.title + meta.suffix : meta.title,
+    title,
     description: pageData.description || meta.description
   }
 }
