@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import update from 'immutability-helper';
-import PropTypes from 'prop-types';
 import Heading from '../_global/heading';
 import Particles from './particles';
 import WorkItem from './work-item';
@@ -18,11 +17,11 @@ const cx = cn.bind(style);
 class RecentWork extends Component {
   constructor(props) {
     super(props);
-    this.handleWorkStops = this.handleWorkStops.bind(this);
     this.content = contentConf.home.sections.recentWork;
     this.workData = filterProjectData('work');
     this.defaultWorkStops = this.workData.map(w => false);
     this.handleResize = throttle(this.handleResize.bind(this), 100);
+    this.handleWorkStops = this.handleWorkStops.bind(this);
     this.state = {
       workStops: this.defaultWorkStops
     }
@@ -34,6 +33,12 @@ class RecentWork extends Component {
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (!prevProps.transportOpen && this.props.transportOpen) {
+      this.resetWorkStops();
+    }
   }
 
   handleResize() {
@@ -66,6 +71,10 @@ class RecentWork extends Component {
 
       this.setState(newState);
     }
+  }
+
+  resetWorkStops() {
+    this.setState({ workStops: this.defaultWorkStops });
   }
 
   renderWorkItems() {
@@ -102,7 +111,8 @@ class RecentWork extends Component {
 const mapStateToProps = ({ global, home }) => {
   return {
     recentWorkTop: home.recentWorkTop,
-    isMobile: global.isMobile
+    isMobile: global.isMobile,
+    transportOpen: global.transportOpen
   }
 }
 

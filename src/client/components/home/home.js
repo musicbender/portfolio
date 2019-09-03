@@ -15,7 +15,7 @@ import Header from '../header';
 import AboutMe from '../about-me';
 import RecentWork from '../recent-work';
 import CavieDots from '../cavie-dots';
-import Contact from '../contact';
+import Skills from '../skills';
 
 @Page()
 class Home extends Component {
@@ -44,14 +44,14 @@ class Home extends Component {
         this.setState({ atAbout: true });
       }
 
-      if (scrollY >= this.props.contactTop) {
+      if (scrollY >= this.props.skillsTop) {
         if (!this.state.atBottom) {
           this.setState({ atBottom: true });
         }
       }
     }
 
-    if (scrollY < this.props.contactTop) {
+    if (scrollY < this.props.skillsTop) {
       if (this.state.atBottom) {
         this.setState({ atBottom: false });
       }
@@ -82,7 +82,7 @@ class Home extends Component {
           />
           <RecentWork />
           <CavieDots baseStart={this.props.recentWorkTop - 400} atBottom={this.state.atBottom} />
-          <Contact atBottom={this.state.atBottom} />
+          <Skills atBottom={this.state.atBottom} />
           </div>
         </div>
       </main>
@@ -104,7 +104,7 @@ const mapStateToProps = ({ global, home }) => {
     isMobile: global.isMobile,
     aboutTop: home.aboutTop,
     recentWorkTop: home.recentWorkTop,
-    contactTop: home.contactTop
+    skillsTop: home.skillsTop
   }
 }
 

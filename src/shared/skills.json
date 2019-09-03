@@ -1,0 +1,126 @@
+{
+  "mobile": [
+    {
+      "text": "react",
+      "position": [4, 0],
+      "direction": "right"
+    },
+    {
+      "text": "scss",
+      "position": [7, 13],
+      "direction": "down"
+    },
+    {
+      "text": "graphql",
+      "position": [1, 11],
+      "direction": "down"
+    },
+    {
+      "text": "node",
+      "position": [1, 8],
+      "direction": "right"
+    },
+    {
+      "text": "redux",
+      "position": [4, 3],
+      "direction": "down"
+    },
+    {
+      "text": "tdd",
+      "position": [0, 18],
+      "direction": "down"
+    },
+    {
+      "text": "mongodb",
+      "position": [4, 19],
+      "direction": "right"
+    },
+    {
+      "text": "docker",
+      "position": [7, 5],
+      "direction": "down"
+    },
+    {
+      "text": "typescript",
+      "position": [0, 0],
+      "direction": "down"
+    },
+    {
+      "text": "jss",
+      "position": [4, 11],
+      "direction": "right"
+    },
+    {
+      "text": "webpack",
+      "position": [2, 16],
+      "direction": "right"
+    }
+  ],
+  "desktop": [
+    {
+      "text": "react",
+      "position": [0, 1],
+      "direction": "right"
+    },
+    {
+      "text": "scss",
+      "position": [0, 7],
+      "direction": "up"
+    },
+    {
+      "text": "graphql",
+      "position": [2, 6],
+      "direction": "up"
+    },
+    {
+      "text": "node",
+      "position": [4, 0],
+      "direction": "right"
+    },
+    {
+      "text": "redux",
+      "position": [4, 5],
+      "direction": "up"
+    },
+    {
+      "text": "tdd",
+      "position": [4, 7],
+      "direction": "right"
+    },
+    {
+      "text": "express",
+      "position": [5, 2],
+      "direction": "right"
+    },
+    {
+      "text": "mongodb",
+      "position": [6, 5],
+      "direction": "right"
+    },
+    {
+      "text": "docker",
+      "position": [10, 1],
+      "direction": "down"
+    },
+    {
+      "text": "typescript",
+      "position": [9, 7],
+      "direction": "right"
+    },
+    {
+      "text": "jss",
+      "position": [11, 5],
+      "direction": "right"
+    },
+    {
+      "text": "webpack",
+      "position": [13, 0],
+      "direction": "down"
+    },
+    {
+      "text": "aws",
+      "position": [14, 4],
+      "direction": "down"
+    }
+  ]  
+}

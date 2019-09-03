@@ -34,7 +34,7 @@ const Triangle = ({
 
 Triangle.propTypes = {
   color: PropTypes.oneOf(['white', 'orange', 'aqua', 'purple', 'yellow']),
-  size: PropTypes.oneOf(['tiny', 'small', 'medium', 'giant']),
+  size: PropTypes.oneOf(['micro', 'tiny', 'small', 'medium', 'giant']),
   opacity: PropTypes.number,
   classNames: PropTypes.string
 }

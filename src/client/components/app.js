@@ -82,16 +82,21 @@ class App extends Component {
             <Curtain entrance="full" exit="full" duration={1275}/>
           </Modal>
         }
+        {
+          config.scrollDebug &&
+          <div className={cx(style.scrollDebug)} style={{ top: this.props.skillsTop }}/>
+        }
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ global }) => {
+const mapStateToProps = ({ global, home }) => {
   return {
     splashOpen: global.splashOpen,
     transportOpen: global.transportOpen,
-    isMobile: global.isMobile
+    isMobile: global.isMobile,
+    skillsTop: home.skillsTop
   }
 }
 

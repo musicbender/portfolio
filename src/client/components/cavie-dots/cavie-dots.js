@@ -22,16 +22,16 @@ const CavieDots = ({ atBottom, bottom, baseStart }) => {
         end: i === 0 ? 200 : start + accumulator * 2,
         properties: [
           {
-            startValue: i === 0 ? 0 : 150,
+            startValue: i === 0 ? 0 : 56,
             endValue: 0,
-            unit: '%',
+            unit: 'vh',
             property: 'translateY'
           }
         ]
       },
       {
         start: bottom - 1400,
-        end: bottom,
+        end: bottom - 300,
         properties: [
           {
             startValue: config.colors.purple,
@@ -48,20 +48,24 @@ const CavieDots = ({ atBottom, bottom, baseStart }) => {
     ];
   }
 
-  const renderDot = (i, size, x, y) => {
+  const renderDot = ({ index, dotSize, x, y, xOffset, yOffset }) => {
     return (
       <Plx
         className={cx(style.dotPlx, style.dot)}
-        parallaxData={getPlxData(i)}
-        tagName="rect"
+        parallaxData={getPlxData(index)}
+        tagName="svg"
         disabled={!hasWindow()}
         animateWhenNotInViewport={true}
-        key={`cavie-dot-$${i}-${i + x + y}`}
-        width={size}
-        height={size}
-        x={x}
-        y={y}
-      />
+        key={`cavie-dot-$${index}-${index + x + y}`}
+        width={dotSize}
+        height={dotSize}
+        style={{
+          left: `calc(${x}% - ${xOffset}px)`,
+          top: `calc(${y}% - ${yOffset}px)`
+        }}
+      >
+        <rect width={dotSize} height={dotSize} />
+      </Plx>
     );
   }
 
@@ -69,28 +73,32 @@ const CavieDots = ({ atBottom, bottom, baseStart }) => {
     let dots = [];
     const dotSize = 12;
     const grid = Math.round(Math.sqrt(dotAmount));
-    const spacing = dotSize * grid;
-    const size = spacing * grid;
+    const size = 100;
+    const spacing = size / (grid - 1);
 
     for (let i = 0; i < dotAmount; i++) {
-      const y = Math.floor(i / grid) * spacing;
-      const x = (i * spacing) - Math.floor((i * spacing) / size) * size;
+      const row = Math.floor(i / grid);
+      const dotConfig = {
+        index: i,
+        dotSize,
+        y: row * spacing,
+        x: (i * spacing) - ((row * size) + (row * spacing))
+      }
+
+      dotConfig.xOffset = (dotConfig.x / spacing) * 3;
+      dotConfig.yOffset = (dotConfig.y / spacing) * 3;
+
 
       dots = [
         ...dots,
-        renderDot(i, dotSize, x, y)
+        renderDot(dotConfig)
       ];
     }
 
     return (
-      <svg
-        className={cx(style.dots, { [style.hide]: atBottom })}
-        viewBox={`0 0 ${size - 45} ${size}`}
-        height={size * 2}
-        width={size}
-      >
+      <div className={cx(style.dots, { [style.hide]: atBottom })}>
         {dots}
-      </svg>
+      </div>
     );
   }
 

@@ -21,15 +21,27 @@
     position: relative;
     > .dots {
       position: absolute;
-      left: 84.1%;
-      bottom: 0;
+      left: 83.95%;
+      top: 18.5em;
+      width: 49.2%;
+      padding-bottom: 48%;
       transform: translateX(-100%);
+      @media (min-width: $largest-site-width) {
+        width: 27.5em;
+        left: 47.375em;
+        padding-bottom: 27.3em;
+      }
       &.hide {
         display: none;
       }
       > .dot {
+        position: absolute;
         fill: $purple;
-        transform: translateY(150%);
+        transform: translateY(100vh);
+        transition: transform $fast ease-out;
+        > rect {
+          fill: inherit;
+        }
       }
     }
   }

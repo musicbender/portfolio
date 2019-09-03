@@ -21,18 +21,16 @@
     }
     > div[class*="dot-formation"] {
       position: absolute;
+      padding-bottom: 41.5%;
       transition: filter $slow linear;
       &[class*="big"] {
-        width: 1920px;
-        left: 91.9%;
+        width: calc($(grid-m) + $(grid-s) + $(grid-m) + $(grid-l) + $(grid-s));
+        left: 92%;
         transform: translateX(-100%);
-      }
-      &[class*="small"] {
-        width: 8.52%;
-        left: 96.05%;
       }
     }
     > .contact-cta {
+      display: none;
       position: absolute;
       top: 45%;
       left: 50%;

@@ -71,7 +71,7 @@
     {
       "name": "triangle-g",
       "type": "triangle",
-      "color": "aqua",
+      "color": "orange",
       "size": "medium",
       "plx": [8, -2]
     },
