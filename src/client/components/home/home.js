@@ -75,14 +75,14 @@ class Home extends Component {
         <div className={cx(style.outterWrapper)}>
           <Header />
           <div className={cx(style.wrapper)}>
-          <AboutMe
-            atAbout={this.state.atAbout}
-            setAboutTop={this.props.setAboutTop}
-            isMobile={this.props.isMobile}
-          />
-          <RecentWork />
-          <CavieDots baseStart={this.props.recentWorkTop - 400} atBottom={this.state.atBottom} />
-          <Skills atBottom={this.state.atBottom} />
+            <AboutMe
+              atAbout={this.state.atAbout}
+              setAboutTop={this.props.setAboutTop}
+              isMobile={this.props.isMobile}
+            />
+            <RecentWork />
+            <CavieDots baseStart={this.props.recentWorkTop - 400} atBottom={this.state.atBottom} />
+            <Skills atBottom={this.state.atBottom} />
           </div>
         </div>
       </main>
