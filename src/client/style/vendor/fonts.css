@@ -1,23 +1,23 @@
 @font-face {
   font-family: 'Futura';
   font-weight: normal;
-  src: url('https://cdn.patjacobs.io/fonts/Futura-Medium.woff2') format('woff2'),
-       url('https://cdn.patjacobs.io/fonts/Futura-Medium.woff') format('woff'),
-       url('https://cdn.patjacobs.io/fonts/Futura-Medium.ttf')  format('truetype');
+  src: url('https://cdn.patjacobs.com/fonts/Futura-Medium.woff2') format('woff2'),
+       url('https://cdn.patjacobs.com/fonts/Futura-Medium.woff') format('woff'),
+       url('https://cdn.patjacobs.com/fonts/Futura-Medium.ttf')  format('truetype');
 }
 
 @font-face {
   font-family: 'Futura';
   font-weight: bold;
-  src: url('https://cdn.patjacobs.io/fonts/Futura-Bold.woff2') format('woff2'),
-       url('https://cdn.patjacobs.io/fonts/Futura-Bold.woff') format('woff'),
-       url('https://cdn.patjacobs.io/fonts/Futura-Bold.ttf')  format('truetype');
+  src: url('https://cdn.patjacobs.com/fonts/Futura-Bold.woff2') format('woff2'),
+       url('https://cdn.patjacobs.com/fonts/Futura-Bold.woff') format('woff'),
+       url('https://cdn.patjacobs.com/fonts/Futura-Bold.ttf')  format('truetype');
 }
 
 @font-face {
   font-family: 'Inconsolata';
   font-weight: normal;
-  src: url('https://cdn.patjacobs.io/fonts/Inconsolata.woff2') format('woff2'),
-       url('https://cdn.patjacobs.io/fonts/Inconsolata.woff') format('woff'),
-       url('https://cdn.patjacobs.io/fonts/Inconsolata.ttf')  format('truetype');
+  src: url('https://cdn.patjacobs.com/fonts/Inconsolata.woff2') format('woff2'),
+       url('https://cdn.patjacobs.com/fonts/Inconsolata.woff') format('woff'),
+       url('https://cdn.patjacobs.com/fonts/Inconsolata.ttf')  format('truetype');
 }
